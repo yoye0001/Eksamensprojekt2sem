@@ -1,17 +1,39 @@
 ---
 import Card from "../components/Card.astro";
+
 const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3B3dGd1Z3VpcG9ubWFpa2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3ODMzNDMsImV4cCI6MjAzMTM1OTM0M30.F0THFO_2BDe8j-ZXrXcyfbczErZtlQ4nCo_MDcCMEVM",
   },
 }).then((res) => res.json());
-
 console.log(data);
 ---
 
 <h1>Database test</h1>
-<p>{data}</p>
+
+<section class="liste">
+  {
+    data.map((work) => {
+      return <Card data={work} />;
+    })
+  }
+</section>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Function to be executed when the page is fully loaded
+    console.log("Page is fully loaded!");
+    // Call your function here
+    myFunction();
+  });
+
+  // Example function
+  function myFunction() {
+    console.log("myFunction has been called.");
+    // Add your code here
+  }
+</script> -->
 <!-- <div>
   {
     data.map((data) => {

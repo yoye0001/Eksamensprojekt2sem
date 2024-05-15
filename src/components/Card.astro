@@ -2,3 +2,10 @@
 const { data } = Astro.props;
 console.log(data);
 ---
+
+<article>
+  <h2>{data.title}</h2>
+
+  <p>{data.tal}</p>
+  <a href={data.href}>KNAP</a>
+</article>
