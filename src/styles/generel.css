@@ -1,0 +1,32 @@
+/* ------ css reset ------ */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Farver */
+html {
+  scroll-behavior: smooth;
+
+  --primary: #c6ccff;
+  --primary-50: rgb(198, 204, 255, 50%);
+  --primary-35: rgb(198, 204, 255, 35%);
+
+  --secondary: #91da94;
+  --secondary-50: rgb(145, 218, 148, 50%);
+  --secondary-35: rgb(145, 218, 148, 35%);
+
+  --accent1: #16218c;
+  --body-contrast: #ececec;
+  --brandbackground: #0f1136;
+
+  --header-gradient: linear-gradient(30deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
+  --footer-gradient: linear-gradient(199deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
+}
