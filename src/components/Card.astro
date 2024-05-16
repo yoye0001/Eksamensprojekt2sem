@@ -30,6 +30,7 @@ import "../styles/generel.css";
   h3 {
     font-size: 2rem;
     transition: all 0.1s ease;
+    hyphens: auto;
   }
 
   a {
@@ -51,7 +52,7 @@ import "../styles/generel.css";
     height: 20vw;
     margin: none;
     transition: all 0.2s ease;
-    border: 1px var(--body-contrast) solid;
+    border: 1px var(--secondary) solid;
   }
 
   .odd {
@@ -75,6 +76,7 @@ import "../styles/generel.css";
     border-radius: 2px;
   }
   .focus hr {
+    border: solid red 1px;
     width: 70vw;
     margin-top: 2rem;
     transition: all 0.2s ease;
@@ -105,6 +107,10 @@ import "../styles/generel.css";
     margin-right: auto;
     aspect-ratio: 1/1;
     overflow: hidden;
+
+    background-color:;
+    filter: drop-shadow(20px 15px rgba(145, 218, 148, 1));
+    border: solid rgba(145, 218, 148, 1) 1px;
   }
   .mobileImageContainer img {
     width: 100%;
@@ -188,7 +194,7 @@ import "../styles/generel.css";
       z-index: -10;
       width: 100%;
       height: 100%;
-      border: var(--body-contrast) solid 2px;
+      border: var(--secondary) solid 2px;
       transform: translateY(-80%) translateX(20%);
     }
 
