@@ -19,7 +19,7 @@ import "../styles/generel.css";
       <p>{data.description1}</p>
       <p>{data.description2}</p>
     </div>
-    <div class="imagecontainer"><img src={data.image} alt={data.image_text} /></div>
+    <div class="imagecontainer"><img src={data.image} alt={data.image_text} /><div class="border"></div></div>
   </a>
   <hr />
 </article>
@@ -57,10 +57,11 @@ import "../styles/generel.css";
     transition: all 0.2s ease;
   }
   .focus .imagecontainer {
-    width: 40vw;
+    width: 30vw;
     height: 20vw;
     margin: none;
     transition: all 0.2s ease;
+    border: 1px var(--body-contrast) solid;
   }
 
   .odd {
@@ -121,10 +122,19 @@ import "../styles/generel.css";
     border-radius: 2px;
   }
 
-  .focus .textcontainer .odd .imagecontainer {
-    border: red solid 2px;
+  .border {
+    position: relative;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    border: var(--body-contrast) solid 2px;
+    transform: translateY(-80%) translateX(20%);
   }
 
+  .focus .imagecontainer .border {
+    transform: translateY(-100%) translateX(0%);
+    transition: all 0.2s ease;
+  }
   .even {
     margin-left: auto;
   }
