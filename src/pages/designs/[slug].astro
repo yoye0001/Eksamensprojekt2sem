@@ -1,5 +1,6 @@
 ---
 import "../../styles/generel.css";
+import MainLayout from "../../layouts/MainLayout.astro";
 export async function getStaticPaths() {
   const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1", {
     method: "GET",
@@ -19,25 +20,69 @@ const { myData } = Astro.props;
 console.log(myData);
 ---
 
-<div class="herowrapper">
-  <div class="herocontainer">
+<MainLayout>
+  <div class="herowrapper">
+    <div class="topleft">
+      <p class="breadcrumb">{myData.type} //</p>
+      <button onclick="goBack()"><h3>back</h3></button>
+    </div>
     <img class="heroimage" src={myData.image} alt="" />
+    <div class="herocontainer">
+      <h1 class="displaytext">{myData.title}</h1>
+      <h3>{myData.customer}</h3>
+    </div>
   </div>
-  <h1 class="displaytext">{myData.title}</h1>
-</div>
-
+</MainLayout>
 <style>
   .herowrapper {
     display: grid;
     margin-left: -1rem;
     margin-right: -1rem;
-    height: auto;
   }
-  .herowrappers img {
+  .herowrapper img {
     object-fit: cover;
+    height: 30rem;
+    filter: brightness(0.8);
   }
+  .heroimage,
   .herocontainer,
-  h1 {
+  .topleft {
     grid-area: 1/1;
   }
+
+  .herocontainer {
+    z-index: 10;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .herocontainer h1 {
+    text-align: right;
+    margin-bottom: 2rem;
+  }
+  .herocontainer h3 {
+    text-align: right;
+    margin-top: auto;
+  }
+  .topleft {
+    z-index: 12;
+    margin-left: 2rem;
+  }
+
+  button {
+    width: auto;
+
+    background: transparent;
+    border: none;
+    padding: none;
+  }
+  .herowrapper p {
+    z-index: 6;
+  }
 </style>
+
+<script>
+  function goBack() {
+    console.log("back");
+    window.history.back();
+  }
+</script>
