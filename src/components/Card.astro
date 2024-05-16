@@ -7,5 +7,18 @@ console.log(data);
   <h2>{data.title}</h2>
 
   <p>{data.tal}</p>
+  <p>{data.type} lighting</p>
+
+  <img src={data.image} alt={data.image_text} height="200" width="200" />
   <a href={data.href}>KNAP</a>
 </article>
+
+<style>
+  img {
+    object-fit: cover;
+  }
+  article {
+    border: black solid 1px;
+    margin: 0.5rem;
+  }
+</style>
