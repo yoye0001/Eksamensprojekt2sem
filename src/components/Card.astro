@@ -15,12 +15,16 @@ import "../styles/generel.css";
   </a>
   <!-- Desktop end -->
 
-  <a class="showMobile imagecontainer">
-    <img src={data.image} alt={data.image_text} /><div class="border"></div>
+  <a class="showMobile">
+    <div class="mobileImageContainer">
+      <h3>{data.title}</h3>
+      <img src={data.image} alt={data.image_text} />
+    </div>
+    <p>{data.description1}</p>
   </a>
-
-  <hr />
 </article>
+
+<hr />
 
 <style>
   h3 {
@@ -28,20 +32,6 @@ import "../styles/generel.css";
     transition: all 0.1s ease;
   }
 
-  .kasse {
-    display: block;
-    order: 0;
-    height: auto;
-    padding: 0.5rem;
-
-    overflow-y: hidden;
-
-    transition: all 0.5s ease;
-    padding-left: 2rem;
-    padding-right: 2rem;
-
-    scroll-snap-align: start;
-  }
   a {
     text-decoration: none;
   }
@@ -90,9 +80,61 @@ import "../styles/generel.css";
     transition: all 0.2s ease;
   }
 
+  /* MOBILE VIEW */
   .showMobile {
     display: none;
-    margin: none;
+  }
+
+  .kasse {
+    display: block;
+    order: 0;
+    height: auto;
+    padding: 0.5rem;
+    overflow-y: hidden;
+    transition: all 0.5s ease;
+
+    scroll-snap-align: start;
+  }
+
+  .mobileImageContainer {
+    display: grid;
+    width: 50vw;
+    height: 50vw;
+    transition: all 0.5s ease;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+  .mobileImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+  }
+  .showMobile img,
+  h3 {
+    grid-area: 1/1;
+  }
+
+  .showMobile h3 {
+    z-index: 1;
+  }
+
+  .focus .mobileImageContainer {
+    width: 70vw;
+    height: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.2s ease;
+  }
+  .focus .mobileImageContainer img {
+    filter: brightness(0.8);
+    transition: all 0.2s ease;
+  }
+  .showMobile p {
+    margin-top: 1rem;
   }
 
   @media (max-width: 900px) {
@@ -103,12 +145,20 @@ import "../styles/generel.css";
     .showMobile {
       display: inherit;
     }
-    .showMobile .imagecontainer {
-      margin: none;
-    }
   }
 
   @media (min-width: 900px) {
+    .kasse {
+      display: block;
+      order: 0;
+      height: auto;
+      padding: 0.5rem;
+      overflow-y: hidden;
+      transition: all 0.5s ease;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      scroll-snap-align: start;
+    }
     .grid1-1 {
       display: grid;
       gap: 10rem;
@@ -116,37 +166,38 @@ import "../styles/generel.css";
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
+
+    .imagecontainer {
+      width: 10vw;
+      height: 10vw;
+      transition: all 0.5s ease;
+      margin-top: auto;
+      margin-bottom: auto;
+      aspect-ratio: 1/1;
+    }
+    .imagecontainer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      border-radius: 2px;
+    }
+
+    .border {
+      position: relative;
+      z-index: -10;
+      width: 100%;
+      height: 100%;
+      border: var(--body-contrast) solid 2px;
+      transform: translateY(-80%) translateX(20%);
+    }
+
+    .focus .imagecontainer .border {
+      transform: translateY(-100%) translateX(0%);
+      transition: all 0.2s ease;
+    }
   }
 
-  .imagecontainer {
-    width: 10vw;
-    height: 10vw;
-    transition: all 0.5s ease;
-    margin-top: auto;
-    margin-bottom: auto;
-    aspect-ratio: 1/1;
-  }
-  .imagecontainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    border-radius: 2px;
-  }
-
-  .border {
-    position: relative;
-    z-index: -10;
-    width: 100%;
-    height: 100%;
-    border: var(--body-contrast) solid 2px;
-    transform: translateY(-80%) translateX(20%);
-  }
-
-  .focus .imagecontainer .border {
-    transform: translateY(-100%) translateX(0%);
-    transition: all 0.2s ease;
-  }
   .even {
     margin-left: auto;
   }
