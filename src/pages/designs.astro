@@ -11,11 +11,10 @@ const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
   },
 }).then((res) => res.json());
 console.log(data);
-const { sitetitle } = Astro.props;
 ---
 
-<MainLayout sitetitle="Multiview">
-  <h1>{sitetitle}hej</h1>
+<MainLayout sitetitle="Designs">
+  <h1>Designs</h1>
 
   <section class="liste">
     {

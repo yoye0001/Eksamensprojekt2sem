@@ -5,14 +5,20 @@ import "../styles/generel.css";
 ---
 
 <article class="kasse">
-  <a href="" class="grid1-1 hideDesktop">
+  <!-- Desktop start -->
+  <a target="_blank" href={`/designs/${data.slug}`} class="grid1-1 hideDesktop">
     <div class="textcontainer">
       <h3>{data.title}</h3>
       <p>{data.description1}</p>
-      <p>{data.description2}</p>
     </div>
     <div class="imagecontainer"><img src={data.image} alt={data.image_text} /><div class="border"></div></div>
   </a>
+  <!-- Desktop end -->
+
+  <a class="showMobile imagecontainer">
+    <img src={data.image} alt={data.image_text} /><div class="border"></div>
+  </a>
+
   <hr />
 </article>
 
@@ -84,9 +90,21 @@ import "../styles/generel.css";
     transition: all 0.2s ease;
   }
 
+  .showMobile {
+    display: none;
+    margin: none;
+  }
+
   @media (max-width: 900px) {
     .hideDesktop {
       display: none;
+    }
+
+    .showMobile {
+      display: inherit;
+    }
+    .showMobile .imagecontainer {
+      margin: none;
     }
   }
 
