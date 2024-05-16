@@ -1,0 +1,54 @@
+---
+import "../styles/generel.css";
+---
+
+<footer>
+    <section id="grid_3-3-3">
+    <div id="textbox" >
+    <p>kongshaug@gmail.com </p>
+    <p>+45 4050 8828</p>
+    <span id="vandretstreg"> </span>
+    <p>Scenograferne, Sankt Peders Straede 45, 1. sal
+        1453 Copenhagen K </p>
+    </div>
+    <div>
+    <img id="logo" src="FAVICON.png" alt=""></div>
+    <div id="links"><img id="insta" src="insta.png" alt="">
+        <span id="lodretstreg"> </span>
+    <img id="linkedin" src="linkedin.png" alt="">
+    </div> 
+    </section>
+</footer>
+
+<style>
+    #textbox{
+    margin-left: -10rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 10rem;
+}
+
+footer{
+    background: var(--footer, linear-gradient(92deg, #16218C 0%, #0F1136 35%, #111338 100%));
+    color: white ;}
+
+
+
+#logo{
+    position: relative;
+    display: grid;
+    place-items: center;
+   
+}
+
+#links{
+    margin-right: -10rem;
+    padding-top: 2rem;
+}
+
+#grid_3-3-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+</style>
