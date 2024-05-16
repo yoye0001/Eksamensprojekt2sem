@@ -16,15 +16,17 @@ console.log(data);
 <MainLayout sitetitle="Designs">
   <h1>Designs</h1>
 
+  <hr />
   <div class="flex">
     <a href=""><h3>recent</h3></a>
     <span class="line">|</span>
-    <a href=""><h3>international</h3></a>
+    <a href=""><h3 class="">international</h3></a>
     <span class="line">|</span>
     <a href=""><h3>national</h3></a>
     <span class="line">|</span>
     <a href=""><h3>older</h3></a>
   </div>
+  <hr />
 
   <section class="liste">
     {
@@ -48,4 +50,31 @@ console.log(data);
     color: var(--body-contrast);
     font-size: 32px;
   }
+
+  .flex a {
+    text-decoration: none;
+  }
+  .selected {
+    border-bottom: solid var(--body-contrast) 2px;
+  }
+
+  .flex h3{
+    border-bottom: solid transparent 2px;
+  }
+  .flex h3:hover {
+    border-bottom: solid var(--body-contrast) 2px;
+    animation: border_anim 0.3s ease-in-out forwards;
+  }
+  hr {
+    margin: 1rem 0 1rem 0;
+    border: solid var(--body-contrast) 1px;
+  }
+
+  @keyframes border_anim {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
+	}
 </style>

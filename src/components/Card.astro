@@ -24,12 +24,12 @@ import "../styles/generel.css";
   </a>
 </article>
 
-<hr />
+<hr class="hideDesktop" />
 
 <style>
   h3 {
     font-size: 2rem;
-    transition: all 0.1s ease;
+    transition: var(--unfocus);
     hyphens: auto;
   }
 
@@ -39,19 +39,18 @@ import "../styles/generel.css";
 
   .focus h3 {
     font-size: 3rem;
-    transition: all 0.2s ease;
+    transition: var(--focus);
   }
 
   .focus {
     min-height: 25rem;
-    /* padding-bottom: 25rem; */
-    transition: all 0.2s ease;
+    transition: var(--focus);
   }
   .focus .imagecontainer {
     width: 30vw;
     height: 20vw;
     margin: none;
-    transition: all 0.2s ease;
+    transition: var(--focus);
     border: 1px var(--secondary) solid;
   }
 
@@ -68,18 +67,16 @@ import "../styles/generel.css";
   hr {
     border: solid var(--body-contrast) 1px;
     width: 50vw;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
     margin-right: auto;
     margin-left: auto;
-    transition: all 0.5s ease;
+    transition: var(--unfocus);
     border-radius: 2px;
   }
   .focus hr {
-    border: solid red 1px;
     width: 70vw;
     margin-top: 2rem;
-    transition: all 0.2s ease;
+    transition: var(--focus);
   }
 
   /* MOBILE VIEW */
@@ -93,7 +90,7 @@ import "../styles/generel.css";
     height: auto;
 
     overflow-y: hidden;
-    transition: all 0.5s ease;
+    transition: var(--unfocus);
 
     scroll-snap-align: start;
   }
@@ -102,7 +99,7 @@ import "../styles/generel.css";
     display: grid;
     width: 50vw;
     height: 50vw;
-    transition: all 0.5s ease;
+    transition: var(--unfocus);
     margin-left: auto;
     margin-right: auto;
     aspect-ratio: 1/1;
@@ -133,14 +130,14 @@ import "../styles/generel.css";
     height: 70vw;
     margin-left: auto;
     margin-right: auto;
-    transition: all 0.2s ease;
+    transition: var(--focus);
 
     filter: drop-shadow(0px 0px rgba(145, 218, 148, 1));
     border: solid rgba(145, 218, 148, 1) 2px;
   }
   .focus .mobileImageContainer img {
     filter: brightness(0.8);
-    transition: all 0.2s ease;
+    transition: var(--focus);
     background-color:;
   }
   .showMobile p {
@@ -164,7 +161,7 @@ import "../styles/generel.css";
       height: auto;
       padding: 0.5rem;
       overflow-y: hidden;
-      transition: all 0.5s ease;
+      transition: var(--unfocus);
 
       scroll-snap-align: start;
     }
@@ -174,12 +171,14 @@ import "../styles/generel.css";
       grid-template-columns: 1fr 1fr;
       padding-top: 1rem;
       padding-bottom: 1rem;
+
+      transition: var(--focus);
     }
 
     .imagecontainer {
       width: 10vw;
       height: 10vw;
-      transition: all 0.5s ease;
+      transition: var(--unfocus);
       margin-top: auto;
       margin-bottom: auto;
       aspect-ratio: 1/1;
@@ -203,7 +202,7 @@ import "../styles/generel.css";
 
     .focus .imagecontainer .border {
       transform: translateY(-100%) translateX(0%);
-      transition: all 0.2s ease;
+      transition: var(--focus);
     }
   }
 
@@ -217,10 +216,11 @@ import "../styles/generel.css";
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
+        //tilføj klasse hvis i vinduet
         entry.target.classList.toggle("focus", entry.isIntersecting);
       });
     },
-    { rootMargin: "-300px" }
+    { rootMargin: "-200px" }
   );
   kasser.forEach((kasse) => {
     observer.observe(kasse);
