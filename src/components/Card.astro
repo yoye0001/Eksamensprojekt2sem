@@ -4,14 +4,6 @@ const { data } = Astro.props;
 import "../styles/generel.css";
 ---
 
-<!-- <article>
-  <h2>{data.title}</h2>
-
-  <p>{data.tal}</p>
-  <p>{data.type} lighting</p>
-
-  <img src={data.image} alt={data.image_text} height="200" width="200" />
-</article> -->
 <article class="kasse">
   <a href="" class="grid1-1 hideDesktop">
     <div class="textcontainer">
@@ -41,6 +33,8 @@ import "../styles/generel.css";
     transition: all 0.5s ease;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    scroll-snap-align: start;
   }
   a {
     text-decoration: none;
