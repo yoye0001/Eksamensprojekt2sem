@@ -16,6 +16,16 @@ console.log(data);
 <MainLayout sitetitle="Designs">
   <h1>Designs</h1>
 
+  <div class="flex">
+    <a href=""><h3>recent</h3></a>
+    <span class="line">|</span>
+    <a href=""><h3>international</h3></a>
+    <span class="line">|</span>
+    <a href=""><h3>national</h3></a>
+    <span class="line">|</span>
+    <a href=""><h3>older</h3></a>
+  </div>
+
   <section class="liste">
     {
       data.map((data) => {
@@ -28,5 +38,14 @@ console.log(data);
 <style>
   .liste {
     scroll-snap-type: y mandatory;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .line {
+    color: var(--body-contrast);
+    font-size: 32px;
   }
 </style>
