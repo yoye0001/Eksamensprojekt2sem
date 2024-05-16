@@ -4,6 +4,7 @@ import "../styles/generel.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 
+
 const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
   method: "GET",
   headers: {
@@ -23,16 +24,18 @@ console.log(data);
 
   <hr />
   <div class="flex">
+
     <a href={`designs?year=${data.year,2024}`}><h3>recent</h3></a>
-    <span class="line">|</span><a href=`designs?year=${data.year,2013}`><h3>older</h3></a>
-    
     <span class="line">|</span>
-    <a href={`designs?year=${data.type,"National"}`}><h3>national</h3></a>
+    <a href=`designs?year=${data.year,2013}`><h3>older</h3></a>
     <span class="line">|</span>
-    <a href={`designs?year=${data.type,"International"}`}><h3 class="">international</h3></a>
+    <a href={`?location=${data.location,"National"}`}><h3>national</h3></a>
+    <span class="line">|</span>
+    <a href={`?location=${data.location,"International"}`}><h3 class="">international</h3></a>
   </div>
   <hr />
 
+  
   <section class="liste">
     {
       data.map((data) => {
