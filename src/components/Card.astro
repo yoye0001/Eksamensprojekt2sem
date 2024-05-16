@@ -172,7 +172,7 @@ import "../styles/generel.css";
       padding-top: 1rem;
       padding-bottom: 1rem;
 
-      transition: var(--focus);
+      transition: var(--unfocus);
     }
 
     .imagecontainer {
@@ -220,7 +220,7 @@ import "../styles/generel.css";
         entry.target.classList.toggle("focus", entry.isIntersecting);
       });
     },
-    { rootMargin: "-200px" }
+    { rootMargin: "-220px" }
   );
   kasser.forEach((kasse) => {
     observer.observe(kasse);
