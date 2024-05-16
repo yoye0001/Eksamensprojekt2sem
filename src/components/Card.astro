@@ -1,27 +1,190 @@
 ---
 const { data } = Astro.props;
-console.log(data);
+
 import "../styles/generel.css";
 ---
 
-<article>
+<!-- <article>
   <h2>{data.title}</h2>
 
   <p>{data.tal}</p>
   <p>{data.type} lighting</p>
 
   <img src={data.image} alt={data.image_text} height="200" width="200" />
-  <a target="_blank" href={data.cta_link}></a>
+</article> -->
+<article class="kasse">
+  <a href="" class="grid1-1 hideDesktop">
+    <div class="textcontainer">
+      <h3>{data.title}</h3>
+      <p>{data.description1}</p>
+      <p>{data.description2}</p>
+    </div>
+    <div class="imagecontainer"><img src={data.image} alt={data.image_text} /></div>
+  </a>
+  <hr />
 </article>
 
 <style>
-  img {
-    object-fit: cover;
-    max-width: 20rem;
+  h3 {
+    font-size: 2rem;
+    transition: all 0.1s ease;
+  }
+
+  .kasse {
+    display: block;
+    order: 0;
+    height: auto;
+    padding: 0.5rem;
+
+    overflow-y: hidden;
+
+    transition: all 0.5s ease;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .focus h3 {
+    font-size: 3rem;
+    transition: all 0.2s ease;
+  }
+
+  .focus {
+    min-height: 25rem;
+    /* padding-bottom: 25rem; */
+    transition: all 0.2s ease;
+  }
+  .focus .imagecontainer {
+    width: 40vw;
+    height: 20vw;
+    margin: none;
+    transition: all 0.2s ease;
+  }
+
+  .odd {
+    order: 1;
+  }
+  .odd h3 {
+    text-align: right;
+  }
+  .odd p {
+    text-align: right;
+  }
+
+  hr {
+    border: solid var(--body-contrast) 1px;
+    width: 50vw;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    transition: all 0.5s ease;
+    border-radius: 2px;
+  }
+  .focus hr {
+    width: 70vw;
+    margin-top: 2rem;
+    transition: all 0.2s ease;
+  }
+
+  @media (max-width: 900px) {
+    .hideDesktop {
+      display: none;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .grid1-1 {
+      display: grid;
+      gap: 10rem;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .imagecontainer {
+    width: 10vw;
+    height: 10vw;
+    transition: all 0.5s ease;
+    margin-top: auto;
+    margin-bottom: auto;
     aspect-ratio: 1/1;
   }
-  article {
-    border: black solid 1px;
-    margin: 0.5rem;
+  .imagecontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+  }
+
+  .focus .textcontainer .odd .imagecontainer {
+    border: red solid 2px;
+  }
+
+  .even {
+    margin-left: auto;
   }
 </style>
+<script>
+  /* Finde  bokse*/
+  const kasser = document.querySelectorAll(".kasse");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("focus", entry.isIntersecting);
+      });
+    },
+    { rootMargin: "-300px" }
+  );
+  kasser.forEach((kasse) => {
+    observer.observe(kasse);
+  });
+</script>
+
+<script>
+  //FÅET HJÆLP FRA CHAT GPT vvvvv-------------------------------vvvvv
+  //Denne kode gør, at hver anden container bytter rundt på billede og tekst, samt skifter tekstens retning
+  function addOddClassToEverySecond() {
+    //definér konstant og select dom element
+    const boxe = document.querySelectorAll(".textcontainer");
+
+    // loop gennem kasserne med klassen .textcontainer
+    //giv dem et index nummer; enten 1 eller 0
+    for (let i = 0; i < boxe.length; i++) {
+      //hvis de givne nummer er lig med 1, og ikke 0 - tilføj så klassen
+      if (i % 2 !== 1) {
+        boxe[i].classList.add("odd");
+      }
+    }
+  }
+
+  //spyt det ud
+  addOddClassToEverySecond();
+  console.log("addOddClassToEverySecond");
+  //   -------------------------------------------------
+
+  //Denne kode bruger vi til at placere billedet ud til kanten af containeren, men kun på hver 1.
+  function addOddClassToEverySecondImg() {
+    //definér konstant og select dom element
+    const image = document.querySelectorAll(".imagecontainer");
+
+    // loop gennem kasserne med klassen .textcontainer
+    //giv dem et index nummer; enten 1 eller 0
+    for (let i = 0; i < image.length; i++) {
+      //hvis de givne nummer er lig med 1, og ikke 0 - tilføj så klassen
+      if (i % 2 !== 0) {
+        image[i].classList.add("even");
+      }
+    }
+  }
+  //spyt det ud
+  addOddClassToEverySecondImg();
+  console.log("addOddClassToEverySecondImg");
+  //FÅET HJÆLP FRA CHAT GPT ^^^^^--------------------------------^^^^^
+</script>
+
+<style></style>

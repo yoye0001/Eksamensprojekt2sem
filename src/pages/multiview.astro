@@ -1,5 +1,8 @@
 ---
+import Card from "../components/Card.astro";
 import "../styles/generel.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
 
 const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1", {
   method: "GET",
@@ -8,24 +11,17 @@ const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
   },
 }).then((res) => res.json());
 console.log(data);
-
 const { sitetitle } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{sitetitle}</title>
+<MainLayout sitetitle="Multiview">
+  <h1>{sitetitle}hej</h1>
 
-    <!-- FONTS -->
-    <link rel="stylesheet" href="https://use.typekit.net/lvx7fww.css" />
-  </head>
-  <body>
-    <!-- SLOT -->
-    <slot />
-    <!-- SLOT -->
-  </body>
-</html>
+  <section class="liste">
+    {
+      data.map((data) => {
+        return <Card data={data} />;
+      })
+    }
+  </section>
+</MainLayout>

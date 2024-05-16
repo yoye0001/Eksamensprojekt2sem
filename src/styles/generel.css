@@ -157,3 +157,15 @@ p .placeholder {
     text-transform: capitalize;
   }
 }
+
+body {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+@media (min-width: 900px) {
+  body {
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+}
