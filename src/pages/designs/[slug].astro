@@ -19,4 +19,25 @@ const { myData } = Astro.props;
 console.log(myData);
 ---
 
-<h1 class="displaytext">{myData.title}</h1>
+<div class="herowrapper">
+  <div class="herocontainer">
+    <img class="heroimage" src={myData.image} alt="" />
+  </div>
+  <h1 class="displaytext">{myData.title}</h1>
+</div>
+
+<style>
+  .herowrapper {
+    display: grid;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    height: auto;
+  }
+  .herowrappers img {
+    object-fit: cover;
+  }
+  .herocontainer,
+  h1 {
+    grid-area: 1/1;
+  }
+</style>
