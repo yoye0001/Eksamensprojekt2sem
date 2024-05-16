@@ -2,6 +2,7 @@
 const { data } = Astro.props;
 
 import "../styles/generel.css";
+import "../styles/animations.css";
 ---
 
 <article class="kasse">
@@ -66,7 +67,7 @@ import "../styles/generel.css";
 
   hr {
     border: solid var(--body-contrast) 1px;
-    width: 50vw;
+    width: 70vw;
 
     margin-right: auto;
     margin-left: auto;
@@ -74,7 +75,6 @@ import "../styles/generel.css";
     border-radius: 2px;
   }
   .focus hr {
-    width: 70vw;
     margin-top: 2rem;
     transition: var(--focus);
   }
@@ -167,7 +167,7 @@ import "../styles/generel.css";
     }
     .grid1-1 {
       display: grid;
-      gap: 10rem;
+      gap: 5rem;
       grid-template-columns: 1fr 1fr;
       padding-top: 1rem;
       padding-bottom: 1rem;

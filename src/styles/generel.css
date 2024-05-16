@@ -36,10 +36,10 @@ html {
 }
 
 /* MOBILE FONT SIZES */
-h1 .displaytext {
+.displaytext {
   font-family: itc-avant-garde-gothic-pro, sans-serif;
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
   color: var(--body-contrast);
   font-size: 64px;
   text-transform: uppercase;
@@ -97,10 +97,10 @@ p .placeholder {
 
 /* DESKTOP FONT SIZES */
 @media (min-width: 900px) {
-  h1 .displaytext {
+  .displaytext {
     font-family: itc-avant-garde-gothic-pro, sans-serif;
     font-weight: 700;
-    font-style: normal;
+    font-style: bold;
     color: var(--body-contrast);
     font-size: 80px;
     text-transform: uppercase;
