@@ -87,12 +87,31 @@ p {
   font-size: 16px;
 }
 
-p .placeholder {
+.placeholder {
   font-family: montserrat, sans-serif;
   font-weight: 400;
   font-style: italic;
   color: var(--body-contrast);
   font-size: 16px;
+}
+
+.hyperlink {
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--body-contrast);
+  font-size: 16px;
+  text-decoration: underline;
+  transition: var(--unfocus);
+}
+.hyperlink:hover {
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--secondary);
+  font-size: 16px;
+  transition: var(--focus);
+  cursor: pointer;
 }
 
 /* DESKTOP FONT SIZES */
