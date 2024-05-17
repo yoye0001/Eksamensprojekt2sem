@@ -85,6 +85,7 @@ p {
   font-style: normal;
   color: var(--body-contrast);
   font-size: 16px;
+  margin-bottom: 0.5rem;
 }
 
 .placeholder {
@@ -103,6 +104,7 @@ p {
   font-size: 16px;
   text-decoration: underline;
   transition: var(--unfocus);
+  margin-bottom: 0.5rem;
 }
 .hyperlink:hover {
   font-family: montserrat, sans-serif;

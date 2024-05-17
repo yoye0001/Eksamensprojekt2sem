@@ -32,13 +32,43 @@ console.log(myData);
     <img class="heroimage" src={myData.image} alt={myData.image_text} />
     <div class="herocontainer">
       <h1 class="displaytext">{myData.title}</h1>
-      <h3>{myData.customer}</h3>
+      <h3>{myData.customer}, {myData.year}</h3>
     </div>
   </div>
   <p>{myData.description1}</p>
   <p>{myData.description2}</p>
   <p class="hyperlink">{myData.buttonTitle}</p>
+
+  <img class="" src={myData.image1} alt={myData.image_text} />
+  <img class="" src={myData.image1} alt={myData.image_text} />
+  <img class="" src={myData.image1} alt={myData.image_text} />
+  <hr />
+  <div class="flex">
+    <a class="flexcontainer" href=""><img class="arrow" src="/public/arrowleft.svg" alt="arrow" /><h3>previous</h3></a>
+    <a class="flexcontainer" href=""><h3>next</h3><img class="arrow" src="/public/arrowright.svg" alt="arrow" /></a>
+  </div>
+  <hr />
 </MainLayout>
+
+<style>
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flexcontainer {
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+  }
+  .flexcontainer h3 {
+    margin: auto;
+  }
+  .flexcontainer img {
+    width: 1rem;
+    height: auto;
+  }
+</style>
 <style>
   .herowrapper {
     display: grid;
