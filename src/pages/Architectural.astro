@@ -1,0 +1,84 @@
+---
+import Card from "../components/Card.astro";
+import "../styles/generel.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+
+const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3B3dGd1Z3VpcG9ubWFpa2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3ODMzNDMsImV4cCI6MjAzMTM1OTM0M30.F0THFO_2BDe8j-ZXrXcyfbczErZtlQ4nCo_MDcCMEVM",
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<MainLayout sitetitle="Designs">
+  <h1>Designs</h1>
+  <!-- `/designs/${data.id}` -->
+
+  <hr />
+  <div class="flex">
+    <a href={`designs?year=${(data.year, 2024)}`}><h3>recent</h3></a>
+    <span class="line">|</span>
+    <a href=`designs?year=${data.year,2013}`><h3>older</h3></a>
+    <span class="line">|</span>
+    <a href={`?location=${(data.location, "National")}`}><h3>national</h3></a>
+    <span class="line">|</span>
+    <a href={`?location=${(data.location, "International")}`}><h3 class="">international</h3></a>
+  </div>
+  <hr />
+
+  <section class="liste">
+    {
+      data.map((data) => {
+        return <Card data={data} />;
+      })
+    }
+  </section>
+</MainLayout>
+
+<style>
+  .liste {
+    scroll-snap-type: y mandatory;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .line {
+    color: var(--body-contrast);
+    font-size: 32px;
+  }
+
+  .flex a {
+    text-decoration: none;
+  }
+  .selected {
+    border-bottom: solid var(--body-contrast) 2px;
+  }
+
+  .flex h3 {
+    border-bottom: solid transparent 2px;
+  }
+  .flex h3:hover {
+    border-bottom: solid var(--body-contrast) 2px;
+    animation: border_anim 0.3s ease-in-out forwards;
+  }
+  hr {
+    margin: 1rem 0 1rem 0;
+    border: solid var(--body-contrast) 1px;
+  }
+
+  @keyframes border_anim {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+</style>
+
+<script src="/src/js/test.js"></script>
