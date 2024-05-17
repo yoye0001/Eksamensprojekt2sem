@@ -100,7 +100,7 @@ p {
   font-family: montserrat, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--body-contrast);
+  color: var(--secondary);
   font-size: 16px;
   text-decoration: underline;
   transition: var(--unfocus);
@@ -110,7 +110,7 @@ p {
   font-family: montserrat, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--secondary);
+  color: var(--body-contrast);
   font-size: 16px;
   transition: var(--focus);
   cursor: pointer;

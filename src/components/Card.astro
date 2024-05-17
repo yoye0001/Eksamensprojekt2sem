@@ -10,7 +10,7 @@ import "../styles/animations.css";
   <a href={`/designs/${data.slug}`} class="grid1-1 hideDesktop">
     <div class="textcontainer">
       <h3>{data.title}</h3>
-      <p>{data.description1}</p>
+      <p>{data.description1}</p><p class="hyperlink">Read more...</p>
     </div>
     <div class="imagecontainer"><img src={data.image} alt={data.image_text} /><div class="border"></div></div>
   </a>
@@ -44,15 +44,16 @@ import "../styles/animations.css";
   }
 
   .focus {
-    min-height: 25rem;
+    min-height: auto;
     transition: var(--focus);
+    filter: grayscale(0%);
   }
   .focus .imagecontainer {
     width: 30vw;
     height: 20vw;
     margin: none;
     transition: var(--focus);
-    border: 1px var(--secondary) solid;
+    border: 1px var(--body-contrast) solid;
   }
 
   .odd {
@@ -164,6 +165,16 @@ import "../styles/animations.css";
       transition: var(--unfocus);
 
       scroll-snap-align: start;
+
+      filter: blur(2px);
+    }
+
+    .focus {
+      filter: grayscale(0);
+    }
+    .focus .textcontainer,
+    .imagecontainer {
+      filter: blur(0);
     }
     .grid1-1 {
       display: grid;
@@ -196,13 +207,17 @@ import "../styles/animations.css";
       z-index: -10;
       width: 100%;
       height: 100%;
-      border: var(--secondary) solid 2px;
+      border: var(--body-contrast) solid 2px;
       transform: translateY(-80%) translateX(20%);
     }
 
     .focus .imagecontainer .border {
       transform: translateY(-100%) translateX(0%);
       transition: var(--focus);
+    }
+    .textcontainer {
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 
@@ -221,7 +236,7 @@ import "../styles/animations.css";
         entry.target.classList.toggle("focus", entry.isIntersecting);
       });
     },
-    { rootMargin: "-220px" }
+    { rootMargin: "-450px" }
   );
   kasser.forEach((kasse) => {
     observer.observe(kasse);
