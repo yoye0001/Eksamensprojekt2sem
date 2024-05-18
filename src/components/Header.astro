@@ -65,6 +65,9 @@ list-style: none;
   width: 8ch;
   margin-left: 5px;
 }
+.nav-branding a .active{
+    border-bottom: none;
+}
 /*hamburgermenu*/
 .hamburger {
   display: none;
@@ -132,29 +135,36 @@ list-style: none;
     font-size: 1.5rem;
     transition: 0.2s;
   }
-  .nav-link:hover{
+  .nav-link:hover, .active{
     border-bottom:none;
     transition: 0.2s;
     color: var(--secondary);
   }
-  .active{
-    color: var(--secondary);
-  }
+
 </style>
 
 <script>
-    //----------------burgermenu---------------
+    /* //---------------burgermenu--------------- */
 const hamburger = document.querySelector(".hamburger");
 const navmenu = document.querySelector(".nav-menu");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navmenu.classList.toggle("active");
 });
-//sikrer at menuknap forsvinder
+/* //sikrer at menuknap forsvinder */
 document.querySelectorAll(".nav-link").forEach((n) =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navmenu.classList.remove("active");
   })
 );
+/* //set active class on nav when the page is active */
+const nav = document.querySelector(".nav-menu");
+const navLinks = nav.querySelectorAll("a");
+const currentURL = window.location.href;
+navLinks.forEach((link) =>{
+    if (link.href === currentURL){
+         link.classList.add("active")
+    }
+});
 </script>
