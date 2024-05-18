@@ -1,5 +1,6 @@
 ---
 import "../styles/generel.css";
+import MainLayout from "../layouts/MainLayout.astro";
 
 const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
   method: "GET",
@@ -10,26 +11,135 @@ const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
 console.log(data);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>PU$$Y IN BIO</h1>
-    <p>Heeey</p>
+<MainLayout sitetitle="Home">
+  <section class="herosection">
+    <div class="herotop">
+      <h1 class="displaytext">jesper</h1>
+    </div>
+    <div class="heromiddle">
+      <div class="middle1">
+        <h3>light designer</h3>
+        <hr />
+        <h3>portfolio</h3>
+      </div>
+      <div class="middle2"></div>
+    </div>
+    <div class="herobottom">
+      <h1 class="displaytext">kongs-<br />haug</h1>
+    </div>
+    <div class="arrowcontainer"><a href="#type"><img src="/arrowdown.svg" alt="arrowdown" /></a></div>
+  </section>
 
-    <div class="div">test</div>
-    <a href={`designs/architectural`}><h3>Architectural</h3></a>
-    <a href={`designs`}><h3>Stage</h3></a>
-    <style>
-      .div {
-        height: 10rem;
-        background: var(--footer-gradient);
-      }
-    </style>
-  </body>
-</html>
+  <section id="type">
+    <a class="typewrapper type1" href="/architectural">
+      <img src="/dac_1000_471.avif" alt="" />
+      <h1>architectural lighting</h1>
+    </a>
+    <a class="typewrapper type2" href="/stage">
+      <img src="/proforma_800_677.avif" alt="" />
+      <h1>stage <br /> lighting</h1>
+    </a>
+  </section>
+
+  <div class="div">test</div>
+  <a href={`designs/architectural`}><h3>Architectural</h3></a>
+  <a href={`designs`}><h3>Stage</h3></a>
+</MainLayout>
+
+<style></style>
+
+<style>
+  /* ----- herosection ----- */
+  .herosection {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    padding: 5rem 0.5rem 5rem 0.5rem;
+    border-bottom: 1.5px var(--body-contrast) solid;
+  }
+
+  .herobottom {
+    text-align: right;
+  }
+  .middle1,
+  .middle2 {
+    position: relative;
+    height: 10rem;
+    border: 1.5px var(--body-contrast) solid;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 5rem;
+  }
+
+  .middle1 {
+    z-index: 10;
+    background-color: var(--brandbackground);
+  }
+  .middle2 {
+    top: -8rem;
+    left: 3rem;
+  }
+  .heromiddle {
+    height: 12rem;
+  }
+  .heromiddle hr {
+    max-width: 6rem;
+    margin: 0.5rem 0 0.5rem 0;
+    border: 1px var(--body-contrast) solid;
+  }
+
+  .arrowcontainer {
+    margin: auto;
+    margin-top: 3rem;
+    width: 4rem;
+  }
+
+  /* ----- type choice ----- */
+  #type {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  #type img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-bottom: 1.5px var(--body-contrast) solid;
+  }
+  .typewrapper {
+    display: grid;
+    text-decoration: none;
+  }
+  .typewrapper img,
+  h1 {
+    grid-area: 1/1;
+  }
+  .typewrapper h1 {
+    padding: 0.5rem;
+  }
+
+  .type2 {
+    text-align: right;
+  }
+  .type2 h1 {
+    margin-top: auto;
+  }
+  /* Desktop */
+  @media (min-width: 900px) {
+  }
+</style>
+
+<script>
+  // HJÆLP FRA CHAT GPT
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    let index = 0;
+
+    function scrollToNextSection() {
+      // Scroll to the next section
+      index = (index + 1) % sections.length;
+      sections[index].scrollIntoView({ behavior: "smooth" });
+    }
+
+    //kør denne funktion efter 2000 milisekunder
+    setTimeout(scrollToNextSection, 2000);
+  });
+</script>
