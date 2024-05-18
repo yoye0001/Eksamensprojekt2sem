@@ -27,8 +27,18 @@ html {
   --body-contrast: #ececec;
   --brandbackground: #0f1136;
 
-  --header-gradient: linear-gradient(30deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
-  --footer-gradient: linear-gradient(199deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
+  --header-gradient: linear-gradient(
+    30deg,
+    rgba(15, 17, 54, 1) 0%,
+    rgba(15, 17, 54, 1) 35%,
+    rgba(22, 33, 140, 1) 100%
+  );
+  --footer-gradient: linear-gradient(
+    199deg,
+    rgba(15, 17, 54, 1) 0%,
+    rgba(15, 17, 54, 1) 35%,
+    rgba(22, 33, 140, 1) 100%
+  );
   background-color: var(--brandbackground);
 
   --focus: all 0.3s ease;
@@ -162,13 +172,13 @@ p {
   }
 }
 
-body {
+main {
   margin-left: 16px;
   margin-right: 16px;
 }
 
 @media (min-width: 900px) {
-  body {
+  main {
     margin-left: 96px;
     margin-right: 96px;
   }

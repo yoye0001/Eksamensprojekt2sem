@@ -1,0 +1,121 @@
+---
+import "../styles/generel.css";
+---
+
+<header>
+    <nav class="navbar">
+        <a href="index.html"><img class="nav-branding" src="/faviconn.svg" alt="logo"></a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link active">FORSIDE</a></li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">PORTFOLIO</a></li>
+            <li class="nav-item"><a href="ommig.html" class="nav-link">OM MIG</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<style>
+    /*----------menu-------------*/
+
+/*navigationsbar*/
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--header-gradient);
+}
+header{
+}
+/*menuknapperne i navigationsbar*/
+.nav-menu {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; 
+
+}
+/*logo*/
+.nav-branding {
+  width: 8ch;
+  margin-left: 5px;
+}
+/*hamburgermenu*/
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 2ch;
+}
+.bar {
+  display: block;
+  width: 35px;
+  height: 2px;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--body-contrast);
+}
+.bar:nth-child(2){
+    width: 25px;
+   margin: 0;
+}
+/*-------------mobil---------------*/
+@media (max-width: 700px) {
+  /*-----------BURGERMENU SETTINGS----------*/
+  .hamburger {
+    display: block;
+  }
+  /*de tre streger bliver til et kryds*/
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  /*menu settings, standard gør den ikke synlig*/
+  .nav-menu {
+    position: absolute;
+    left: -100%;
+    top: 9.1ch;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--pink);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
+  }
+  /*kommer frem, når den er active*/
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+    /* color: var(--red);*/
+  }
+</style>
+
+<script>
+    //----------------burgermenu---------------
+const hamburger = document.querySelector(".hamburger");
+const navmenu = document.querySelector(".nav-menu");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navmenu.classList.toggle("active");
+});
+//sikrer at menuknap forsvinder
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navmenu.classList.remove("active");
+  })
+);
+</script>
