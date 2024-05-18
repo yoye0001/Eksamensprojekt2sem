@@ -129,46 +129,20 @@ p {
 /* DESKTOP FONT SIZES */
 @media (min-width: 900px) {
   .displaytext {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
-    font-weight: 700;
-    font-style: bold;
-    color: var(--body-contrast);
     font-size: 80px;
-    text-transform: uppercase;
   }
   h1 {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: var(--body-contrast);
     font-size: 64px;
-    text-transform: uppercase;
   }
   h2 {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--body-contrast);
     font-size: 48px;
-    text-transform: uppercase;
   }
   h3 {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--body-contrast);
     font-size: 32px;
-    text-transform: uppercase;
   }
 
   h3 .active {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--body-contrast);
     font-size: 32px;
-    text-transform: uppercase;
-    text-decoration: underline;
   }
 }
 
