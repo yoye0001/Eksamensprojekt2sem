@@ -49,18 +49,18 @@ console.log(data);
 
         if (type == "Architectural") {
           var elems = document.getElementsByName("Stage");
-          var header = document.getElementsByName("header_stg");
+          // var header = document.getElementsByName("header_stg");
           for (var i = 0; i < elems.length; i++) {
             elems[i].style.display = "none";
-            header[i].style.display = "none";
+            //   header[i].style.display = "none";
           }
         }
         if (type == "Stage") {
           var elems = document.getElementsByName("Architectural");
-          var header = document.getElementsByName("header_arc");
+          // var header = document.getElementsByName("header_arc");
           for (var i = 0; i < elems.length; i++) {
             elems[i].style.display = "none";
-            header[i].style.display = "none";
+            // header[i].style.display = "none";
           }
         }
       };
@@ -114,11 +114,10 @@ console.log(data);
   }
 
   .titlecontainer {
-    display: flex;
-    justify-content: center;
     position: sticky;
     top: 1rem;
-
+    display: flex;
+    justify-content: center;
     z-index: 1;
   }
 </style>
