@@ -4,14 +4,16 @@ import "../styles/generel.css";
 
 <header>
     <nav class="navbar">
-        <a href="index.html"><img class="nav-branding" src="/faviconn.svg" alt="logo"></a>
+        <a href="/"><img class="nav-branding" src="/faviconn.svg" alt="logo"></a>
         <ul class="nav-menu">
-            <h1>MENU</h1>
-            <li class="nav-item"><a href="index.html" class="nav-link active">FORSIDE</a></li>
+            <h1 class="hidedesktop">MENU</h1>
+            <li class="nav-item"><a href="/" class="nav-link hidedesktop">HOME</a></li>
            <hr>
-            <li class="nav-item"><a href="portfolio.html" class="nav-link">PORTFOLIO</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">PORTFOLIO</a></li>
             <hr>
-            <li class="nav-item"><a href="ommig.html" class="nav-link">OM MIG</a></li>
+            <li class="nav-item"><a href="/cv" class="nav-link">CV</a></li>
+            <hr>
+            <li class="nav-item"><a href="/contact" class="nav-link">CONTACT</a></li>
             <hr>
         </ul>
         <div class="hamburger">
@@ -24,7 +26,7 @@ import "../styles/generel.css";
 
 <style>
     /*----------menu-------------*/
-h1{
+    .hidedesktop, hr{
     display: none;
 }
 /*navigationsbar*/
@@ -33,7 +35,7 @@ h1{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 1.5rem;
   background: var(--header-gradient);
 }
 header{
@@ -43,7 +45,7 @@ header{
 .nav-menu {
   display: flex;
   justify-content: space-around;
-  gap: 20px; 
+  gap: 2rem; 
 list-style: none;
 
 }
@@ -53,9 +55,9 @@ list-style: none;
     font-family: montserrat, sans-serif;
   
 }
-.nav-link:hover{
+.nav-link:hover, .active{
     border-bottom: solid var(--body-contrast) 1px;
-      transition: 0.5s;
+     transition: 0.5s;
     
 }
 /*logo*/
@@ -84,9 +86,10 @@ list-style: none;
 }
 /*-------------mobil---------------*/
 @media (max-width: 700px) {
-    h1{
+    .hidedesktop, hr{
     display: inherit;
 }
+
   /*-----------BURGERMENU SETTINGS----------*/
   .hamburger {
     display: block;
@@ -105,7 +108,7 @@ list-style: none;
   .nav-menu {
     position: absolute;
     left: -100%;
-    top: 11.4ch;
+    top: 14.9ch;
     gap: 2;
     flex-direction: column;
     background: var(--header-gradient);
@@ -127,6 +130,15 @@ list-style: none;
 
   .nav-link {
     font-size: 1.5rem;
+    transition: 0.2s;
+  }
+  .nav-link:hover{
+    border-bottom:none;
+    transition: 0.2s;
+    color: var(--secondary);
+  }
+  .active{
+    color: var(--secondary);
   }
 </style>
 
