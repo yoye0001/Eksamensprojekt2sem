@@ -10,10 +10,11 @@ import "../styles/animations.css";
   <a href={`/designs/${data.slug}`} class="grid1-1 hideDesktop">
     <div class="textcontainer">
       <h3>{data.title}</h3>
-      <p>{data.description1}</p><p class="hyperlink">Read more...</p>
+      <p>{data.description1} . .</p><p class="hyperlink">Read more . . .</p>
     </div>
-    <div class="imagecontainer"><img src={data.image} alt={data.image_text} /><div class="border"></div></div>
+    <div class="imagecontainer"><img src={data.image} alt={data.image_text} /></div>
   </a>
+  <hr class="hideDesktop desktopline" />
   <!-- Desktop end -->
 
   <a class="showMobile">
@@ -24,8 +25,6 @@ import "../styles/animations.css";
     <p>{data.description1}</p>
   </a>
 </article>
-
-<hr class="hideDesktop" />
 
 <style>
   h3 {
@@ -54,6 +53,7 @@ import "../styles/animations.css";
     margin: none;
     transition: var(--focus);
     border: 1px var(--body-contrast) solid;
+    border-radius: 1.5px;
   }
 
   .odd {
@@ -65,19 +65,8 @@ import "../styles/animations.css";
   .odd p {
     text-align: right;
   }
-
-  hr {
-    border: solid var(--body-contrast) 1px;
-    width: 70vw;
-
-    margin-right: auto;
+  .even {
     margin-left: auto;
-    transition: var(--unfocus);
-    border-radius: 2px;
-  }
-  .focus hr {
-    margin-top: 2rem;
-    transition: var(--focus);
   }
 
   /* MOBILE VIEW */
@@ -163,12 +152,22 @@ import "../styles/animations.css";
       padding: 0.5rem;
       overflow-y: hidden;
       transition: var(--unfocus);
-
       scroll-snap-align: start;
-
-      filter: blur(2px);
     }
-
+    .hideDesktop {
+      filter: blur(1.3px);
+    }
+    .focus img {
+      margin: -1rem;
+      transition: var(--unfocus);
+    }
+    .focus:active img {
+      margin: 0rem;
+      transition: var(--focus);
+    }
+    .focus a {
+      margin-top: 1rem;
+    }
     .focus {
       filter: grayscale(0);
     }
@@ -202,33 +201,33 @@ import "../styles/animations.css";
       border-radius: 2px;
     }
 
-    .border {
-      position: relative;
-      z-index: -10;
-      width: 100%;
-      height: 100%;
-      border: var(--body-contrast) solid 2px;
-      transform: translateY(-80%) translateX(20%);
-    }
-
-    .focus .imagecontainer .border {
-      transform: translateY(-100%) translateX(0%);
-      transition: var(--focus);
-    }
     .textcontainer {
       margin-top: auto;
       margin-bottom: auto;
     }
-  }
 
-  .even {
-    margin-left: auto;
+    .desktopline {
+      border: solid var(--body-contrast) 1px;
+      width: 20vw;
+
+      margin-right: auto;
+      margin-left: auto;
+      transition: var(--unfocus);
+      border-radius: 2px;
+    }
+
+    /* kan ikke få til at virke */
+    .focus .desktopline {
+      margin-top: 2rem;
+      transition: var(--focus);
+      width: 40vw;
+    }
   }
 </style>
 
 <script>
   /* Finde  bokse*/
-  const kasser = document.querySelectorAll(".kasse");
+  const kasser = document.querySelectorAll(".hideDesktop");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -265,7 +264,7 @@ import "../styles/animations.css";
   console.log("addOddClassToEverySecond");
   //   -------------------------------------------------
 
-  //Denne kode bruger vi til at placere billedet ud til kanten af containeren, men kun på hver 1.
+  //Denne kode bruger vi til at placere billedet ud til kanten af containeren, men kun på hver første
   function addOddClassToEverySecondImg() {
     //definér konstant og select dom element
     const image = document.querySelectorAll(".imagecontainer");
