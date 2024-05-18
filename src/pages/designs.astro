@@ -4,7 +4,6 @@ import "../styles/generel.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 
-
 const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
   method: "GET",
   headers: {
@@ -12,43 +11,69 @@ const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
   },
 }).then((res) => res.json());
 console.log(data);
-
-
-
-          
 ---
 
 <MainLayout sitetitle="Designs">
-  <h1>Designs</h1>
+  <div class="titlecontainer">
+    <h1 name="header_arc">Architectural Designs</h1>
+    <h1 name="header_stg">Stage Designs</h1>
+  </div>
   <!-- `/designs/${data.id}` -->
 
   <hr />
   <div class="flex">
-
-    <a href={`designs?year=${data.year,2024}`}><h3>recent</h3></a>
+    <a href={`designs?year=${(data.year, 2024)}`}><h3>recent</h3></a>
     <span class="line">|</span>
     <a href=`designs?year=${data.year,2013}`><h3>older</h3></a>
     <span class="line">|</span>
-    <a href={`?location=${data.location,"National"}`}><h3>national</h3></a>
+    <a href={`?location=${(data.location, "National")}`}><h3>national</h3></a>
     <span class="line">|</span>
-    <a href={`?location=${data.location,"International"}`}><h3 class="">international</h3></a>
+    <a href={`?location=${(data.location, "International")}`}><h3 class="">international</h3></a>
   </div>
   <hr />
 
-  
   <section class="liste">
     {
       data.map((data) => {
-        return <Card data={data} />;
+        if (data.type == "Architectural") return <Card name="arc" data={data} />;
+        if (data.type == "Stage") return <Card name="stg" data={data} />;
       })
-    
     }
+
+    <script>
+      console.log("filter by type");
+      window.onload = function () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const type = urlParams.get("type");
+
+        if (type == "Architectural") {
+          var elems = document.getElementsByName("Stage");
+          var header = document.getElementsByName("header_stg");
+          for (var i = 0; i < elems.length; i++) {
+            elems[i].style.display = "none";
+            header[i].style.display = "none";
+          }
+        }
+        if (type == "Stage") {
+          var elems = document.getElementsByName("Architectural");
+          var header = document.getElementsByName("header_arc");
+          for (var i = 0; i < elems.length; i++) {
+            elems[i].style.display = "none";
+            header[i].style.display = "none";
+          }
+        }
+      };
+    </script>
   </section>
 </MainLayout>
 
 <style>
   .liste {
     scroll-snap-type: y mandatory;
+    /* prøver at minimere whitespace */
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
   .flex {
     display: flex;
@@ -67,7 +92,7 @@ console.log(data);
     border-bottom: solid var(--body-contrast) 2px;
   }
 
-  .flex h3{
+  .flex h3 {
     border-bottom: solid transparent 2px;
   }
   .flex h3:hover {
@@ -80,10 +105,20 @@ console.log(data);
   }
 
   @keyframes border_anim {
-	0%{
-		width: 0%;
-	}
-	100%{
-		width: 100%;
-	}
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .titlecontainer {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 1rem;
+
+    z-index: 1;
+  }
 </style>
