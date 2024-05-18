@@ -19,6 +19,31 @@ console.log(data);
     <h1 name="header_stg">Stage Designs</h1>
   </div>
   <!-- `/designs/${data.id}` -->
+  <script>
+    console.log("filter by type");
+    window.onload = function () {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const type = urlParams.get("type");
+
+      if (type == "Architectural") {
+        var elems = document.getElementsByName("Stage");
+        // var header = document.getElementsByName("header_stg");
+        for (var i = 0; i < elems.length; i++) {
+          elems[i].style.display = "none";
+          //   header[i].style.display = "none";
+        }
+      }
+      if (type == "Stage") {
+        var elems = document.getElementsByName("Architectural");
+        // var header = document.getElementsByName("header_arc");
+        for (var i = 0; i < elems.length; i++) {
+          elems[i].style.display = "none";
+          // header[i].style.display = "none";
+        }
+      }
+    };
+  </script>
 
   <hr />
   <div class="flex">
@@ -39,32 +64,6 @@ console.log(data);
         if (data.type == "Stage") return <Card name="stg" data={data} />;
       })
     }
-
-    <script>
-      console.log("filter by type");
-      window.onload = function () {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const type = urlParams.get("type");
-
-        if (type == "Architectural") {
-          var elems = document.getElementsByName("Stage");
-          // var header = document.getElementsByName("header_stg");
-          for (var i = 0; i < elems.length; i++) {
-            elems[i].style.display = "none";
-            //   header[i].style.display = "none";
-          }
-        }
-        if (type == "Stage") {
-          var elems = document.getElementsByName("Architectural");
-          // var header = document.getElementsByName("header_arc");
-          for (var i = 0; i < elems.length; i++) {
-            elems[i].style.display = "none";
-            // header[i].style.display = "none";
-          }
-        }
-      };
-    </script>
   </section>
 </MainLayout>
 
