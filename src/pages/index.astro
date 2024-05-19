@@ -99,7 +99,10 @@ console.log(data);
   }
 
   /* ----- type choice ----- */
-
+  #type {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
   #type img {
     object-fit: cover;
     aspect-ratio: 1/1.2;
@@ -137,6 +140,10 @@ console.log(data);
 
   /* Desktop */
   @media (min-width: 1000px) {
+    #type {
+      margin-left: -96px;
+      margin-right: -96px;
+    }
     .typecontainer {
       display: grid;
       grid-template-columns: 10fr 0.1% 10fr;
