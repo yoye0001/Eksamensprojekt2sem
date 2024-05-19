@@ -35,17 +35,27 @@ console.log(myData);
       <h3>{myData.customer}, {myData.year}</h3>
     </div>
   </div>
+  <div class="beskrivelse">
   <div class="data_description"> 
   <p>{myData.description1}</p>
   <p>{myData.description2}</p>
   <p class="hyperlink">{myData.buttonTitle}</p>
-  <hr class="line">
+  
 </div>
 
-<div class="galleri">  
+  <hr class="line">
+  <div>
   <img class="" src={myData.image1} alt={myData.image1_text} />
-  <img class="" src={myData.image2} alt={myData.image2_text} />
-  <img class="" src={myData.image3} alt={myData.image3_text} />
+</div>
+</div>
+<div class="undergalleri">
+  <div> 
+    <img class="" src={myData.image2} alt={myData.image2_text} />
+  </div>
+<div>
+   <img class="" src={myData.image3} alt={myData.image3_text} />
+  </div>
+ 
 </div>
 
   <hr />
@@ -85,7 +95,7 @@ margin-top: 2rem;
 margin-bottom: 2rem;
   }
   .line{
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 50%;
   }
   .herowrapper {
@@ -173,13 +183,41 @@ left: 0;
     transform: translate(-1rem, 0px);
     transition: var(--focus);
   }
-/* DESKTOP FONT SIZES */
-@media (min-width: 900px) {
 
+@media (min-width: 900px) {
+.line{
+width: 0;
+margin-left: 2rem;
+margin-bottom: auto;
+order: 2;
+height: 90%;
+margin-top: auto;
+}
+.data_description{
+  order: 3;
+  align-content: center;
+}
+.beskrivelse{
+  display: grid;
+  grid-template-columns: 2fr 0.2fr 1fr;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+
+}
+.beskrivelse img{
+order: 1;
+
+}
   .topleft .arrow {
     width: 1.5rem;
   }
+  .undergalleri{
+  display: flex;
+  gap: 0.5rem;
+
 }
+}
+
 
 </style>
 
