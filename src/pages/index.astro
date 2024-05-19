@@ -22,7 +22,7 @@ console.log(data);
       </div>
     </div>
     <div class="heromiddle">
-      <div class="middle1">
+      <div class="middle1 gradientanim">
         <div class="contentwrapper2">
           <h3>light designer</h3>
           <hr />
@@ -51,94 +51,7 @@ console.log(data);
   </section>
 </MainLayout>
 
-<style>
-  @media (min-width: 1000px) {
-    .typecontainer {
-      display: grid;
-      grid-template-columns: 10fr 0.1% 10fr;
-      transition: var(--unfocus);
-      overflow: hidden;
-    }
-
-    .linedesktop {
-      border: solid 1.5px var(--body-contrast);
-    }
-    .typewrapper img {
-      transition: var(--unfocus);
-      filter: brightness(1);
-    }
-    .typewrapper:hover img {
-      filter: brightness(0.8);
-      transition: var(--focus);
-    }
-    .typewrapper:active img {
-      transition: var(--focus);
-      margin: 1rem;
-      border-radius: 2px;
-    }
-
-    .type2 h1 {
-      margin: 0;
-    }
-    .type1 h1 {
-      text-align: right;
-      margin-top: auto;
-      margin-bottom: 5rem;
-    }
-  }
-  @media (min-width: 900px) {
-    .displaytext {
-      font-size: 104px;
-    }
-    h3 {
-      font-size: 24px;
-    }
-    .herotop {
-      z-index: 10;
-    }
-    .herosection {
-      margin-left: 8rem;
-      margin-right: 8rem;
-      padding-top: 0;
-    }
-    .heromiddle {
-      position: relative;
-      top: -5rem;
-      margin-left: 7rem;
-      margin-right: 7rem;
-      max-width: 60rem;
-      z-index: -10;
-    }
-    .middle1,
-    .middle2 {
-      height: 25rem;
-    }
-
-    .middle2 {
-      top: -22rem;
-      left: 4rem;
-    }
-    .herobottom {
-      position:;
-
-      z-index: 20;
-    }
-    .contentwrapper1 {
-      display: flex;
-      gap: 1rem;
-    }
-    .contentwrapper1 hr {
-      margin: 0.5rem 0 0.5rem 0;
-    }
-    .contentwrapper2 {
-      display: none;
-    }
-    .arrowcontainer {
-      position: relative;
-      top: -3rem;
-    }
-  }
-</style>
+<style></style>
 
 <style>
   /* ----- herosection ----- */
@@ -223,10 +136,100 @@ console.log(data);
   }
 
   /* Desktop */
+  @media (min-width: 1000px) {
+    .typecontainer {
+      display: grid;
+      grid-template-columns: 10fr 0.1% 10fr;
+      transition: var(--unfocus);
+      overflow: hidden;
+    }
+
+    .linedesktop {
+      border: solid 1.5px var(--body-contrast);
+    }
+    .typewrapper img {
+      transition: var(--unfocus);
+      filter: brightness(1);
+    }
+    .typewrapper:hover img {
+      filter: brightness(0.8);
+      transition: var(--focus);
+    }
+    .typewrapper:active img {
+      transition: var(--focus);
+      margin: 1rem;
+      border-radius: 2px;
+    }
+
+    .type2 h1 {
+      margin: 0;
+    }
+    .type1 h1 {
+      text-align: right;
+      margin-top: auto;
+      margin-bottom: 5rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .displaytext {
+      font-size: 104px;
+      max-width: 75rem;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .herotop {
+      z-index: 10;
+    }
+    .herosection {
+      margin-left: 6rem;
+      margin-right: 6rem;
+
+      padding-top: 0;
+    }
+    .heromiddle {
+      position: relative;
+      top: -5rem;
+      margin-left: 7rem;
+      margin-right: 7rem;
+      max-width: 60rem;
+      z-index: -10;
+    }
+    .middle1,
+    .middle2 {
+      height: 25rem;
+    }
+
+    .middle2 {
+      top: -22rem;
+      left: 4rem;
+    }
+    .herobottom {
+      position:;
+
+      z-index: 20;
+    }
+    .contentwrapper1 {
+      display: flex;
+      gap: 1rem;
+    }
+    .contentwrapper1 hr {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .contentwrapper2 {
+      display: none;
+    }
+    .arrowcontainer {
+      position: relative;
+      top: -3rem;
+    }
+  }
 </style>
 
 <script>
   // HJÆLP FRA CHAT GPT
+
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     let index = 0;
