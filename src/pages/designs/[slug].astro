@@ -35,13 +35,18 @@ console.log(myData);
       <h3>{myData.customer}, {myData.year}</h3>
     </div>
   </div>
+  <div class="data_description"> 
   <p>{myData.description1}</p>
   <p>{myData.description2}</p>
   <p class="hyperlink">{myData.buttonTitle}</p>
+</div>
 
+<div class="galleri">  
   <img class="" src={myData.image1} alt={myData.image1_text} />
   <img class="" src={myData.image2} alt={myData.image2_text} />
   <img class="" src={myData.image3} alt={myData.image3_text} />
+</div>
+
   <hr />
   <div class="flex">
     <a class="flexcontainer" href=""><img class="arrow" src="/public/arrowleft.svg" alt="arrow" /><h3>previous</h3></a>
@@ -70,6 +75,11 @@ console.log(myData);
   }
 </style>
 <style>
+
+
+  .data_description{
+
+  }
   .herowrapper {
     display: grid;
 }
