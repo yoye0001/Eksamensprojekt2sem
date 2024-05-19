@@ -15,12 +15,19 @@ console.log(data);
   <section class="herosection">
     <div class="herotop">
       <h1 class="displaytext">jesper</h1>
-    </div>
-    <div class="heromiddle">
-      <div class="middle1">
+      <div class="contentwrapper1">
         <h3>light designer</h3>
         <hr />
         <h3>portfolio</h3>
+      </div>
+    </div>
+    <div class="heromiddle">
+      <div class="middle1">
+        <div class="contentwrapper2">
+          <h3>light designer</h3>
+          <hr />
+          <h3>portfolio</h3>
+        </div>
       </div>
       <div class="middle2"></div>
     </div>
@@ -80,6 +87,56 @@ console.log(data);
     }
   }
   @media (min-width: 900px) {
+    .displaytext {
+      font-size: 104px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .herotop {
+      z-index: 10;
+    }
+    .herosection {
+      margin-left: 8rem;
+      margin-right: 8rem;
+      padding-top: 0;
+    }
+    .heromiddle {
+      position: relative;
+      top: -5rem;
+      margin-left: 7rem;
+      margin-right: 7rem;
+      max-width: 60rem;
+      z-index: -10;
+    }
+    .middle1,
+    .middle2 {
+      height: 25rem;
+    }
+
+    .middle2 {
+      top: -22rem;
+      left: 4rem;
+    }
+    .herobottom {
+      position:;
+
+      z-index: 20;
+    }
+    .contentwrapper1 {
+      display: flex;
+      gap: 1rem;
+    }
+    .contentwrapper1 hr {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .contentwrapper2 {
+      display: none;
+    }
+    .arrowcontainer {
+      position: relative;
+      top: -3rem;
+    }
   }
 </style>
 
@@ -158,6 +215,13 @@ console.log(data);
   .typewrapper h1 {
     z-index: 20;
   }
+  .contentwrapper1 {
+    display: none;
+  }
+  .contentwrapper2 {
+    display: inherit;
+  }
+
   /* Desktop */
 </style>
 
