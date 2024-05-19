@@ -15,8 +15,8 @@ console.log(data);
 
 <MainLayout sitetitle="Designs">
   <div class="titlecontainer">
-    <h1 name="header_arc">Architectural Designs</h1>
-    <h1 name="header_stg">Stage Designs</h1>
+    <h1 name="header_arc">Architectural</h1>
+    <h1 name="header_stg">Stage</h1><h1>Designs</h1>
   </div>
 
   <!-- `/designs/${data.id}` -->
@@ -52,18 +52,18 @@ console.log(data);
 
     if (type == "Architectural") {
       var elems = document.getElementsByName("Stage");
-      var header = document.getElementsByName("header_stg");
+      // var header = document.getElementsByName("header_stg");
       for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = "none";
-        header[i].style.display = "none";
+        // header[i].style.display = "none";
       }
     }
     if (type == "Stage") {
       var elems = document.getElementsByName("Architectural");
-      var header = document.getElementsByName("header_arc");
+      //var header = document.getElementsByName("header_arc");
       for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = "none";
-        header[i].style.display = "none";
+        // header[i].style.display = "none";
       }
     }
   };
@@ -120,5 +120,11 @@ console.log(data);
     display: flex;
     justify-content: center;
     z-index: 1;
+    border: solid var(--body-contrast) 1px;
+    border-top: none;
+    margin-bottom: 2rem;
+  }
+  .titlecontainer h1 {
+    margin-top: -1rem;
   }
 </style>
