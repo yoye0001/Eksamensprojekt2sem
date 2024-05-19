@@ -72,9 +72,8 @@ console.log(myData);
 <style>
   .herowrapper {
     display: grid;
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
+}
+  
   .herowrapper img {
     object-fit: cover;
     height: 30rem;
@@ -91,11 +90,18 @@ console.log(myData);
     z-index: 10;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 1rem;
+    margin-right: 1rem;  
+    overflow: hidden;
   }
   .herocontainer h1 {
     text-align: right;
+  
     margin-bottom: 2rem;
+    word-break: break-all;
+
+  }
+  .heroimage{
+    width: 100%;
   }
   .herocontainer h3 {
     text-align: right;
@@ -139,6 +145,14 @@ console.log(myData);
     transform: translate(-1rem, 0px);
     transition: var(--focus);
   }
+/* DESKTOP FONT SIZES */
+@media (min-width: 900px) {
+
+  .topleft .arrow {
+    width: 1.5rem;
+  }
+}
+
 </style>
 
 <script>
