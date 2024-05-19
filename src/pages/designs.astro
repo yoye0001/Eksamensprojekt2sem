@@ -13,9 +13,9 @@ const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
 console.log(data);
 ---
 
-<MainLayout sitetitle="Designs">
+<MainLayout sitetitle={data.type + "Designs"}>
   <div class="titlecontainer">
-    <h1 name="header_arc">Architectural</h1>
+    <h1 name="header_arc">Architec-tural</h1>
     <h1 name="header_stg">Stage</h1><h1>Designs</h1>
   </div>
 
@@ -123,8 +123,10 @@ console.log(data);
     border: solid var(--body-contrast) 1px;
     border-top: none;
     margin-bottom: 2rem;
+    overflow-x: hidden;
   }
   .titlecontainer h1 {
-    margin-top: -1rem;
+    margin-top: 1rem;
+    word-wrap::normal;
   }
 </style>

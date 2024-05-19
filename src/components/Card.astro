@@ -17,56 +17,30 @@ import "../styles/animations.css";
   <hr class="hideDesktop desktopline" />
   <!-- Desktop end -->
 
-  <a class="showMobile">
+  <a href={`/designs/${data.slug}`} class="showMobile">
     <div class="mobileImageContainer">
-      <h3>{data.title}</h3>
+      <div class="overlay">
+        <div class="overlaycontent">
+          <h2>{data.title}</h2>
+          <hr class="overlayline" />
+          <h3 class="year">{data.year}</h3>
+        </div>
+      </div>
+
       <img src={data.image} alt={data.image_text} />
     </div>
-    <p>{data.description1}</p>
   </a>
+  <hr class="showMobile mobileline" />
 </article>
 
 <style>
   h3 {
-    font-size: 2rem;
     transition: var(--unfocus);
     hyphens: auto;
   }
 
   a {
     text-decoration: none;
-  }
-
-  .focus h3 {
-    font-size: 3rem;
-    transition: var(--focus);
-  }
-
-  .focus {
-    min-height: auto;
-    transition: var(--focus);
-    filter: grayscale(0%);
-  }
-  .focus .imagecontainer {
-    width: 30vw;
-    height: 20vw;
-    margin: none;
-    transition: var(--focus);
-    border: 1px var(--body-contrast) solid;
-    border-radius: 1.5px;
-  }
-
-  .odd {
-    order: 1;
-  }
-  .odd h3 {
-    text-align: right;
-  }
-  .odd p {
-    text-align: right;
-  }
-  .even {
-    margin-left: auto;
   }
 
   /* MOBILE VIEW */
@@ -87,18 +61,18 @@ import "../styles/animations.css";
 
   .mobileImageContainer {
     display: grid;
-    width: 50vw;
-    height: 50vw;
+    width: 60vw;
+    height: 60vw;
     transition: var(--unfocus);
     margin-left: auto;
     margin-right: auto;
     aspect-ratio: 1/1;
     overflow: hidden;
+    border-radius: 1.5px;
 
-    background-color:;
-    filter: drop-shadow(20px 15px rgba(145, 218, 148, 1));
     border: solid rgba(145, 218, 148, 0) 1px;
   }
+
   .mobileImageContainer img {
     width: 100%;
     height: 100%;
@@ -107,7 +81,7 @@ import "../styles/animations.css";
     border-radius: 2px;
   }
   .showMobile img,
-  h3 {
+  .overlay {
     grid-area: 1/1;
   }
 
@@ -116,22 +90,63 @@ import "../styles/animations.css";
   }
 
   .focus .mobileImageContainer {
-    width: 70vw;
-    height: 70vw;
-    margin-left: auto;
-    margin-right: auto;
-    transition: var(--focus);
+    width: 75vw;
+    height: 75vw;
 
-    filter: drop-shadow(0px 0px rgba(145, 218, 148, 1));
-    border: solid rgba(145, 218, 148, 1) 2px;
+    transition: var(--focus);
   }
   .focus .mobileImageContainer img {
     filter: brightness(0.8);
     transition: var(--focus);
-    background-color:;
   }
-  .showMobile p {
-    margin-top: 1rem;
+  .mobileline {
+    margin: 0.5rem auto 0.5rem auto;
+    width: 8rem;
+    border: 1.5px var(--body-contrast) solid;
+  }
+  .overlay {
+    border-radius: 1.5px;
+    display: none;
+    transition: var(--unfocus);
+  }
+  .overlaycontent {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    gap: 0.5rem;
+    transition: var(--focus);
+
+    height: 60vw;
+
+    padding-top: 2rem;
+  }
+  .overlaycontent h2 {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    word-break: break-all;
+  }
+  .focus .overlay {
+    display: inline;
+
+    background-color: var(--primary-35);
+    z-index: 2;
+  }
+  .overlayline {
+    border: 1.5px var(--body-contrast) solid;
+    max-width: 1.5px;
+  }
+
+  /* årstal alt for stort */
+  .year {
+    text-align: left;
+    padding-top: 280%;
+    transform: rotate(90deg);
+
+    /* text-align: left;
+    padding-top: -50%;
+    transform: rotate(-90deg);
+    margin-bottom: 7rem; */
   }
 
   @media (max-width: 900px) {
@@ -222,13 +237,45 @@ import "../styles/animations.css";
       transition: var(--focus);
       width: 40vw;
     }
+
+    .focus h3 {
+      font-size: 3rem;
+      transition: var(--focus);
+    }
+
+    .focus {
+      min-height: auto;
+      transition: var(--focus);
+      filter: grayscale(0%);
+    }
+    .focus .imagecontainer {
+      width: 30vw;
+      height: 20vw;
+      margin: none;
+      transition: var(--focus);
+      border: 1px var(--body-contrast) solid;
+      border-radius: 1.5px;
+    }
+
+    .odd {
+      order: 1;
+    }
+    .odd h3 {
+      text-align: right;
+    }
+    .odd p {
+      text-align: right;
+    }
+    .even {
+      margin-left: auto;
+    }
   }
 </style>
 
 <script>
-  /* Finde  bokse*/
-  const kasser = document.querySelectorAll(".hideDesktop");
-  const observer = new IntersectionObserver(
+  /* Finde DESKTOP bokse*/
+  const kasserDesktop = document.querySelectorAll(".hideDesktop");
+  const observerDesktop = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         //tilføj klasse hvis i vinduet
@@ -237,8 +284,23 @@ import "../styles/animations.css";
     },
     { rootMargin: "-450px" }
   );
-  kasser.forEach((kasse) => {
-    observer.observe(kasse);
+  kasserDesktop.forEach((kasse) => {
+    observerDesktop.observe(kasse);
+  });
+
+  /* Finde  MOBILE bokse*/
+  const kasserMobile = document.querySelectorAll(".showMobile");
+  const observerMobile = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        //tilføj klasse hvis i vinduet
+        entry.target.classList.toggle("focus", entry.isIntersecting);
+      });
+    },
+    { rootMargin: "-370px" }
+  );
+  kasserMobile.forEach((kasse) => {
+    observerMobile.observe(kasse);
   });
 </script>
 
