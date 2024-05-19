@@ -30,23 +30,58 @@ console.log(data);
     <div class="arrowcontainer"><a href="#type"><img src="/arrowdown.svg" alt="arrowdown" /></a></div>
   </section>
 
-  <section id="type">
-    <a class="typewrapper type1" href="/designs?type=Architectural">
-      <img src="/dac_1000_471.avif" alt="" />
-      <h1>architectural lighting</h1>
-    </a>
+  <section id="type" class="typecontainer">
     <a class="typewrapper type2" href="/designs?type=Stage">
-      <img src="/proforma_800_677.avif" alt="" />
+      <img src="/proforma_800_677.avif" alt="Image of lighting setting on Hotel Proforma play" width="800" height="677" />
       <h1>stage <br /> lighting</h1>
     </a>
-  </section>
 
-  <div class="div">test</div>
-  <a href={`designs/architectural`}><h3>Architectural</h3></a>
-  <a href={`designs`}><h3>Stage</h3></a>
+    <hr class="linedesktop" />
+    <a class="typewrapper type1" href="/designs?type=Architectural">
+      <img src="/dac_1000_471.avif" alt="Image of dac exhibition" width="1000" height="471" />
+      <h1>architec&shy;tural lighting</h1>
+    </a>
+  </section>
 </MainLayout>
 
-<style></style>
+<style>
+  @media (min-width: 1000px) {
+    .typecontainer {
+      display: grid;
+      grid-template-columns: 10fr 0.1% 10fr;
+      transition: var(--unfocus);
+      overflow: hidden;
+    }
+
+    .linedesktop {
+      border: solid 1.5px var(--body-contrast);
+    }
+    .typewrapper img {
+      transition: var(--unfocus);
+      filter: brightness(1);
+    }
+    .typewrapper:hover img {
+      filter: brightness(0.8);
+      transition: var(--focus);
+    }
+    .typewrapper:active img {
+      transition: var(--focus);
+      margin: 1rem;
+      border-radius: 2px;
+    }
+
+    .type2 h1 {
+      margin: 0;
+    }
+    .type1 h1 {
+      text-align: right;
+      margin-top: auto;
+      margin-bottom: 5rem;
+    }
+  }
+  @media (min-width: 900px) {
+  }
+</style>
 
 <style>
   /* ----- herosection ----- */
@@ -95,13 +130,10 @@ console.log(data);
   }
 
   /* ----- type choice ----- */
-  #type {
-    /* margin-left: -1rem;
-    margin-right: -1rem; */
-  }
+
   #type img {
     object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1.2;
     border-bottom: 1.5px var(--body-contrast) solid;
   }
   .typewrapper {
@@ -114,6 +146,7 @@ console.log(data);
   }
   .typewrapper h1 {
     padding: 0.5rem;
+    font-weight: 600;
   }
 
   .type2 {
@@ -122,9 +155,10 @@ console.log(data);
   .type2 h1 {
     margin-top: auto;
   }
-  /* Desktop */
-  @media (min-width: 900px) {
+  .typewrapper h1 {
+    z-index: 20;
   }
+  /* Desktop */
 </style>
 
 <script>
