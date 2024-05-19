@@ -1,5 +1,6 @@
 ---
 import "../styles/generel.css";
+import Header from "../components/Header.astro";
 
 // const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1", {
 //   method: "GET",
@@ -23,9 +24,13 @@ const { sitetitle } = Astro.props;
     <!-- FONTS -->
     <link rel="stylesheet" href="https://use.typekit.net/lvx7fww.css" />
   </head>
-  <body>
+
+  <body> 
+    <Header />
+  </main>
     <!-- SLOT -->
     <slot />
     <!-- SLOT -->
+  </main>
   </body>
 </html>
