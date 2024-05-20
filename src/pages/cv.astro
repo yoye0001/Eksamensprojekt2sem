@@ -1,0 +1,156 @@
+---
+import "../styles/generel.css";
+import Footer from "../components/Footer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+---
+
+
+<MainLayout sitetitle="Home">
+<main>
+    <article id="grid_2-2">
+    <img id="profile" src="/public/profilbillede.png" alt="">
+    <div>
+        <h1 id="head">Jesper <br> Kongshaug</h1>
+        <p>Jesper Kongshaug er prisbelønnet lysdesigner der arbejder, forsker og underviser internationalt indenfor områderne scenekunst, lyskunst, arkitektur og lysteknologi.</p>
+        <p>“Kongshaug er en af danmarks fornemste lysdesignere. Hovedparten af hans arbejder har været knyttet til opera på internationalt plan. Kongshaug er med høj kunstnerisk kvalitet afprøvende, eksperimenterende, men også meget klar og sikker i sine løsninger. Han skabte en 14 km lyskunst-installation “Vinterlys”, da København i 1996 var EU-kulturby.” (Gyldendals encyklopædi)</p>
+        <p>Jesper Kongshaug underviser og forelæser på en række førende kulturinstitutioner på verdensplan. Jesper Kongshaug udvikler og rådgiver om arkitektonisk belysning for en række af landets førende arkitekttegnestuer. Uddannelse: Mat/Fys student fra Aurehøj Statsgymnasium Efteruddannelse: Niels Brocks Handelsskole 1974-75 Polyteknisk Læreanstalt, Lundtofte, 1974-76 University of Arizona, Tucson - Performance Studies 1976-78</p>
+    </div>
+</article>
+    <div id="line"></div>
+    <article id="section2"> 
+        <h2 id="head2">UPCOMING WORK</h2>
+        <ul>
+            <li>Flammenwerfer, Det Kongelige Teater Copenhagen - AUTUMN 2024  | <a href="" >Read more</a></li> 
+            <li>New stage show, Aveny-X Greenland - SUMMER 2024 | <a href="" >Read more</a></li> 
+            <li>Vandkulturhuset, Copenhagen - AUTUMN 2024 | <a href="" >Read more</a></li> 
+        </ul>
+    </article>
+    <div id="line"></div>
+    <article id="section3">
+    <h2 id="head3">CURRICULUM</h2>
+    <div id="lineshort"></div>
+    <div id="grid_2-2v2">
+        <h3>STAGE LIGHTING</h3>
+        <h3>ARCHITECTURAL LIGHTING</h3>
+    </div>
+    <div id="lineshort"></div>
+    <article id="grid_3-3-3">
+        <h2 id="year">2024</h2>
+        <div id="tidslinje"></div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque viverra turpis.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque viverra turpis.</li>
+        </ul>
+    </article>
+</article>
+
+</main>
+
+</MainLayout>
+<Footer>
+</Footer>
+
+<style>
+    
+    @media (min-width: 1000px) {
+
+#grid_2-2{
+display: grid;
+grid-template-columns: 1fr 1fr;}
+
+#grid_2-2v2{
+display: grid;
+grid-template-columns: 1fr 1fr;
+place-items: center;
+margin: 2%;}
+
+#grid_3-3-3{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+justify-items: center;}
+
+#profile{
+max-width: 100%;
+height: 818px;
+margin-left: -6rem;}
+
+#head{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+
+}
+
+#head2{
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+#head3{
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#section2{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+#line {
+    color: var(--body-contrast);
+        border: solid;
+        height: 1.5px;  
+        width: 116%;
+        margin-left: -8%;
+  }
+
+#lineshort {
+    color: var(--body-contrast);
+        border: solid;
+        height: 2px;  
+        width: 100%;
+  }
+  
+  #tidslinje{
+    color: var(--body-contrast);
+        border: solid;
+        margin-top: 50px;
+        height: 1600px;  
+        width: 1.5px;
+       
+  }
+
+  #year{margin-top: ;
+    margin-left: 120%;
+}
+}
+    
+ul{
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--body-contrast);
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  line-height: 30px;
+}
+
+p{
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+a{
+    color: var(--secondary);
+
+}
+
+
+
+  
+</style>
