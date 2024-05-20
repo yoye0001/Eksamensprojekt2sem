@@ -22,3 +22,11 @@
   animation-delay: 0s;
   animation-iteration-count: infinite;
 }
+@keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
