@@ -95,9 +95,23 @@ console.log(data);
   }
 
   .arrowcontainer {
+
     margin: auto;
     margin-top: 3rem;
     width: 4rem;
+    z-index: 30;
+
+  }
+  .arrowcontainer img{
+    position: absolute;
+        transition: var(--unfocus);
+  }
+
+  .arrowcontainer:hover img {
+   padding-top: 1rem;
+   padding-bottom: -1rem;
+
+transition: var(--focus);
   }
 
   /* ----- type choice ----- */
