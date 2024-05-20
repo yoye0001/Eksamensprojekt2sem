@@ -5,6 +5,8 @@ import "../styles/animations.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 
+
+
 const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
   method: "GET",
   headers: {
@@ -15,6 +17,7 @@ console.log(data);
 ---
 
 <MainLayout sitetitle= "Designs">
+
   <div class="breadcrumbcontainer">
   <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> &#x27A1;  <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
 </div>

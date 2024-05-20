@@ -1,0 +1,35 @@
+---
+import "../styles/generel.css";
+import "../styles/animations.css";
+---
+
+<a href="#top" class="totopcontainer">
+  <img src="/arrowup.svg" alt="arrowup" />
+</a>
+<style>
+  .totopcontainer {
+    position: fixed;
+    top: 80%;
+    right: 0;
+    aspect-ratio: 1/1;
+    width: 4rem;
+    height: auto;
+    border: solid var(--body-contrast) 1px;
+    border-right: none;
+    z-index: 200;
+  }
+  img {
+    width: 3rem;
+    margin: auto;
+    margin-top: 1rem;
+    transition: var(--unfocus);
+  }
+  .totopcontainer:hover img {
+    margin-top: 0.5rem;
+    transition: var(--focus);
+  }
+  .totopcontainer:active img {
+    margin-top: 1rem;
+    transition: var(--focus);
+  }
+</style>
