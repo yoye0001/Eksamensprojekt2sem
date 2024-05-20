@@ -14,10 +14,13 @@ const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongs
 console.log(data);
 ---
 
-<MainLayout sitetitle={data.type + "Designs"}>
+<MainLayout sitetitle= "Designs">
+  <div class="breadcrumbcontainer">
+  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> &#x27A1;  <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
+</div>
   <div class="titlecontainer">
-    <h1 name="header_arc">Architec-tural</h1>
-    <h1 name="header_stg">Stage</h1><h1>Designs</h1>
+    <h1 id="header_arc"> </h1>
+    <h1 id="header_stg"></h1>
   </div>
 
   <!-- `/designs/${data.id}` -->
@@ -44,6 +47,22 @@ console.log(data);
   </section>
 </MainLayout>
 
+<style>
+
+  .breadcrumb {
+    display: flex;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+  .breadcrumb {
+    max-width: fit-content;
+    border: solid var(--body-contrast) 1px;
+    border-top: none;
+    padding: 1rem;
+    background-color: var(--brandbackground);
+  }
+</style>
+
 <script>
   console.log("filter by type");
   window.onload = function () {
@@ -56,6 +75,8 @@ console.log(data);
       // var header = document.getElementsByName("header_stg");
       for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = "none";
+        document.querySelector("#header_arc").textContent = "architectural designs";
+        document.querySelector(".breadcrumbtext").textContent = "Architectural Designs";
         // header[i].style.display = "none";
       }
     }
@@ -64,6 +85,8 @@ console.log(data);
       //var header = document.getElementsByName("header_arc");
       for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = "none";
+        document.querySelector("#header_stg").textContent = "stage designs";
+        document.querySelector(".breadcrumbtext").textContent = "Stage Designs";
         // header[i].style.display = "none";
       }
     }
@@ -106,22 +129,13 @@ console.log(data);
     border: solid var(--body-contrast) 1px;
   }
 
-  /* @keyframes border_anim {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  } */
 
   .titlecontainer {
-    position: sticky;
-    top: 1rem;
+
     display: flex;
     justify-content: center;
     z-index: 1;
-    border: solid var(--body-contrast) 1px;
+
     border-top: none;
     margin-bottom: 2rem;
     overflow-x: hidden;
