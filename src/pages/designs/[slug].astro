@@ -23,10 +23,10 @@ console.log(myData);
 <MainLayout sitetitle={myData.title}>
   <div class="herowrapper" id="no-margin">
     <div class="topleft">
-      <p class="breadcrumb"><a href=`/designs?type=${myData.type}`>{myData.type}</a> // <span class="placeholder">{myData.title}</span></p>
+      <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> // <a class="hyperlink" href=`/designs?type=${myData.type}`>{myData.type}</a> // <span class="placeholder">{myData.title}</span></p>
       <span id="go-back" class="backbuttoncontainer">
         <img class="arrow" src="/public/arrowleft.svg" alt="arrow" />
-        <button> <h3>back</h3></button>
+        <h3>back</h3>
       </span>
     </div>
     <img class="heroimage" src={myData.image} alt={myData.image_text} />
@@ -149,6 +149,8 @@ console.log(myData);
     margin-top: auto;
   }
   .topleft {
+    position: sticky;
+
     z-index: 12;
     margin-left: 1rem;
     max-height: 20%;
@@ -157,6 +159,9 @@ console.log(myData);
     margin-left: 1rem;
     margin-top: 1rem;
     max-width: 10rem;
+  }
+  .backbuttoncontainer:hover {
+    cursor: pointer;
   }
 
   .topleft .arrow {
@@ -171,14 +176,13 @@ console.log(myData);
     justify-content: start;
     gap: 0.5rem;
   }
-
-  button {
-    width: auto;
-
-    background: transparent;
-    border: none;
-    padding: none;
+  .breadcrumb {
+    max-width: fit-content;
+    border: solid var(--body-contrast) 1px;
+    border-top: none;
+    padding: 1rem;
   }
+
   .herowrapper p {
     z-index: 6;
   }
