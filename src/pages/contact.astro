@@ -1,0 +1,75 @@
+---
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+const { data } = Astro.props;
+---
+
+<MainLayout sitetitle="Contact">
+  <div class="grid2-1-2">
+    <div class="contactinformation col">
+      <h1>contact</h1>
+      <br />
+      <p>kongshaug@gmail.com</p>
+      <p>+45 40 50 88 28</p>
+      <br />
+      <p>Atelier: Scenograferne</p>
+      <p>Sankt Peders Straede 45, 1. sal, DK-1453 Copenhagen K, Denmark</p>
+      <p>T : +45 33 13 95 08 | F : +45 33 13 95 06</p>
+      <br />
+      <p>AgentManagement : HarrisonParrott Ltd., London, U.K.</p>
+      <div class="iconwrapper">
+        <a target="_blank" href="https://www.instagram.com/jespergardekongshaug/?hl=en"> <img src="/public/ig.svg" alt="instagram icon" /></a>
+        <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/public/li.svg" alt="linkedin icon" /></a>
+      </div>
+    </div>
+    <hr />
+    <div class="contactform col">
+      <form action="netflify">
+        <h3>Send a message</h3>
+        <div class="grid1-1">
+          <label for="fname"><p>First name</p></label>
+          <label for="lname"><p>Last name</p></label>
+        </div>
+        <div class="grid1-1">
+          <input type="text" id="fname" name="fname" />
+          <input type="text" id="lname" name="lname" />
+        </div>
+        <label for="mail"><p>Email</p></label>
+        <input type="text" id="mail" name="mail" />
+        <label for="message"><p>Message</p></label>
+        <input type="text" id="message" name="message" />
+        <ButtonSecondary ctaDestination="" buttonTitle="Hej" />
+      </form>
+    </div>
+  </div>
+</MainLayout>
+<style>
+  /* .contactinformation {
+    text-align: center;
+  } */
+
+  .iconwrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+  }
+  .iconwrapper a {
+    width: 20%;
+  }
+  hr {
+    border: solid 1.5px var(--body-contrast);
+    margin: 2rem 4rem 2rem 4rem;
+  }
+  .grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .grid2-1-2 {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      margin: auto;
+    }
+  }
+</style>

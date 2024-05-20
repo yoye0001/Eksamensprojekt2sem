@@ -15,12 +15,19 @@ console.log(data);
   <section class="herosection">
     <div class="herotop">
       <h1 class="displaytext">jesper</h1>
-    </div>
-    <div class="heromiddle">
-      <div class="middle1">
+      <div class="contentwrapper1">
         <h3>light designer</h3>
         <hr />
         <h3>portfolio</h3>
+      </div>
+    </div>
+    <div class="heromiddle">
+      <div class="middle1 gradientanim">
+        <div class="contentwrapper2">
+          <h3>light designer</h3>
+          <hr />
+          <h3>portfolio</h3>
+        </div>
       </div>
       <div class="middle2"></div>
     </div>
@@ -30,20 +37,18 @@ console.log(data);
     <div class="arrowcontainer"><a href="#type"><img src="/arrowdown.svg" alt="arrowdown" /></a></div>
   </section>
 
-  <section id="type">
-    <a class="typewrapper type1" href="/designs?type=Architectural">
-      <img src="/dac_1000_471.avif" alt="" />
-      <h1>architectural lighting</h1>
-    </a>
+  <section id="type" class="typecontainer">
     <a class="typewrapper type2" href="/designs?type=Stage">
-      <img src="/proforma_800_677.avif" alt="" />
+      <img src="/proforma_800_677.avif" alt="Image of lighting setting on Hotel Proforma play" width="800" height="677" />
       <h1>stage <br /> lighting</h1>
     </a>
-  </section>
 
-  <div class="div">test</div>
-  <a href={`designs/architectural`}><h3>Architectural</h3></a>
-  <a href={`designs`}><h3>Stage</h3></a>
+    <hr class="linedesktop" />
+    <a class="typewrapper type1" href="/designs?type=Architectural">
+      <img src="/dac_1000_471.avif" alt="Image of dac exhibition" width="1000" height="471" />
+      <h1>architec&shy;tural lighting</h1>
+    </a>
+  </section>
 </MainLayout>
 
 <style></style>
@@ -55,7 +60,6 @@ console.log(data);
     margin-right: -1rem; */
 
     padding: 5rem 0.5rem 5rem 0.5rem;
-    border-bottom: 1.5px var(--body-contrast) solid;
   }
 
   .herobottom {
@@ -96,13 +100,14 @@ console.log(data);
 
   /* ----- type choice ----- */
   #type {
-    /* margin-left: -1rem;
-    margin-right: -1rem; */
+    margin-left: -16px;
+    margin-right: -16px;
   }
   #type img {
     object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1.2;
     border-bottom: 1.5px var(--body-contrast) solid;
+    border-top: 1.5px var(--body-contrast) solid;
   }
   .typewrapper {
     display: grid;
@@ -114,6 +119,7 @@ console.log(data);
   }
   .typewrapper h1 {
     padding: 0.5rem;
+    font-weight: 600;
   }
 
   .type2 {
@@ -122,13 +128,115 @@ console.log(data);
   .type2 h1 {
     margin-top: auto;
   }
+  .typewrapper h1 {
+    z-index: 20;
+  }
+  .contentwrapper1 {
+    display: none;
+  }
+  .contentwrapper2 {
+    display: inherit;
+  }
+
   /* Desktop */
+  @media (min-width: 1000px) {
+    #type {
+      margin-left: -96px;
+      margin-right: -96px;
+    }
+    .typecontainer {
+      display: grid;
+      grid-template-columns: 10fr 0.1% 10fr;
+      transition: var(--unfocus);
+      overflow: hidden;
+    }
+
+    .linedesktop {
+      border: solid 1.5px var(--body-contrast);
+    }
+    .typewrapper img {
+      transition: var(--unfocus);
+      filter: brightness(1);
+    }
+    .typewrapper:hover img {
+      filter: brightness(0.8);
+      transition: var(--focus);
+    }
+    .typewrapper:active img {
+      transition: var(--focus);
+      margin: 1rem;
+      border-radius: 2px;
+    }
+
+    .type2 h1 {
+      margin: 0;
+    }
+    .type1 h1 {
+      text-align: right;
+      margin-top: auto;
+      margin-bottom: 5rem;
+    }
+  }
+
   @media (min-width: 900px) {
+    .displaytext {
+      font-size: 104px;
+      max-width: 75rem;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .herotop {
+      z-index: 10;
+    }
+    .herosection {
+      margin-left: 6rem;
+      margin-right: 6rem;
+
+      padding-top: 0;
+    }
+    .heromiddle {
+      position: relative;
+      top: -5rem;
+      margin-left: 7rem;
+      margin-right: 7rem;
+      max-width: 60rem;
+      z-index: -10;
+    }
+    .middle1,
+    .middle2 {
+      height: 25rem;
+    }
+
+    .middle2 {
+      top: -22rem;
+      left: 4rem;
+    }
+    .herobottom {
+      position:;
+
+      z-index: 20;
+    }
+    .contentwrapper1 {
+      display: flex;
+      gap: 1rem;
+    }
+    .contentwrapper1 hr {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .contentwrapper2 {
+      display: none;
+    }
+    .arrowcontainer {
+      position: relative;
+      top: -3rem;
+    }
   }
 </style>
 
 <script>
   // HJÆLP FRA CHAT GPT
+
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     let index = 0;

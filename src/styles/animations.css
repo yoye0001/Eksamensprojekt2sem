@@ -1,0 +1,24 @@
+@keyframes gradientanim_kf {
+  0% {
+    background-image: url(../../public/gradient1_1000_605.avif);
+  }
+
+  33% {
+    background-image: url(../../public/gradient2_1000_605.avif);
+  }
+
+  66% {
+    background-image: url(../../public/gradient3_1000_605.avif);
+  }
+  100% {
+    background-image: url(../../public/gradient1_1000_605.avif);
+  }
+}
+
+.gradientanim {
+  animation-name: gradientanim_kf;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}

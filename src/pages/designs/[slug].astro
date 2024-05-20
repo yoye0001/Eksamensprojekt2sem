@@ -21,7 +21,7 @@ console.log(myData);
 ---
 
 <MainLayout>
-  <div class="herowrapper">
+  <div class="herowrapper" id="no-margin">
     <div class="topleft">
       <p class="breadcrumb"><a href=`/${myData.type}`>{myData.type}</a> // <span class="placeholder">{myData.title}</span></p>
       <span class="backbuttoncontainer">
@@ -35,13 +35,29 @@ console.log(myData);
       <h3>{myData.customer}, {myData.year}</h3>
     </div>
   </div>
+  <div class="beskrivelse">
+  <div class="data_description"> 
   <p>{myData.description1}</p>
   <p>{myData.description2}</p>
   <p class="hyperlink">{myData.buttonTitle}</p>
+  
+</div>
 
+  <hr class="line">
+  <div>
   <img class="" src={myData.image1} alt={myData.image1_text} />
-  <img class="" src={myData.image2} alt={myData.image2_text} />
-  <img class="" src={myData.image3} alt={myData.image3_text} />
+</div>
+</div>
+<div class="undergalleri">
+  <div> 
+    <img class="" src={myData.image2} alt={myData.image2_text} />
+  </div>
+<div>
+   <img class="" src={myData.image3} alt={myData.image3_text} />
+  </div>
+ 
+</div>
+
   <hr />
   <div class="flex">
     <a class="flexcontainer" href=""><img class="arrow" src="/public/arrowleft.svg" alt="arrow" /><h3>previous</h3></a>
@@ -51,6 +67,10 @@ console.log(myData);
 </MainLayout>
 
 <style>
+  main {
+  margin-left: 16px;
+  margin-right: 16px;
+}
   .flex {
     display: flex;
     justify-content: space-between;
@@ -67,18 +87,37 @@ console.log(myData);
   .flexcontainer img {
     width: 1rem;
     height: auto;
+
   }
-</style>
-<style>
+.beskrivelse{
+  display: grid;
+  margin-bottom: 0.5rem;
+}  
+.undergalleri{
+  display: grid;
+  gap: 0.5rem;
+margin-bottom: 2rem;
+}
+.data_description{
+margin-top: 2rem;
+margin-bottom: 2rem;
+
+  }
+  .line{
+    margin-bottom: 2rem;
+    width: 50%;
+  }
   .herowrapper {
     display: grid;
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
+    margin-left: 0;
+    height: 70vh;
+    overflow: hidden;
+}
   .herowrapper img {
     object-fit: cover;
     height: 30rem;
     filter: brightness(0.8);
+
   }
   .heroimage,
   .herocontainer,
@@ -86,16 +125,30 @@ console.log(myData);
   img {
     grid-area: 1/1;
   }
+  .heroimage{
+    position: absolute;
+left: 0;
+  }
 
   .herocontainer {
     z-index: 10;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 1rem;
+    margin-right: 1rem;  
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .herocontainer h1 {
     text-align: right;
+  
     margin-bottom: 2rem;
+    word-break: break-all;
+
+  }
+  .heroimage{
+    width: 100%;
   }
   .herocontainer h3 {
     text-align: right;
@@ -139,6 +192,42 @@ console.log(myData);
     transform: translate(-1rem, 0px);
     transition: var(--focus);
   }
+
+@media (min-width: 900px) {
+.line{
+width: 0;
+margin-left: 2rem;
+margin-bottom: auto;
+order: 2;
+height: 90%;
+margin-top: auto;
+}
+.data_description{
+  order: 3;
+  align-content: center;
+}
+.beskrivelse{
+  display: grid;
+  grid-template-columns: 2fr 0.2fr 1fr;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+
+}
+.beskrivelse img{
+order: 1;
+
+}
+  .topleft .arrow {
+    width: 1.5rem;
+  }
+  .undergalleri{
+  display: flex;
+  gap: 0.5rem;
+
+}
+}
+
+
 </style>
 
 <script>
