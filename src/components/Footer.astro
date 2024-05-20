@@ -8,19 +8,27 @@ import "../styles/generel.css";
     <p>kongshaug@gmail.com </p>
     <p>+45 4050 8828</p>
     <span id="vandretstreg"> </span>
-    <p>Scenograferne, Sankt Peders Straede 45, 1. sal
-        1453 Copenhagen K </p>
+    <p>Scenograferne, Sankt Peders Straede 45, 1. sal 
+        <br> 1453 Copenhagen K </p>
     </div>
     <div>
     <img id="logo" src="FAVICON.png" alt=""></div>
-    <div id="links"><img id="insta" src="insta.png" alt="">
+    <div id="links">
+        <a href="https://www.instagram.com/jespergardekongshaug/?hl=da"><img id="insta" src="insta.png" alt=""></a>
+        
         <span id="lodretstreg"> </span>
-    <img id="linkedin" src="linkedin.png" alt="">
+        <a href="https://www.linkedin.com/in/jesperkongshaug/?originalSubdomain=dk"><img id="linkedin" src="linkedin.png" alt=""></a>
+        
     </div> 
     </section>
 </footer>
 
 <style>
+
+footer{
+    background: var(--footer-gradient);}
+
+@media (min-width: 1000px) {
     #textbox{
     margin-left: -10rem;
     padding-top: 2rem;
@@ -28,20 +36,28 @@ import "../styles/generel.css";
     width: 10rem;
 }
 
-footer{
-    background: var(--footer-gradient);}
-
-
 
 #logo{
     position: relative;
-    display: grid;
-    place-items: center;
+    width: 600px;
+    height: 400px;
+    margin-top: -200px;
 }
 
-#links{
-    margin-right: -10rem;
-    padding-top: 2rem;
+#links {
+        display: flex;
+        align-items: center; 
+        gap: 10px; 
+        margin-right: -10rem;
+        padding-top: 2rem;
+    }
+
+#lodretstreg{
+    color: var(--body-contrast);
+        border: solid;
+        height: 55px;  
+        width: 1px;
+
 }
 
 #grid_3-3-3{
@@ -49,4 +65,53 @@ footer{
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
 }
+
+}
+
+@media (max-width: 1000px) {
+    #grid_3-3-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    #textbox {
+        text-align: center;
+        order: 2; 
+    }
+
+    #logo {
+        order: 1; 
+    }
+
+    #links {
+        order: 3; 
+    }
+}
+
+@media (max-width: 1000px) {
+    #textbox{
+    text-align: center;
+    order: 2;
+}
+
+#logo{
+    order: 1;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+#links{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px; 
+        
+}
+
+}
+
 </style>
