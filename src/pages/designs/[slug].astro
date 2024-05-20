@@ -24,6 +24,7 @@ console.log(myData);
   <div class="herowrapper" id="no-margin">
     <div class="topleft">
       <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> &#x27A1; <a class="hyperlink" href=`/designs?type=${myData.type}`>{myData.type} Designs</a> &#x27A1; <span class="placeholder">{myData.title}</span></p>
+
       <span id="go-back" class="backbuttoncontainer">
         <img class="arrow" src="/public/arrowleft.svg" alt="arrow" />
         <h3>back</h3>
@@ -151,8 +152,8 @@ console.log(myData);
   }
   .topleft {
     position: sticky;
-
-    z-index: 12;
+    top: 0;
+    z-index: 100;
 
     max-height: 20%;
   }
