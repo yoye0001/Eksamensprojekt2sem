@@ -10,22 +10,56 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout sitetitle="Home">
 <main>
     <article id="grid_2-2">
-    <img id="profile" src="/public/profilbillede.png" alt="">
+    <img id="profile" src="/profilbillede.png" alt="">
     <div>
         <h1 id="head">Jesper <br> Kongshaug</h1>
-        <p>Jesper Kongshaug er prisbelønnet lysdesigner der arbejder, forsker og underviser internationalt indenfor områderne scenekunst, lyskunst, arkitektur og lysteknologi.</p>
-        <p>“Kongshaug er en af danmarks fornemste lysdesignere. Hovedparten af hans arbejder har været knyttet til opera på internationalt plan. Kongshaug er med høj kunstnerisk kvalitet afprøvende, eksperimenterende, men også meget klar og sikker i sine løsninger. Han skabte en 14 km lyskunst-installation “Vinterlys”, da København i 1996 var EU-kulturby.” (Gyldendals encyklopædi)</p>
-        <p>Jesper Kongshaug underviser og forelæser på en række førende kulturinstitutioner på verdensplan. Jesper Kongshaug udvikler og rådgiver om arkitektonisk belysning for en række af landets førende arkitekttegnestuer. Uddannelse: Mat/Fys student fra Aurehøj Statsgymnasium Efteruddannelse: Niels Brocks Handelsskole 1974-75 Polyteknisk Læreanstalt, Lundtofte, 1974-76 University of Arizona, Tucson - Performance Studies 1976-78</p>
+        <h3>Profile:</h3>
+        <p>Jesper Kongshaug is an award-winning lighting designer who works, researches, and teaches internationally in the fields of performing arts, light art, architecture, and lighting technology.</p>
+        <p>“Kongshaug is one of Denmark’s foremost lighting designers. The majority of his work has been associated with opera on an international level. Kongshaug's work is of high artistic quality, innovative, experimental, yet also very clear and assured in his solutions. He created a 14 km light art installation 'Winter Light' when Copenhagen was the European Capital of Culture in 1996.” (Gyldendal's Encyclopedia)</p>
+        <p>Jesper Kongshaug teaches and lectures at several leading cultural institutions worldwide. He develops and advises on architectural lighting for many of the country’s leading architectural firms.</p> 
+    <a href="">Read more on Operabase↗️</a>
+        <h3>Education:</h3>
+        <ul>
+            <li>Niels Brock Business School (1974-75)</li>
+            <li>Technical University of Denmark, Lundtofte (1974-76)</li>
+            <li>University of Arizona, Tucson - Performance Studies (1976-78)</li>
+        </ul>
+
     </div>
 </article>
     <div id="line"></div>
     <article id="section2"> 
-        <h2 id="head2">UPCOMING WORK</h2>
-        <ul>
-            <li>Flammenwerfer, Det Kongelige Teater Copenhagen - AUTUMN 2024  | <a href="" >Read more</a></li> 
-            <li>New stage show, Aveny-X Greenland - SUMMER 2024 | <a href="" >Read more</a></li> 
-            <li>Vandkulturhuset, Copenhagen - AUTUMN 2024 | <a href="" >Read more</a></li> 
-        </ul>
+        <article id="grid_3-3-3">
+            <div>
+                <h2>NOTABLE POSITIONS</h2>
+                <ul>
+                    <li>Tivoli Gardens Head of Lights  | 2015 - present day</li>
+                    <li> Copenhagen Light Festival boardmember and curator | 2019 - present day</li>
+                    <li>Light designer at The Royal Opera | 1995 - present day</li>
+                    <li> Membership of the following organisations: Sammenslutningen af Danske Scenografer, ESTA and USITT meber</li>
+                </ul>
+            </div>
+            <div>
+                
+                <h2>SOFTWARE </h2>
+                <ul>
+                    <li>AutoCAD </li>
+                        <li>VectorWorks</li>
+                        <li>ESP Vision</li>
+                        <li>DIAlux</li>
+                        <li> GrandMA</li>
+                </ul>
+                
+            </div>
+            <div>
+                <h2 id="head2">UPCOMING WORK</h2>
+                <ul>
+                <li>Flammenwerfer, Det Kongelige Teater Copenhagen - AUTUMN 2024  | <a href="" >Read more</a></li> 
+                <li>New stage show, Aveny-X Greenland - SUMMER 2024 | <a href="" >Read more</a></li> 
+                <li>Vandkulturhuset, Copenhagen - AUTUMN 2024 | <a href="" >Read more</a></li> 
+                </ul>
+    </div>
+    </article>
     </article>
     <div id="line"></div>
     <article id="section3">
@@ -37,12 +71,22 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
     <div id="lineshort"></div>
     <article id="grid_3-3-3">
-        <h2 id="year">2024</h2>
-        <div id="tidslinje"></div>
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque viverra turpis.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque viverra turpis.</li>
+        <ul id="timelinetext">
+            <li>Flammenwerfer, The Royal Theater, 2024</li>
+            <li>Drot & Maqrsk, The Royal Theater, 2024</li>
+            <li>Aveny-X performancens, Next Zone Moves, 2024</li>
         </ul>
+        <div id="tidslinje"></div>
+        <h2 id="year">2024</h2>
+    </article>
+    <article id="grid_3-3-3">
+        <ul id="timelinetextleft">
+            <li>Blixen, The Royal Theater, 2022</li>
+            <li>Pelléas et Mélisande, Hungarian State Opera, 2022</li>
+            <li>Lohengrin, Deutsche Oper Berlin, 2022</li>
+        </ul>
+        <div id="tidslinje"></div>
+        <h2 id="yearleft">2022</h2>
     </article>
 </article>
 
@@ -72,9 +116,10 @@ grid-template-columns: 1fr 1fr 1fr;
 justify-items: center;}
 
 #profile{
-max-width: 100%;
+object-fit: cover;
+max-width: 110%;
 height: 818px;
-margin-left: -6rem;}
+margin-left: -12rem;}
 
 #head{
     margin-top: 5rem;
@@ -102,8 +147,8 @@ margin-left: -6rem;}
     color: var(--body-contrast);
         border: solid;
         height: 1.5px;  
-        width: 116%;
-        margin-left: -8%;
+        width: 136%;
+        margin-left: -18%;
   }
 
 #lineshort {
@@ -113,6 +158,13 @@ margin-left: -6rem;}
         width: 100%;
   }
   
+#littleline{
+    color: var(--body-contrast);
+        border: solid;
+        height: 157px;  
+        width: 2px;
+
+}
   #tidslinje{
     color: var(--body-contrast);
         border: solid;
@@ -124,6 +176,14 @@ margin-left: -6rem;}
 
   #year{margin-top: ;
     margin-left: 120%;
+}
+
+#yearleft{margin-top: ;
+    margin-left: 120%;
+}
+
+#timelinetext{
+    
 }
 }
     
