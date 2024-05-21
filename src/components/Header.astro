@@ -8,7 +8,6 @@ import Dropdown from "../components/Dropdown.astro";
     <nav class="navbar">
         <a href="/"><img class="nav-branding" src="/faviconn.svg" alt="logo"></a>
         <ul class="nav-menu">
-            <h1 class="hidedesktop">MENU</h1>
             <li class="nav-item"><a href="/" class="nav-link hidedesktop">HOME</a></li>
            <hr>
             <li class="nav-item dropdown">
@@ -33,6 +32,9 @@ import Dropdown from "../components/Dropdown.astro";
     /*----------menu-------------*/
     .hidedesktop, hr{
     display: none;
+}
+.hidedesktop{
+    margin-top: 1rem;
 }
 /*navigationsbar*/
 .navbar {
