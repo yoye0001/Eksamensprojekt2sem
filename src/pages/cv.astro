@@ -2,6 +2,7 @@
 import "../styles/generel.css";
 import Footer from "../components/Footer.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Timeline from "../components/Timeline.astro"
 
 
 ---
@@ -42,7 +43,6 @@ import MainLayout from "../layouts/MainLayout.astro";
                 </ul>
             </div>
             <div id="center">
-                <hr id="lodretlinje2">
                 <h3>SOFTWARE </h3>
                 <ul>
                     <li>AutoCAD </li>
@@ -51,9 +51,9 @@ import MainLayout from "../layouts/MainLayout.astro";
                         <li>DIAlux</li>
                         <li> GrandMA</li>
                 </ul>
-                <hr id="lodretlinje2">
             </div>
             <div>
+                
                 <h3 id="head2">UPCOMING WORK</h3>
                 <ul>
                 <li>Flammenwerfer, Det Kongelige Teater Copenhagen - AUTUMN 2024  | <a href="" >Read more</a></li> 
@@ -72,42 +72,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <h3>ARCHITECTURAL LIGHTING</h3>
     </div>
     <hr id="lineshort">
-    <article id="grid_2-1-2">
-        <div class="righttext" id="fixedheight">
-        <ul id="timelinetext">
-            <li>Flammenwerfer, The Royal Theater, 2024</li>
-            <li>Drot & Maqrsk, The Royal Theater, 2024</li>
-            <li>Aveny-X performancens, Next Zone Moves, 2024</li>
-        </ul>
-    </div>
-        <div id="tidslinjebox">
-            <div id="box"></div>
-            <hr id="tidslinje"></hr>
-        </div>
-        <div  class="leftyear" id="fixedheightyear">
-        <div id="left">
-        <h2 id="year">2024</h2>
-        </div>
-    </div>
-    </article>
-    <article id="grid_2-1-2">
-        <div class="leftext" id="fixedheight">
-        <ul id="timelinetext">
-            <li>Flammenwerfer, The Royal Theater, 2024</li>
-            <li>Drot & Maqrsk, The Royal Theater, 2024</li>
-            <li>Aveny-X performancens, Next Zone Moves, 2024</li>
-        </ul>
-    </div>
-        <div id="tidslinjebox">
-            <div id="box"></div>
-            <hr id="tidslinje"></hr>
-        </div>
-        <div  class="rightyear" id="fixedheightyear">
-        <div id="left">
-        <h2 id="year">2024</h2>
-        </div>
-    </div>
-    </article>
+    <Timeline></Timeline>
 </article>
 
 </main>
@@ -133,11 +98,9 @@ margin: 2%;}
 
 #grid_3-3-3{
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;}
+grid-template-columns: 1fr 1fr 1fr;
+}
 
-#grid_2-1-2{
-display: grid;
-grid-template-columns: 2fr 1fr 2fr;}
 
 #profile{
     display: flex;
@@ -153,6 +116,7 @@ height: 818px;
 
 #profiletext{
     margin-left: -30%;
+    display: block;
 }
 #lodretlinje2{
     width: 2px;
@@ -162,17 +126,11 @@ height: 157px;
 #center{
     display: flex;
     justify-content: center;
+    align-content: center;
+    
 }
 
-#fixedheight{
-    height: 250px;
-    margin-top: 20%;
-}
 
-#fixedheightyear{
-    height: 250px;
-    margin-top: 20%;
-}
 #head{
     margin-top: 5%;
     margin-bottom: 3%;
@@ -181,12 +139,6 @@ height: 157px;
 }
 
 
-
-#head3{
-    margin-top: 3%;
-    text-align: center;
-    margin-bottom: 3%;
-}
 
 #section2{
     margin-top: 5%;
@@ -216,49 +168,24 @@ height: 157px;
 
 }
 
-#tidslinjebox{
-    order: 2;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-
 }
-  #tidslinje{
+
+@media (max-width: 1000px) {
+    #line {
     color: var(--body-contrast);
         border: solid;
-        height: 250px;  
-        width: 1.5px;
+        height: 1.5px;  
+        width: 117%;
+        margin-left: -9%;
+        margin-top: 10%;
+        margin-bottom: 10%;
   }
-
-#box{
-    color: var(--body-contrast);
-    border: 1.5px solid;
-    width: 23px;
-height: 23px;
-flex-shrink: 0;}
-  .leftyear{
-    order: 3;
-    text-align: left; 
-}
-.rightyear{
-    order: 1;
-    text-align: right; 
 }
 
-.righttext{
-    order: 1;
-}
-
-.lefttext{
-    order: 3;}
-#yearleft{
-    margin-left: 120%;
-}
-
-#timelinetext{
-    
-    margin: auto;
-}
+#head3{
+    margin-top: 3%;
+    text-align: center;
+    margin-bottom: 3%;
 }
     
 ul{
@@ -271,13 +198,7 @@ ul{
   line-height: 30px;
 }
 
-p{
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
+
 
 a{
     color: var(--secondary);
