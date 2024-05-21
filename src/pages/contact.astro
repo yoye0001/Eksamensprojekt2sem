@@ -18,8 +18,8 @@ const { data } = Astro.props;
       <br />
       <p>AgentManagement : HarrisonParrott Ltd., London, U.K.</p>
       <div class="iconwrapper">
-        <a target="_blank" href="https://www.instagram.com/jespergardekongshaug/?hl=en"> <img src="/public/ig.svg" alt="instagram icon" /></a>
-        <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/public/li.svg" alt="linkedin icon" /></a>
+        <a target="_blank" href="https://www.instagram.com/jespergardekongshaug/?hl=en"> <img src="/public/ins.png" alt="instagram icon" /></a>
+        <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/public/1.png" alt="linkedin icon" /></a>
       </div>
     </div>
     <hr />
@@ -38,7 +38,8 @@ const { data } = Astro.props;
         <input type="text" id="mail" name="mail" />
         <label for="message"><p>Message</p></label>
         <input type="text" id="message" name="message" />
-        <ButtonSecondary ctaDestination="" buttonTitle="Hej" />
+        
+        <ButtonSecondary class="small-button" ctaDestination="" buttonTitle="Send" />
       </form>
     </div>
   </div>
@@ -47,6 +48,24 @@ const { data } = Astro.props;
   /* .contactinformation {
     text-align: center;
   } */
+#fname,#mail,#message, #lname{
+   background: var(--primary-50);
+}
+
+#fname{
+  width: 194px;
+  height: 33.19px;
+}
+#mail{
+   width: 427px;
+  height: 44px;
+
+}
+
+#message{
+    width: 427px;
+  height: 157px;
+}
 
   .iconwrapper {
     display: flex;
@@ -56,15 +75,29 @@ const { data } = Astro.props;
   .iconwrapper a {
     width: 20%;
   }
+
+  form{
+    max-width: 429px;
+  }
   hr {
-    border: solid 1.5px var(--body-contrast);
+    border: none;
     margin: 2rem 4rem 2rem 4rem;
+  
   }
   .grid1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+ 
+ 
   }
+
+   .grid2-1-2 {  align-items: center;
+  }
+ h1,h3{
+margin-top: 40px;
+ }
+
   @media (min-width: 900px) {
     .grid2-1-2 {
       display: grid;
