@@ -2,6 +2,25 @@
 import "../styles/generel.css";
 ---
 
+<article id="grid_2-1-2">
+    <div class="righttext" id="fixedheight">
+    <ul id="timelinetext">
+        <li>Flammenwerfer, The Royal Theater, 2024</li>
+        <li>Drot & Maqrsk, The Royal Theater, 2024</li>
+        <li>Aveny-X performancens, Next Zone Moves, 2024</li>
+    </ul>
+</div>
+    <div id="tidslinjebox">
+        <div id="box"></div>
+        <hr id="tidslinje"></hr>
+    </div>
+    <div  class="leftyear" id="fixedheightyear">
+    <div id="left">
+    <h2 id="year">2024</h2>
+    </div>
+</div>
+</article>
+
     <style>
         /* Add your CSS styles here */
         @media (min-width: 1000px) {
@@ -97,20 +116,16 @@ import "../styles/generel.css";
             const timelineSection = document.getElementById("timelinesection");
             data.forEach(event => {
                 const article = document.createElement("article");
-                article.classList.add(event.year % 2 === 0 ? "left" : "right");
+                article.classList.add();
 
                 const textDiv = document.createElement("div");
-                textDiv.classList.add(event.year % 2 === 0 ? "lefttext" : "righttext");
-                textDiv.innerHTML = `<ul><li>${event.text}, ${event.year}</li></ul>`;
+                textDiv.classList.add();
+                textDiv.innerHTML = `<ul><li>${event.text}</li></ul>`;
                 article.appendChild(textDiv);
 
-                const timelineBox = document.createElement("div");
-                timelineBox.classList.add("tidslinjebox");
-                timelineBox.innerHTML = `<div class="box"></div><hr class="tidslinje"></hr>`;
-                article.appendChild(timelineBox);
 
                 const yearDiv = document.createElement("div");
-                yearDiv.classList.add(event.year % 2 === 0 ? "leftyear" : "rightyear");
+                yearDiv.classList.add( );
                 yearDiv.innerHTML = `<h2 class="year">${event.year}</h2>`;
                 article.appendChild(yearDiv);
 
