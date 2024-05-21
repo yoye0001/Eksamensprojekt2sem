@@ -1,0 +1,126 @@
+---
+import "../styles/generel.css";
+---
+
+    <style>
+        /* Add your CSS styles here */
+        @media (min-width: 1000px) {
+            /* Styles for larger screens */
+            #timelinesection {
+                margin-top: 5%;
+            }
+            .fixedheight {
+                height: 150px;
+                margin-top: 20%;
+            }
+            .fixedheightyear {
+                height: 150px;
+                margin-top: 20%;
+            }
+            .tidslinjebox {
+                order: 2;
+                display: flex;
+                justify-content: center;
+                margin: auto;
+            }
+            .leftyear {
+                order: 3;
+                text-align: left;
+            }
+            .rightyear {
+                order: 1;
+                text-align: right;
+            }
+            .righttext {
+                order: 1;
+            }
+            .lefttext {
+                order: 3;
+            }
+            #timelinetext {
+                margin: auto;
+            }
+        }
+        #grid_2-1-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+        }
+        .tidslinje {
+            order: 2;
+            color: var(--body-contrast);
+            border: solid;
+            height: 240px;
+            width: 1.5px;
+        }
+        .box {
+            color: var(--body-contrast);
+            border: 1.5px solid;
+            width: 23px;
+            height: 23px;
+            flex-shrink: 0;
+        }
+        ul {
+            font-family: montserrat, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--body-contrast);
+            font-size: 16px;
+            margin-bottom: 0.5rem;
+            line-height: 30px;
+        }
+        @media (max-width: 1000px) {
+            /* Styles for smaller screens */
+            .fixedheight {
+                order: 3;
+            }
+            .tidslinjebox {
+                order: 2;
+            }
+            .fixedheightyear {
+                order: 1;
+            }
+        }
+    </style>
+
+    <article id="timelinesection"></article>
+
+    <script>
+        // data//
+        const timelineData = [
+            { year: "2024", text: "Flammenwerfer, The Royal Theater" },
+            { year: "2022", text: "Blixen, The Royal Theater" },
+            
+        ];
+
+        //lav artikler//
+        function generateTimelineArticles(data) {
+            const timelineSection = document.getElementById("timelinesection");
+            data.forEach(event => {
+                const article = document.createElement("article");
+                article.classList.add(event.year % 2 === 0 ? "left" : "right");
+
+                const textDiv = document.createElement("div");
+                textDiv.classList.add(event.year % 2 === 0 ? "lefttext" : "righttext");
+                textDiv.innerHTML = `<ul><li>${event.text}, ${event.year}</li></ul>`;
+                article.appendChild(textDiv);
+
+                const timelineBox = document.createElement("div");
+                timelineBox.classList.add("tidslinjebox");
+                timelineBox.innerHTML = `<div class="box"></div><hr class="tidslinje"></hr>`;
+                article.appendChild(timelineBox);
+
+                const yearDiv = document.createElement("div");
+                yearDiv.classList.add(event.year % 2 === 0 ? "leftyear" : "rightyear");
+                yearDiv.innerHTML = `<h2 class="year">${event.year}</h2>`;
+                article.appendChild(yearDiv);
+
+                timelineSection.appendChild(article);
+            });
+        }
+
+        //load side//
+        window.onload = function () {
+            generateTimelineArticles(timelineData);
+        };
+    </script>
+
