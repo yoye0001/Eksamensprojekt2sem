@@ -7,7 +7,7 @@ import "../styles/generel.css";
     <div id="textbox" >
     <p>kongshaug@gmail.com </p>
     <p>+45 4050 8828</p>
-    <span id="vandretstreg"> </span>
+    <hr  id="vandretstreg"> </hr>
     <p>Scenograferne, Sankt Peders Straede 45, 1. sal 
         <br> 1453 Copenhagen K </p>
     </div>
@@ -60,6 +60,13 @@ footer{
 
 }
 
+#vandretstreg{
+    color: var(--body-contrast);
+        margin-bottom: 5%;
+        width: 55px;
+        transform: rotate(180deg);
+}
+
 #grid_3-3-3{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -69,6 +76,14 @@ footer{
 }
 
 @media (max-width: 1000px) {
+
+    #vandretstreg{
+    color: var(--body-contrast);
+        margin-bottom: 5%;
+        width: 55px;
+        transform: rotate(180deg);
+        
+}
     #grid_3-3-3 {
         display: flex;
         flex-direction: column;
