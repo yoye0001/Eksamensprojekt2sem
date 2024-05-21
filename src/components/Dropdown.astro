@@ -44,7 +44,7 @@ background: transparent;
   /* Links inside the dropdown */
   .dropdown-content div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     color: var(--body-contrast);
     margin: 12px 16px;
     margin-bottom: 1.2rem;
@@ -54,6 +54,9 @@ background: transparent;
     font-size: 1rem;
     transition: 0.2s ease-in-out;
   }
+  .dropdown-content div:hover{
+    border-bottom: 1px solid var(--body-contrast);
+  }
   .dropdown {
     transition: 0.2s ease-in-out;
   }
@@ -61,13 +64,11 @@ background: transparent;
   .dropdown-content {
     display: none;
     transition: 0.3s ease-in-out;
+    border-top: 1px solid var(--body-contrast);
   }
 
    /* Change the background color of the dropdown button when the dropdown content is shown */
-   .dropdown:hover .dropbtn{
-    border-bottom: 1px solid var(--text-color) ;
-    transition: 0.2s ease-in-out;
-  }
+   
 
     /* Show the dropdown menu on active */
     .show{
@@ -91,29 +92,20 @@ background: transparent;
   .dropdown-content {
     display: none;
     position: absolute;
-    background: var(--header-gradient);
+    background: var(--footer-gradient);
     min-width: 200px;
     z-index: 1;
-    top: 2rem;
+    top: 1.25rem;
 
   }
 
- 
-  .dropdown-content div:hover{
-    transition: 0.2s ease-in-out;
-    border-bottom: 1px solid var(--text-color);
-  }
+
 
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
-   /* Change the background color of the dropdown button when the dropdown content is shown */
-   .dropdown:hover .dropbtn, .dropdown .dropbtn .active {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--text-color) ;
-    transition: 0.2s ease-in-out;
-  }
+
   }
 </style>
 
