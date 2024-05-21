@@ -10,14 +10,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout sitetitle="Home">
 <main>
     <article id="grid_2-2">
-    <img id="profile" src="/profilbillede.png" alt="">
-    <div>
+        <div id="profile">
+    <img id="profilepic" src="/profilbillede.png" alt="">
+    </div>
+    <div id="profiletext">
         <h1 id="head">Jesper <br> Kongshaug</h1>
         <h3>Profile:</h3>
         <p>Jesper Kongshaug is an award-winning lighting designer who works, researches, and teaches internationally in the fields of performing arts, light art, architecture, and lighting technology.</p>
         <p>“Kongshaug is one of Denmark’s foremost lighting designers. The majority of his work has been associated with opera on an international level. Kongshaug's work is of high artistic quality, innovative, experimental, yet also very clear and assured in his solutions. He created a 14 km light art installation 'Winter Light' when Copenhagen was the European Capital of Culture in 1996.” (Gyldendal's Encyclopedia)</p>
         <p>Jesper Kongshaug teaches and lectures at several leading cultural institutions worldwide. He develops and advises on architectural lighting for many of the country’s leading architectural firms.</p> 
-    <a href="">Read more on Operabase↗️</a>
+        <a href="https://www.operabase.com/jesper-kongshaug-a8270/da">Read more on Operabase</a>
         <h3>Education:</h3>
         <ul>
             <li>Niels Brock Business School (1974-75)</li>
@@ -27,7 +29,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     </div>
 </article>
-    <div id="line"></div>
+    <hr id="line">
     <article id="section2"> 
         <article id="grid_3-3-3">
             <div>
@@ -39,9 +41,9 @@ import MainLayout from "../layouts/MainLayout.astro";
                     <li> Membership of the following organisations: Sammenslutningen af Danske Scenografer, ESTA and USITT meber</li>
                 </ul>
             </div>
-            <div>
-                
-                <h2>SOFTWARE </h2>
+            <div id="center">
+                <hr id="lodretlinje2">
+                <h3>SOFTWARE </h3>
                 <ul>
                     <li>AutoCAD </li>
                         <li>VectorWorks</li>
@@ -49,10 +51,10 @@ import MainLayout from "../layouts/MainLayout.astro";
                         <li>DIAlux</li>
                         <li> GrandMA</li>
                 </ul>
-                
+                <hr id="lodretlinje2">
             </div>
             <div>
-                <h2 id="head2">UPCOMING WORK</h2>
+                <h3 id="head2">UPCOMING WORK</h3>
                 <ul>
                 <li>Flammenwerfer, Det Kongelige Teater Copenhagen - AUTUMN 2024  | <a href="" >Read more</a></li> 
                 <li>New stage show, Aveny-X Greenland - SUMMER 2024 | <a href="" >Read more</a></li> 
@@ -61,32 +63,50 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
     </article>
     </article>
-    <div id="line"></div>
+    <hr id="line">
     <article id="section3">
     <h2 id="head3">CURRICULUM</h2>
-    <div id="lineshort"></div>
+    <hr id="lineshort">
     <div id="grid_2-2v2">
         <h3>STAGE LIGHTING</h3>
         <h3>ARCHITECTURAL LIGHTING</h3>
     </div>
-    <div id="lineshort"></div>
-    <article id="grid_3-3-3">
+    <hr id="lineshort">
+    <article id="grid_2-1-2">
+        <div class="righttext" id="fixedheight">
         <ul id="timelinetext">
             <li>Flammenwerfer, The Royal Theater, 2024</li>
             <li>Drot & Maqrsk, The Royal Theater, 2024</li>
             <li>Aveny-X performancens, Next Zone Moves, 2024</li>
         </ul>
-        <div id="tidslinje"></div>
+    </div>
+        <div id="tidslinjebox">
+            <div id="box"></div>
+            <hr id="tidslinje"></hr>
+        </div>
+        <div  class="leftyear" id="fixedheightyear">
+        <div id="left">
         <h2 id="year">2024</h2>
+        </div>
+    </div>
     </article>
-    <article id="grid_3-3-3">
-        <ul id="timelinetextleft">
-            <li>Blixen, The Royal Theater, 2022</li>
-            <li>Pelléas et Mélisande, Hungarian State Opera, 2022</li>
-            <li>Lohengrin, Deutsche Oper Berlin, 2022</li>
+    <article id="grid_2-1-2">
+        <div class="leftext" id="fixedheight">
+        <ul id="timelinetext">
+            <li>Flammenwerfer, The Royal Theater, 2024</li>
+            <li>Drot & Maqrsk, The Royal Theater, 2024</li>
+            <li>Aveny-X performancens, Next Zone Moves, 2024</li>
         </ul>
-        <div id="tidslinje"></div>
-        <h2 id="yearleft">2022</h2>
+    </div>
+        <div id="tidslinjebox">
+            <div id="box"></div>
+            <hr id="tidslinje"></hr>
+        </div>
+        <div  class="rightyear" id="fixedheightyear">
+        <div id="left">
+        <h2 id="year">2024</h2>
+        </div>
+    </div>
     </article>
 </article>
 
@@ -102,7 +122,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 #grid_2-2{
 display: grid;
-grid-template-columns: 1fr 1fr;}
+grid-template-columns: 1fr 1fr;
+margin-left: 0%;}
 
 #grid_2-2v2{
 display: grid;
@@ -112,35 +133,64 @@ margin: 2%;}
 
 #grid_3-3-3{
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-justify-items: center;}
+grid-template-columns: 1fr 1fr 1fr;}
+
+#grid_2-1-2{
+display: grid;
+grid-template-columns: 2fr 1fr 2fr;}
 
 #profile{
+    display: flex;
+    justify-content: left;
+    margin-left: -30%;
+}
+#profilepic{
 object-fit: cover;
-max-width: 110%;
+width: 630px;
 height: 818px;
-margin-left: -12rem;}
 
+}
+
+#profiletext{
+    margin-left: -30%;
+}
+#lodretlinje2{
+    width: 2px;
+height: 157px;
+}
+
+#center{
+    display: flex;
+    justify-content: center;
+}
+
+#fixedheight{
+    height: 250px;
+    margin-top: 20%;
+}
+
+#fixedheightyear{
+    height: 250px;
+    margin-top: 20%;
+}
 #head{
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-weight: bold;
 
 }
 
-#head2{
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-}
+
 
 #head3{
-    margin-top: 3rem;
+    margin-top: 3%;
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 
 #section2{
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #line {
@@ -165,25 +215,49 @@ margin-left: -12rem;}
         width: 2px;
 
 }
+
+#tidslinjebox{
+    order: 2;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+}
   #tidslinje{
     color: var(--body-contrast);
         border: solid;
-        margin-top: 50px;
-        height: 1600px;  
+        height: 250px;  
         width: 1.5px;
-       
   }
 
-  #year{margin-top: ;
-    margin-left: 120%;
+#box{
+    color: var(--body-contrast);
+    border: 1.5px solid;
+    width: 23px;
+height: 23px;
+flex-shrink: 0;}
+  .leftyear{
+    order: 3;
+    text-align: left; 
+}
+.rightyear{
+    order: 1;
+    text-align: right; 
 }
 
-#yearleft{margin-top: ;
+.righttext{
+    order: 1;
+}
+
+.lefttext{
+    order: 3;}
+#yearleft{
     margin-left: 120%;
 }
 
 #timelinetext{
     
+    margin: auto;
 }
 }
     
