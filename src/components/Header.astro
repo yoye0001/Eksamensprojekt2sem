@@ -1,16 +1,19 @@
 ---
 import "../styles/generel.css";
 import "../styles/animations.css";
+import Dropdown from "../components/Dropdown.astro";
 ---
 
 <header>
     <nav class="navbar">
         <a href="/"><img class="nav-branding" src="/faviconn.svg" alt="logo"></a>
         <ul class="nav-menu">
-            <h1 class="hidedesktop">MENU</h1>
             <li class="nav-item"><a href="/" class="nav-link hidedesktop">HOME</a></li>
            <hr>
-            <li class="nav-item"><a href="#type" class="nav-link">PORTFOLIO</a></li>
+         
+                <!-- <a href="#type" class="nav-link">PORTFOLIO</a> -->
+                <Dropdown header="PORTFOLIO" underknap1="STAGE LIGHTING" underknap2="ARCHITECTURAL LIGHTING"></Dropdown> 
+         
             <hr>
             <li class="nav-item"><a href="/cv" class="nav-link">CV</a></li>
             <hr>
@@ -29,6 +32,9 @@ import "../styles/animations.css";
     /*----------menu-------------*/
     .hidedesktop, hr{
     display: none;
+}
+.hidedesktop{
+    margin-top: 1rem;
 }
 /*navigationsbar*/
 .navbar {
@@ -56,18 +62,11 @@ list-style: none;
     font-family: montserrat, sans-serif;
   
 }
-/* .nav-link:hover{
+ /* .nav-link:hover{
     border-bottom: solid var(--body-contrast) 1px;
-    animation: border_anim1 0.3s ease-in-out forwards;
+    animation: border_anim 0.3s ease-in-out forwards;
   }
-  @keyframes border_anim1 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }  */
+  */
 .nav-link:hover, .active{
     border-bottom: solid var(--body-contrast) 1px;
      transition: 0.5s;
