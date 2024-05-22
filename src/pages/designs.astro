@@ -3,7 +3,6 @@ import Card from "../components/Card.astro";
 import "../styles/generel.css";
 import "../styles/animations.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import ButtonPrimary from "../components/ButtonPrimary.astro";
 
 
 
@@ -37,6 +36,8 @@ console.log(data);
     <a href={`?location=${(data.location, "National")}`}><h3>national</h3></a>
     <span class="line">|</span>
     <a href={`?location=${(data.location, "International")}`}><h3 class="">international</h3></a>
+    <span class="line">|</span>
+    <a href={`/designs`}><h3 class="">all</h3></a>
   </div>
   <hr />
 
@@ -134,6 +135,7 @@ console.log(data);
 
   .flex h3 {
     border-bottom: solid transparent 2px;
+    transition: var(--unfocus);
   }
   .flex h3:hover {
     border-bottom: solid var(--body-contrast) 2px;

@@ -15,9 +15,9 @@ import Dropdown from "../components/Dropdown.astro";
                 <Dropdown header="PORTFOLIO" underknap1="STAGE LIGHTING" underknap2="ARCHITECTURAL LIGHTING"></Dropdown> 
          
             <hr>
-            <li class="nav-item"><a href="/cv" class="nav-link">CV</a></li>
+            <li class="nav-item"><a href="/cv" class="nav-link"><h3>CV</a></h3></li>
             <hr>
-            <li class="nav-item"><a href="/contact" class="nav-link">CONTACT</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link"><h3>CONTACT</h3></a></li>
             <hr>
         </ul>
         <div class="hamburger">
@@ -27,6 +27,16 @@ import Dropdown from "../components/Dropdown.astro";
         </div>
     </nav>
 </header>
+
+<style>
+  li a {
+    border-bottom: solid transparent 2px;
+  }
+  li h3:hover {
+    border-bottom: solid var(--body-contrast) 2px;
+    animation: border_anim 0.3s ease-in-out forwards;
+  }
+</style>
 
 <style>
     /*----------menu-------------*/
@@ -56,10 +66,13 @@ header{
 list-style: none;
 
 }
-.nav-link{
+.nav-link,h3{
     color: var(--body-contrast);
     text-decoration: none;
     font-family: montserrat, sans-serif;
+    border-bottom: solid transparent 2px;
+transition: var(--unfocus);
+    font-size: 1rem;
   
 }
  /* .nav-link:hover{
@@ -100,7 +113,7 @@ list-style: none;
    margin: 0;
 }
 /*-------------mobil---------------*/
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .hidedesktop, hr{
     display: inherit;
 }
@@ -143,7 +156,7 @@ list-style: none;
     left: 0;
   }
 
-  .nav-link {
+  .nav-link,h3 {
     font-size: 1.5rem;
     transition: 0.2s;
   }
