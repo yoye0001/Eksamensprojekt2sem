@@ -30,7 +30,7 @@ import Timeline from "../components/Timeline.astro";
 
     </div>
 </article>
-    <hr id="line">
+    <hr class="line">
     <article id="section2"> 
         <article id="grid_3-3-3">
             <div>
@@ -63,7 +63,7 @@ import Timeline from "../components/Timeline.astro";
     </div>
     </article>
     </article>
-    <hr id="line">
+    <hr class="line">
     <article id="section3">
     <h2 id="head3">CURRICULUM</h2>
     <hr id="lineshort">
@@ -87,6 +87,8 @@ import Timeline from "../components/Timeline.astro";
 #grid_2-2{
 display: grid;
 grid-template-columns: 1fr 1fr;
+gap: 1rem;
+
 }
 
 #grid_2-2v2{
@@ -106,8 +108,16 @@ grid-template-columns: 1fr 1fr 1fr;
     justify-content: left;
     margin-left: -30%; */
 }
+#profile{
+    margin-left: -98px;
+}
 #profilepic{
-/* object-fit: cover;
+object-fit: cover;
+height: 818px;
+width: 100%;
+
+aspect-ratio: 1/1.5;
+/* 
 width: 630px;
 height: 818px; */
 
