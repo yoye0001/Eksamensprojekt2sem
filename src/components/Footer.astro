@@ -7,7 +7,9 @@ import "../styles/generel.css";
     <div id="textbox" >
     <p>kongshaug@gmail.com </p>
     <p>+45 4050 8828</p>
+    <div id="stregmobil">
     <hr  id="vandretstreg"> </hr>
+</div>  
     <p>Scenograferne, Sankt Peders Straede 45, 1. sal 
         <br> 1453 Copenhagen K </p>
     </div>
@@ -80,9 +82,16 @@ footer{
     #vandretstreg{
     color: var(--body-contrast);
         margin-bottom: 5%;
+        margin-top: 3%;
         width: 55px;
         transform: rotate(180deg);
+
         
+}
+
+#stregmobil{
+    display: flex;
+        justify-content: center;
 }
     #grid_3-3-3 {
         display: flex;
@@ -130,4 +139,9 @@ footer{
 
 }
 
+@media (max-width: 6000px) {
+    {
+        margin-top: -50%;
+    }
+}
 </style>
