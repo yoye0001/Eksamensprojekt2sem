@@ -14,7 +14,7 @@ import "../styles/generel.css";
         <br> 1453 Copenhagen K </p>
     </div>
     <div>
-    <img id="logo" src="FAVICON.png" alt=""></div>
+    <img id="logo" src="faviconn.svg" alt=""></div>
     <div id="links">
         <a href="https://www.instagram.com/jespergardekongshaug/?hl=da"><img id="insta" src="insta.png" alt=""></a>
         
@@ -28,7 +28,10 @@ import "../styles/generel.css";
 <style>
 
 footer{
-    background: var(--footer-gradient);}
+    background: var(--footer-gradient);
+    border-top: 1px solid var(--body-contrast);
+    padding-bottom: 1.5rem;
+}
 
 @media (min-width: 1000px) {
     #textbox{
@@ -40,10 +43,8 @@ footer{
 
 
 #logo{
-    position: relative;
-    width: 600px;
-    height: 400px;
-    margin-top: -200px;
+
+   
 }
 
 #links {
@@ -81,12 +82,9 @@ footer{
 
     #vandretstreg{
     color: var(--body-contrast);
-        margin-bottom: 5%;
-        margin-top: 3%;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
         width: 55px;
-        transform: rotate(180deg);
-
-        
 }
 
 #stregmobil{
@@ -108,7 +106,9 @@ footer{
 
     #logo {
         order: 1; 
-        margin-top: -30%;
+       height:3rem;
+       margin-top:1.5rem;
+       margin-bottom:1.5rem;
     }
 
     #links {
@@ -139,9 +139,4 @@ footer{
 
 }
 
-@media (max-width: 6000px) {
-    {
-        margin-top: -50%;
-    }
-}
 </style>
