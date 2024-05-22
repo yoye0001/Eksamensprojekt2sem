@@ -17,7 +17,7 @@ import Dropdown from "../components/Dropdown.astro";
             <hr>
             <li class="nav-item"><a href="/cv" class="nav-link"><h3>CV</a></h3></li>
             <hr>
-            <li class="nav-item"><a href="/contact" class="nav-link"><h3>CONTACT</h3></a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link"><h3>CONTACT</a></h3></li>
             <hr>
         </ul>
         <div class="hamburger">
@@ -28,18 +28,25 @@ import Dropdown from "../components/Dropdown.astro";
     </nav>
 </header>
 
-<style>
-  li a {
-    border-bottom: solid transparent 2px;
-  }
-  li h3:hover {
-    border-bottom: solid var(--body-contrast) 2px;
-    animation: border_anim 0.3s ease-in-out forwards;
-  }
-</style>
+
 
 <style>
     /*----------menu-------------*/
+
+    /* kun på comp */
+    @media (min-width: 900px) {
+    li a {
+    border-bottom: solid transparent 1.5px;
+  }
+  li h3:hover {
+    border-bottom: solid var(--body-contrast) 1.5px;
+    animation: border_anim 0.5s ease-in-out forwards;
+  }
+  .nav-link,h3{
+    border-bottom: solid transparent 1.5px;
+
+}
+}
     .hidedesktop, hr{
     display: none;
 }
@@ -70,7 +77,6 @@ list-style: none;
     color: var(--body-contrast);
     text-decoration: none;
     font-family: montserrat, sans-serif;
-    border-bottom: solid transparent 2px;
 transition: var(--unfocus);
     font-size: 1rem;
   
