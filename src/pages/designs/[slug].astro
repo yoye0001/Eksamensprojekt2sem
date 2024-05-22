@@ -46,15 +46,15 @@ console.log(myData);
 
     <hr class="line" />
     <div>
-      <img class="" src={myData.image1} alt={myData.image1_text} />
+      <img class="lightimage" src={myData.image1} alt={myData.image1_text} />
     </div>
   </div>
   <div class="undergalleri">
     <div>
-      <img class="" src={myData.image2} alt={myData.image2_text} />
+      <img class="lightimage" src={myData.image2} alt={myData.image2_text} />
     </div>
     <div>
-      <img class="" src={myData.image3} alt={myData.image3_text} />
+      <img class="lightimage" src={myData.image3} alt={myData.image3_text} />
     </div>
   </div>
 
@@ -220,6 +220,9 @@ console.log(myData);
   .backbuttoncontainer:hover h3 {
     color: var(--secondary);
     transition: var(--focus);
+  }
+  .lightimage {
+    border-radius: 2px;
   }
 
   @media (min-width: 900px) {
