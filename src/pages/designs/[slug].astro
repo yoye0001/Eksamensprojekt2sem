@@ -26,8 +26,6 @@ console.log(myData);
   </div>
   <div class="herowrapper" id="no-margin">
     <div class="topleft">
-      <!-- <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <a class="hyperlink" href=`/designs?type=${myData.type}`>{myData.type} Designs</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <span class="placeholder">{myData.title}</span></p> -->
-
       <span id="go-back" class="backbuttoncontainer">
         <img class="arrow" src="/public/arrowleft.svg" alt="arrow" />
         <h3>back</h3>
@@ -161,7 +159,7 @@ console.log(myData);
   }
   .topleft .backbuttoncontainer {
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     max-width: 10rem;
   }
   .backbuttoncontainer:hover {
@@ -179,14 +177,6 @@ console.log(myData);
     justify-content: start;
     gap: 0.5rem;
   }
-
-  /* .breadcrumb {
-    max-width: fit-content;
-    border: solid var(--body-contrast) 1px;
-    border-top: none;
-    padding: 1rem;
-    background: var(--footer-gradient);
-  } */
 
   .breadcrumbcontainer {
     position: sticky;
