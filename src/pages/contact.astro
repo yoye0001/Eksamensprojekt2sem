@@ -1,6 +1,7 @@
 ---
 import ButtonSecondary from "../components/ButtonSecondary.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Footer from "../components/Footer.astro";
 const { data } = Astro.props;
 ---
 
@@ -45,7 +46,11 @@ const { data } = Astro.props;
       </form>
     </div>
   </div>
+  
 </MainLayout>
+<Footer>
+</Footer>
+
 <style>
   /* .contactinformation {
     text-align: center;
