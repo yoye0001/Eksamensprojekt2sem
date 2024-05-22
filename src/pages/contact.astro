@@ -1,6 +1,7 @@
 ---
 import ButtonSecondary from "../components/ButtonSecondary.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
 const { data } = Astro.props;
 ---
 
@@ -22,7 +23,8 @@ const { data } = Astro.props;
         <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/public/1.png" alt="linkedin icon" /></a>
       </div>
     </div>
-    <hr />
+      <hr class="hr"/>
+
     <div class="contactform col">
       <form action="netflify">
         <h3>Send a message</h3>
@@ -31,25 +33,42 @@ const { data } = Astro.props;
           <label for="lname"><p>Last name</p></label>
         </div>
         <div class="grid1-1">
-          <input type="text" id="fname" name="fname" />
-          <input type="text" id="lname" name="lname" />
+          
+          <input type="text" id="fname" name="fname"placeholder="Enter your first name" class="placeholder"/>
+          <input type="text" id="lname" name="lname" placeholder="Enter your last name"class="placeholder" />
         </div>
         <label for="mail"><p>Email</p></label>
-        <input type="text" id="mail" name="mail" />
+        <input type="text" id="mail" name="mail"placeholder="Enter your Email" class="placeholder" />
         <label for="message"><p>Message</p></label>
-        <input type="text" id="message" name="message" />
+        <input type="text" id="message" name="message" placeholder="Send a message"class="placeholder" />
         
         <ButtonSecondary class="small-button" ctaDestination="" buttonTitle="Send" />
       </form>
     </div>
   </div>
+  
 </MainLayout>
+
 <style>
   /* .contactinformation {
     text-align: center;
   } */
+
+  .contactform h3{
+    margin-bottom: 4px;
+  }
+.placeholder::placeholder{
+ color: var(--Background-contrast, #ECECEC);
+
+font-size: 16px;
+font-style: italic;
+font-weight: 400;
+line-height: normal;
+opacity: 40%;
+}
 #fname,#mail,#message, #lname{
    background: var(--primary-50);
+   margin-bottom: 4%;
 }
 
 #fname{
@@ -69,19 +88,26 @@ const { data } = Astro.props;
 
   .iconwrapper {
     display: flex;
-    justify-content: space-evenly;
+   gap: 50px;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .iconwrapper a {
-    width: 20%;
+width: 75px;
+height: 75px;
+flex-shrink: 0;
   }
 
   form{
     max-width: 429px;
   }
   hr {
-    border: none;
-    margin: 2rem 4rem 2rem 4rem;
+  width: 476px;
+height: var(--Number, 0px);
+transform: rotate(90deg);
+flex-shrink: 0;
+ stroke-width: 2px;
+stroke: var(--Background-contrast, #ECECEC);
   
   }
   .grid1-1 {
@@ -103,6 +129,36 @@ margin-top: 40px;
       display: grid;
       grid-template-columns: 2fr 1fr 2fr;
       margin: auto;
+      
     }
+   
   }
+  @media (max-width: 900px) {
+
+ .contactform{
+   margin: 0 auto;
+  }
+ .hr {
+    width: 246px;
+    transform: none;
+height: var(--Number, 0px);
+
+margin: 0 auto;
+  }
+    .iconwrapper a {
+      width: 54px;
+height: 54px;
+flex-shrink: 0;
+
+    }
+      .iconwrapper{
+        gap: 41px;
+        justify-content: center;
+      }
+      .contactinformation{
+text-align: center;
+      }
+  }
+     
+  
 </style>
