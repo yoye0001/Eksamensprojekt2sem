@@ -59,7 +59,7 @@ console.log(data);
     /* margin-left: -1rem;
     margin-right: -1rem; */
 
-    padding: 5rem 0.5rem 5rem 0.5rem;
+    padding: 1rem 0.5rem 5rem 0.5rem;
   }
 
   .herobottom {
@@ -97,9 +97,10 @@ console.log(data);
   .arrowcontainer {
 position: relative;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 4rem;
     z-index: 30;
+
 
   }
   .arrowcontainer img{
@@ -121,7 +122,7 @@ transition: var(--focus);
   }
   #type img {
     object-fit: cover;
-    aspect-ratio: 1/1.2;
+    aspect-ratio: 1/1;
     border-bottom: 1.5px var(--body-contrast) solid;
     border-top: 1.5px var(--body-contrast) solid;
   }
@@ -191,6 +192,9 @@ transition: var(--focus);
       margin-top: auto;
       margin-bottom: 5rem;
     }
+    .arrowcontainer {
+
+    margin-top: -2rem;
   }
 
   @media (min-width: 900px) {
@@ -248,21 +252,3 @@ transition: var(--focus);
     }
   }
 </style>
-
-<script>
-  // HJÆLP FRA CHAT GPT
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    let index = 0;
-
-    function scrollToNextSection() {
-      // Scroll to the next section
-      index = (index + 1) % sections.length;
-      sections[index].scrollIntoView({ behavior: "smooth" });
-    }
-
-    //kør denne funktion efter 2000 milisekunder
-    setTimeout(scrollToNextSection, 2000);
-  });
-</script>

@@ -21,10 +21,11 @@ console.log(myData);
 ---
 
 <MainLayout sitetitle={myData.title}>
+  <div class="breadcrumbcontainer">
+    <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <a class="hyperlink" href=`/designs?type=${myData.type}`>{myData.type} Designs</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <span class="placeholder">{myData.title}</span></p>
+  </div>
   <div class="herowrapper" id="no-margin">
     <div class="topleft">
-      <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> &#x27A1; <a class="hyperlink" href=`/designs?type=${myData.type}`>{myData.type} Designs</a> &#x27A1; <span class="placeholder">{myData.title}</span></p>
-
       <span id="go-back" class="backbuttoncontainer">
         <img class="arrow" src="/public/arrowleft.svg" alt="arrow" />
         <h3>back</h3>
@@ -45,15 +46,15 @@ console.log(myData);
 
     <hr class="line" />
     <div>
-      <img class="" src={myData.image1} alt={myData.image1_text} />
+      <img class="lightimage" src={myData.image1} alt={myData.image1_text} />
     </div>
   </div>
   <div class="undergalleri">
     <div>
-      <img class="" src={myData.image2} alt={myData.image2_text} />
+      <img class="lightimage" src={myData.image2} alt={myData.image2_text} />
     </div>
     <div>
-      <img class="" src={myData.image3} alt={myData.image3_text} />
+      <img class="lightimage" src={myData.image3} alt={myData.image3_text} />
     </div>
   </div>
 
@@ -151,15 +152,14 @@ console.log(myData);
     margin-top: auto;
   }
   .topleft {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    margin-top: 3rem;
+    z-index: 10;
 
     max-height: 20%;
   }
   .topleft .backbuttoncontainer {
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     max-width: 10rem;
   }
   .backbuttoncontainer:hover {
@@ -172,7 +172,18 @@ console.log(myData);
 
     transition: var(--unfocus);
   }
-  span,
+  span {
+    display: flex;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+
+  .breadcrumbcontainer {
+    position: sticky;
+    top: 0%;
+    z-index: 100;
+    height: 0rem;
+  }
   .breadcrumb {
     display: flex;
     justify-content: start;
@@ -183,7 +194,16 @@ console.log(myData);
     border: solid var(--body-contrast) 1px;
     border-top: none;
     padding: 1rem;
-    background-color: var(--brandbackground);
+    background: var(--footer-gradient);
+  }
+  .breadcrumb a,
+  span,
+  img {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .breadcrumb img {
+    width: 3%;
   }
 
   .herowrapper p {
@@ -193,6 +213,16 @@ console.log(myData);
   span:hover .arrow {
     transform: translate(-1rem, 0px);
     transition: var(--focus);
+  }
+  .backbuttoncontainer h3 {
+    transition: var(--unfocus);
+  }
+  .backbuttoncontainer:hover h3 {
+    color: var(--secondary);
+    transition: var(--focus);
+  }
+  .lightimage {
+    border-radius: 2px;
   }
 
   @media (min-width: 900px) {

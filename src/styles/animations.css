@@ -3,11 +3,15 @@
     background-image: url(/gradient1_1000_605.avif);
   }
 
-  33% {
+  20% {
+    background-image: url(/gradient4_1000_603.avif);
+  }
+
+  50% {
     background-image: url(/gradient2_1000_605.avif);
   }
 
-  66% {
+  70% {
     background-image: url(/gradient3_1000_605.avif);
   }
   100% {
@@ -17,7 +21,7 @@
 
 .gradientanim {
   animation-name: gradientanim_kf;
-  animation-duration: 7s;
+  animation-duration: 8s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
