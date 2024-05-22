@@ -2,6 +2,7 @@
 import "../styles/generel.css";
 import "../styles/animations.css";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import ToTop from "../components/ToTop.astro";
 
 // const data = await fetch("https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1", {
@@ -35,5 +36,6 @@ const { sitetitle } = Astro.props;
       <slot />
     </main>
     <!-- SLOT -->
+    <Footer />
   </body>
 </html>
