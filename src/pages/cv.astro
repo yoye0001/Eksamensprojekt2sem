@@ -16,12 +16,12 @@ import Timeline from "../components/Timeline.astro";
     </div>
     <div id="profiletext">
         <h1 id="head">Jesper <br> Kongshaug</h1>
-        <h3>Profile:</h3>
+        <h3>Profile</h3>
         <p>Jesper Kongshaug is an award-winning lighting designer who works, researches, and teaches internationally in the fields of performing arts, light art, architecture, and lighting technology.</p>
         <p>“Kongshaug is one of Denmark’s foremost lighting designers. The majority of his work has been associated with opera on an international level. Kongshaug's work is of high artistic quality, innovative, experimental, yet also very clear and assured in his solutions. He created a 14 km light art installation 'Winter Light' when Copenhagen was the European Capital of Culture in 1996.” (Gyldendal's Encyclopedia)</p>
         <p>Jesper Kongshaug teaches and lectures at several leading cultural institutions worldwide. He develops and advises on architectural lighting for many of the country’s leading architectural firms.</p> 
         <a href="https://www.operabase.com/jesper-kongshaug-a8270/da">Read more on Operabase</a>
-        <h3>Education:</h3>
+        <h3>Education</h3>
         <ul>
             <li>Niels Brock Business School (1974-75)</li>
             <li>Technical University of Denmark, Lundtofte (1974-76)</li>
@@ -81,12 +81,13 @@ import Timeline from "../components/Timeline.astro";
 
 <style>
     
-    @media (min-width: 1000px) {
+    /* desktop */
+    @media (min-width: 900px) {
 
 #grid_2-2{
 display: grid;
 grid-template-columns: 1fr 1fr;
-margin-left: 0%;}
+}
 
 #grid_2-2v2{
 display: grid;
@@ -101,20 +102,20 @@ grid-template-columns: 1fr 1fr 1fr;
 
 
 #profile{
-    display: flex;
+    /* display: flex;
     justify-content: left;
-    margin-left: -30%;
+    margin-left: -30%; */
 }
 #profilepic{
-object-fit: cover;
+/* object-fit: cover;
 width: 630px;
-height: 818px;
+height: 818px; */
 
 }
 
 #profiletext{
-    margin-left: -30%;
-    display: block;
+    /* margin-left: -30%;
+    display: block; */
 }
 #lodretlinje2{
     width: 2px;
@@ -168,7 +169,9 @@ height: 157px;
 
 }
 
-@media (max-width: 1000px) {
+/* mobil */
+
+@media (max-width: 900px) {
     #line {
     color: var(--body-contrast);
         border: solid;
