@@ -17,6 +17,7 @@ import "../styles/animations.css";
     border: solid var(--body-contrast) 1px;
     border-right: none;
     z-index: 200;
+    background-color: var(--brandbackground);
   }
   img {
     width: 3rem;
@@ -28,12 +29,20 @@ import "../styles/animations.css";
     margin-top: 0.5rem;
     transition: var(--focus);
   }
-  .totopcontainer:hover {
-    background-color: var(--brandbackground);
-    transition: var(--focus);
-  }
+
   .totopcontainer:active img {
     margin-top: 1rem;
     transition: var(--focus);
+  }
+
+  @media (min-width: 900px) {
+    .totopcontainer {
+      background-color: transparent;
+      transition: var(--unfocus);
+    }
+    .totopcontainer:hover {
+      background-color: var(--brandbackground);
+      transition: var(--focus);
+    }
   }
 </style>
