@@ -1,0 +1,100 @@
+---
+import "../styles/generel.css";
+const { year, work1, work2, work3, work4, orientation } = Astro.props;
+// if (work3 == null) {
+//   work3.style.display = "none";
+// }
+---
+
+<article class={orientation}>
+  <h3>{year}</h3>
+  <div class="lineWithCube">
+    <div class="line"></div>
+    <div class="cube"></div>
+  </div>
+
+  <ul>
+    <li><p>{work1}</p></li>
+    <li><p>{work2}</p></li>
+    <li id="work3"><p>{work3}</p></li>
+    <li id="work4"><p>{work4}</p></li>
+  </ul>
+</article>
+
+<style>
+  @media (min-width: 900px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 10% 1fr;
+    }
+    h3 {
+      text-align: right;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    .odd h3 {
+      order: 1;
+      text-align: left;
+    }
+    .odd ul {
+      order: -1;
+      text-align: right;
+    }
+    .odd ul li {
+      list-style: none;
+    }
+    ul {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+</style>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 1fr 10% 5fr;
+  }
+  h3 {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+  ul {
+    list-style: square;
+    color: var(--body-contrast);
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+  }
+  .lineWithCube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1.5px;
+    background-color: var(--body-contrast);
+
+    z-index: -1;
+  }
+
+  .cube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: translate(-50%, -50%);
+    border: 2px var(--body-contrast) solid;
+    border-radius: 1px;
+  }
+</style>
