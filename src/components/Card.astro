@@ -5,12 +5,12 @@ import "../styles/generel.css";
 import "../styles/animations.css";
 ---
 
-<article class="kasse" name={data.type}>
+<article class="kasse" name={data.type} name={data.year}>
   <!-- Desktop start -->
   <a href={`/designs/${data.slug}`} class="grid1-1 hideDesktop">
     <div class="textcontainer">
       <h3>{data.title}</h3>
-      <p>{data.description1} . .</p><p class="hyperlink">Read more . . .</p>
+      <p>{data.description1} . .</p><p>{data.year} | {data.type} design | <span class="hyperlink">Read more . . .</span></p>
     </div>
     <div class="imagecontainer"><img src={data.image} alt={data.image_text} /></div>
   </a>
@@ -115,7 +115,7 @@ import "../styles/animations.css";
     gap: 0.5rem;
     transition: var(--focus);
     height: 60vw;
- 
+
     justify-items: center;
   }
   .overlaycontent h2 {
@@ -127,9 +127,9 @@ import "../styles/animations.css";
   }
   .focus .overlay {
     /* display: inline; */
-display: inline-flex;
-align-items: center;
-justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--primary-35);
     z-index: 2;
   }

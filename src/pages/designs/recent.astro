@@ -1,8 +1,8 @@
 ---
-import Card from "../components/Card.astro";
-import "../styles/generel.css";
-import "../styles/animations.css";
-import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../../components/Card.astro";
+import "../../styles/generel.css";
+import "../../styles/animations.css";
+import MainLayout from "../../layouts/MainLayout.astro";
 
 
 
@@ -18,7 +18,7 @@ console.log(data);
 <MainLayout sitetitle= "Designs">
 
   <div class="breadcrumbcontainer">
-  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow">  <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
+  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow"> <a class="hyperlink" href=`/designs`>Designs</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
 </div>
   <div class="titlecontainer">
     <h1 id="header_arc"> </h1>
@@ -29,9 +29,9 @@ console.log(data);
 
   <hr />
   <div class="flex">
-    <a href="/designs/recent"><h3>recent</h3></a>
+    <a class="selected" href="/designs/recent"><h3>recent</h3></a>
     <span class="line">|</span>
-    <a href=`designs?year=${data.year,2013}`><h3>older</h3></a>
+    <a href="/designs/older"><h3>older</h3></a>
     <span class="line">|</span>
     <a href={`?location=${(data.location, "National")}`}><h3>national</h3></a>
     <span class="line">|</span>
@@ -42,10 +42,18 @@ console.log(data);
   <hr />
 
   <section class="liste ">
-    {
+
+    <!-- {
       data.map((data) => {
-        if (data.type == "Architectural") return <Card name="arc" data={data} />;
-        if (data.type == "Stage") return <Card name="stg" data={data} />;
+        return <Card name={data.year} data={data} />;
+      })
+    } -->
+    {
+      data
+        .sort((a, b) => b.year - a.year) //sortering
+        .map((data) => {
+        if (data.year == 2024 || data.year == 2022 || data.year == 2021 || data.year == 2020 || data.year == 2019  ) return <Card name="recent" data={data} />;
+
       })
     }
   </section>
@@ -79,37 +87,19 @@ console.log(data);
   }
 </style>
 
+
+
+
+
 <script>
-  console.log("filter by type");
+  console.log("filter by year");
   window.onload = function () {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const type = urlParams.get("type");
 
-    document.querySelector("#header_stg").textContent = "all designs";
-        document.querySelector(".breadcrumbtext").textContent = "All Designs";
-
-    if (type == "Architectural") {
-      var elems = document.getElementsByName("Stage");
-      // var header = document.getElementsByName("header_stg");
-      for (var i = 0; i < elems.length; i++) {
-        elems[i].style.display = "none";
-        document.querySelector("#header_arc").textContent = "architectural designs";
-        document.querySelector(".breadcrumbtext").textContent = "Architectural Designs";
+        document.querySelector("#header_arc").textContent = "Filter: Recent";
+        document.querySelector(".breadcrumbtext").textContent = "Filter: Recent";
         // header[i].style.display = "none";
-      }
-    }
-    if (type == "Stage") {
-      var elems = document.getElementsByName("Architectural");
-      //var header = document.getElementsByName("header_arc");
-      for (var i = 0; i < elems.length; i++) {
-        elems[i].style.display = "none";
-        document.querySelector("#header_stg").textContent = "stage designs";
-        document.querySelector(".breadcrumbtext").textContent = "Stage Designs";
-        // header[i].style.display = "none";
-      }
-    }
-    
+        console.log("filter by recent");
+ 
   };
 </script>
 
