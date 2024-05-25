@@ -5,7 +5,7 @@ const { ctaDestination, buttonTitle, target } = Astro.props;
 ---
 
 <div class="knapcontainer">
-  <a target={target} href={ctaDestination}><h3>{buttonTitle}</h3></a>
+  <a target={target} href={ctaDestination}><p>{buttonTitle}</p></a>
   <div class="baggrund"></div>
 </div>
 
@@ -20,16 +20,18 @@ const { ctaDestination, buttonTitle, target } = Astro.props;
   .baggrund {
     grid-area: 1/1;
   }
-
+p{
+  margin-bottom: 0;
+}
   a {
     display: block;
     max-width: fit-content;
-    max-height: fit-content;
+    max-height: 2.4rem;
     border: solid var(--primary) 2px;
     background-color: transparent;
     border-radius: 1px;
-    padding: 1rem 4rem;
-    margin: 2rem 2rem;
+    padding: 0.5rem 3rem;
+    /* margin: 2rem 2rem; */
 
     transition: var(--unfocus);
     text-decoration: none;
@@ -41,16 +43,18 @@ const { ctaDestination, buttonTitle, target } = Astro.props;
   .baggrund {
     display: block;
     position: relative;
+    max-width: fit-content;
+    height: 2.4rem;
     z-index: 1;
     top: 1rem;
     left: 2rem;
-
-    width: 5rem;
+/* 
+    width: 5rem; */
     border-radius: 2px;
-
-    padding: 1rem 5.9rem;
-    margin: 2rem 2rem;
-
+    padding: 1rem 4.4rem;
+    /* padding: 1rem 5.9rem; */
+    /* margin: 2rem 2rem; */
+margin-bottom: 3rem;
     background-color: var(--primary-35);
 
     transition: var(--unfocus);
@@ -69,7 +73,7 @@ const { ctaDestination, buttonTitle, target } = Astro.props;
   /* vises kun i mobile */
   @media (max-width: 900px) {
     .baggrund {
-      padding: 1rem 5.45rem;
+      /* padding: 1rem 5.45rem; */
     }
   }
 </style>
