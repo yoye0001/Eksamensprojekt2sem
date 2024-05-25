@@ -104,11 +104,11 @@ flex-shrink: 0;
     max-width: 100%;
   }
   hr {
-  width: 476px;
+
 height: var(--Number, 0px);
-transform: rotate(90deg);
-flex-shrink: 0;
- stroke-width: 2px;
+/* transform: rotate(90deg); */
+/* flex-shrink: 0; */
+
 stroke: var(--Background-contrast, #ECECEC);
   
   }
@@ -128,12 +128,18 @@ margin-top: 40px;
 
   @media (min-width: 900px) {
     .grid2-1-2 {
+      /* display: flex; */
       display: grid;
       grid-template-columns: 2fr 1fr 2fr;
       margin: auto;
-      
-    }
+      /* flex-direction: row; */
    
+    }
+    hr {
+width: 1px;
+height: 476px;
+margin: auto;
+  }
   }
   @media (max-width: 900px) {
 
