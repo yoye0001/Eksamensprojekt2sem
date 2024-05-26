@@ -2,7 +2,7 @@
 import "../styles/generel.css";
 import "../styles/animations.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import CVstage from "../components/CVstage.astro";
+
 import CVcomponent from "../components/CVcomponent.astro";
 ---
 
@@ -79,7 +79,7 @@ import CVcomponent from "../components/CVcomponent.astro";
   </article>
 
   <div class="cvStage">
-    <CVcomponent orientation="odd" year="2024" work1="Flammenwerfer, The Royal Theater, 2024" work2="Drot & Maqrsk, The Royal Theater, 202" work3="Aveny-X performancens, Next Zone Moves, 2024" />
+    <CVcomponent orientation="odd" year="2024" work1="Flammenwerfer, The Royal Theater, 2024" work2="Drot & Maqrsk, The Royal Theater, 2024" work3="Aveny-X performancens, Next Zone Moves, 2024" />
     <CVcomponent orientation="" year="2022" work1="Blixen, The Royal Theater, 2022" work2="Pelléas et Mélisande, Hungarian State Opera, 2022" work3="Lohengrin, Deutsche Oper Berlin, 2022" />
     <CVcomponent orientation="odd" year="2020" work1="Mozart - Idomeneo, Israel Opera, 2020" work2="Björk - Vespertine, Hotel Proforma, 2020" />
     <CVcomponent orientation="" year="2017" work1="Meistersinger, Wagner in Covent Garden, London, 2017" work2="Madame Butterfly, La Monnaie/ De Munt, 2017" work3="Eine Nacht in Venedig, Oper Graz, 2017" />
@@ -102,6 +102,7 @@ import CVcomponent from "../components/CVcomponent.astro";
 
 <!-- <CVcomponent orientation="" year="2006" work1="" work2="" work3="" work4="" /> -->
 <script>
+  //STAGE
   function showStage() {
     const stage = document.querySelector(".cvStage");
     const archi = document.querySelector(".cvArchi");
@@ -122,11 +123,10 @@ import CVcomponent from "../components/CVcomponent.astro";
     }
   }
 
-  // Add event listener to the button
   const button1 = document.getElementById("stgbutton");
   button1.addEventListener("click", showStage);
 
-  //ARCHITECT
+  //ARCHITECTURAL
   function showArchi() {
     const stage = document.querySelector(".cvStage");
     const archi = document.querySelector(".cvArchi");
@@ -146,7 +146,6 @@ import CVcomponent from "../components/CVcomponent.astro";
     }
   }
 
-  // Add event listener to the button
   const button2 = document.getElementById("archibutton");
   button2.addEventListener("click", showArchi);
 </script>
@@ -162,12 +161,14 @@ import CVcomponent from "../components/CVcomponent.astro";
     background-color: transparent;
     border: none;
     border-bottom: solid transparent 2px;
+    transition: var(--unfocus);
   }
   button:hover {
     cursor: pointer;
   }
   button:hover {
     border-bottom: solid var(--body-contrast) 2px;
+    transition: var(--focus);
   }
 
   .selected {

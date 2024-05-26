@@ -26,6 +26,10 @@
   animation-delay: 0s;
   animation-iteration-count: infinite;
 }
+
+.borderanim {
+  animation: border_anim 0.3s ease-in-out forwards;
+}
 @keyframes border_anim {
   0% {
     width: 0%;
