@@ -81,30 +81,36 @@ console.log(data);
 
 <script>
   console.log("filter by type");
+  //Sæt funktion igang når vinduet lades
   window.onload = function () {
+    //Aflæs URL'en
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
+    //Hent type fra databasen og aflæs
     const type = urlParams.get("type");
 
-
+//Hvis der står "Architectural" i URL'en
     if (type == "Architectural") {
+      //så er variablen elems, som er alle cards med navnet "Stage"
       var elems = document.getElementsByName("Stage");
-      // var header = document.getElementsByName("header_stg");
+//Loop gennem alle elementer og gør følgende
       for (var i = 0; i < elems.length; i++) {
+        //her skal alle cards med navnet "Stage" være skjulte
         elems[i].style.display = "none";
+        //ændr titlen på siden og breadcrumben
         document.querySelector("#header_arc").textContent = "architectural designs";
         document.querySelector(".breadcrumbtext").textContent = "Architectural Designs";
-        // header[i].style.display = "none";
+
       }
     }
     if (type == "Stage") {
       var elems = document.getElementsByName("Architectural");
-      //var header = document.getElementsByName("header_arc");
+     
       for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = "none";
         document.querySelector("#header_stg").textContent = "stage designs";
         document.querySelector(".breadcrumbtext").textContent = "Stage Designs";
-        // header[i].style.display = "none";
+  
       }
     }
     
