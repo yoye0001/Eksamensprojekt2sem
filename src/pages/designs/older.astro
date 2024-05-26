@@ -1,0 +1,158 @@
+---
+import Card from "../../components/Card.astro";
+import "../../styles/generel.css";
+import "../../styles/animations.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+
+
+const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3B3dGd1Z3VpcG9ubWFpa2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3ODMzNDMsImV4cCI6MjAzMTM1OTM0M30.F0THFO_2BDe8j-ZXrXcyfbczErZtlQ4nCo_MDcCMEVM",
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<MainLayout sitetitle= "Designs">
+
+  <div class="breadcrumbcontainer">
+  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow"> <a class="hyperlink" href=`/designs`>Designs</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
+</div>
+  <div class="titlecontainer">
+    <h1 id="header_arc"> </h1>
+    <h1 id="header_stg"></h1>
+  </div>
+
+ 
+
+  <hr />
+  <div class="flex">
+    <a  href="/designs/recent"><h3>recent</h3></a>
+    <span class="line">|</span>
+    <a class="selected" href="/designs/older"><h3>older</h3></a>
+    <span class="line">|</span>
+    <a href={`?location=${(data.location, "National")}`}><h3>national</h3></a>
+    <span class="line">|</span>
+    <a href={`?location=${(data.location, "International")}`}><h3 class="">international</h3></a>
+    <span class="line">|</span>
+    <a href={`/designs`}><h3 class="">all</h3></a>
+  </div>
+  <hr />
+
+  <section class="liste ">
+
+    <!-- {
+      data.map((data) => {
+        return <Card name={data.year} data={data} />;
+      })
+    } -->
+    {
+      data
+        .sort((a, b) => a.year - b.year) //sortering
+        .map((data) => {
+        if (data.year == 2017 || data.year == 2016 || data.year == 2014 || data.year == 2013 || data.year == 2010 || data.year == 2008 ) return <Card name="recent" data={data} />;
+
+      })
+    }
+  </section>
+</MainLayout>
+
+<style>
+.breadcrumbcontainer{
+  position: sticky;
+  top: 0%;
+  z-index: 100;
+}
+  .breadcrumb {
+    display: flex;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+  .breadcrumb {
+    max-width: fit-content;
+    border: solid var(--body-contrast) 1px;
+    border-top: none;
+    padding: 1rem;
+    background: var(--footer-gradient);
+  }
+  .breadcrumb a,span,img{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .breadcrumb img{
+    width: 5%;
+
+  }
+</style>
+
+
+
+
+
+<script>
+  console.log("filter by year");
+  window.onload = function () {
+
+        document.querySelector("#header_arc").textContent = "Older Projects";
+        document.querySelector(".breadcrumbtext").textContent = "Filter: Older";
+        // header[i].style.display = "none";
+        console.log("filter by recent");
+ 
+  };
+</script>
+
+<style>
+  .liste {
+    scroll-snap-type: y mandatory;
+    /* prøver at minimere whitespace */
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .line {
+    color: var(--body-contrast);
+    font-size: 32px;
+  }
+
+  .flex a {
+    text-decoration: none;
+  }
+  .selected {
+    border-bottom: solid var(--body-contrast) 2px;
+  }
+
+  .flex h3 {
+    border-bottom: solid transparent 2px;
+    transition: var(--unfocus);
+  }
+  .flex h3:hover {
+    border-bottom: solid var(--body-contrast) 2px;
+    animation: border_anim 0.3s ease-in-out forwards;
+  }
+  hr {
+    margin: 1rem 0 1rem 0;
+    border: solid var(--body-contrast) 1px;
+  }
+
+
+  .titlecontainer {
+
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+
+    border-top: none;
+    margin-bottom: 2rem;
+    overflow-x: hidden;
+  }
+  .titlecontainer h1 {
+    margin-top: 1rem;
+    word-wrap::normal;
+  }
+</style>
