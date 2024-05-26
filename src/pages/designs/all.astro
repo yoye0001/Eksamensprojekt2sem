@@ -18,7 +18,7 @@ console.log(data);
 <MainLayout sitetitle= "Designs">
 
   <div class="breadcrumbcontainer">
-  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow"> <a class="hyperlink" href=`/designs`>Designs</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow" /> <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
+  <p class="breadcrumb"><a class="hyperlink" href="/">Home</a> <img src="/breadcrumb_arrow.svg" alt="breadcrumbarrow"> <span class="placeholder breadcrumbtext">PLACEHOLDER</span></p>
 </div>
   <div class="titlecontainer">
     <h1 id="header_arc"> </h1>
@@ -33,11 +33,11 @@ console.log(data);
     <span class="line">|</span>
     <a  href="/designs/older"><h3>older</h3></a>
     <span class="line">|</span>
-    <a  href="/designs/national"><h3>national</h3></a>
+    <a href="/designs/national"><h3>national</h3></a>
     <span class="line">|</span>
-    <a class="selected" href="/designs/international"><h3 class="">international</h3></a>
+    <a href="/designs/international"><h3 class="">international</h3></a>
     <span class="line">|</span>
-    <a href="/designs/all"><h3 class="">all</h3></a>
+    <a class="selected" href="/designs/all"><h3 class="">all</h3></a>
   </div>
   <hr />
 
@@ -50,9 +50,9 @@ console.log(data);
     } -->
     {
       data
-
+      .sort((a, b) => a.title.localeCompare(b.title)) //alfabetisk sortering
         .map((data) => {
-        if (data.location == "International") return <Card name="recent" data={data} />;
+        if (data ) return <Card name="recent" data={data} />;
 
       })
     }
@@ -92,11 +92,11 @@ console.log(data);
 
 
 <script>
-  console.log("filter by year");
+  console.log("filter by all");
   window.onload = function () {
 
-        document.querySelector("#header_arc").textContent = "International Projects";
-        document.querySelector(".breadcrumbtext").textContent = "Filter: International";
+        document.querySelector("#header_arc").textContent = "All Projects";
+        document.querySelector(".breadcrumbtext").textContent = "Filter: All";
         // header[i].style.display = "none";
         console.log("filter by recent");
  

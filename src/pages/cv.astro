@@ -97,7 +97,7 @@ import CVcomponent from "../components/CVcomponent.astro";
     <CVcomponent year="2013" work1="Kastrup Airport, Terminal 2+3, 2000-2013 (Nominated for the Danish Lighting Award 2013)" work2="The Blue Planet, Kastrup, 2013 (Nominated for the Danish Lighting Award 2013)" work3="Grønnegade Square, Odense, 2013 (Nominated for the Danish Lighting Award 2013)" />
     <CVcomponent orientation="odd" year="2006" work1="Royal Danish Playhouse, Kvæsthusbroen, Copenhagen, 2006 (Winner of the Danish Lighting Award 2006)" work2="Højbro Square, Copenhagen, 2006 (Nominated for the Danish Lighting Award 2006)" />
   </div>
-  <div class="flex"><a target="_blank" class="hyperlink" href="https://www.operabase.com/jesper-kongshaug-a8270/da">Read more on Operabase&#x2197;</a></div>
+  <div class="flex1"><a target="_blank" class="hyperlink" href="https://www.operabase.com/jesper-kongshaug-a8270/da">Read more on Operabase&#x2197;</a></div>
 </MainLayout>
 
 <!-- <CVcomponent orientation="" year="2006" work1="" work2="" work3="" work4="" /> -->
@@ -179,6 +179,16 @@ import CVcomponent from "../components/CVcomponent.astro";
   .flex {
     border-top: 2px var(--body-contrast) solid;
     border-bottom: 2px var(--body-contrast) solid;
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .flex1 {
+    border-top: 2px var(--body-contrast) solid;
+
     display: flex;
     justify-content: space-around;
     place-items: center;
