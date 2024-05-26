@@ -15,9 +15,10 @@ import Dropdown from "../components/Dropdown.astro";
                 <Dropdown header="PORTFOLIO" underknap1="STAGE LIGHTING" underknap2="ARCHITECTURAL LIGHTING"></Dropdown> 
          
             <hr>
-            <li class="nav-item"><a href="/cv" class="nav-link"><h3>CV</a></h3></li>
+            <li class="nav-item"><a href="/cv" class="nav-link"> <p>CV</p>
+              </a></li>
             <hr>
-            <li class="nav-item"><a href="/contact" class="nav-link"><h3>CONTACT</a></h3></li>
+            <li class="nav-item"><a href="/contact" class="nav-link"><p>CONTACT</p></a></li>
             <hr>
         </ul>
         <div class="hamburger">
@@ -38,11 +39,11 @@ import Dropdown from "../components/Dropdown.astro";
     li a {
     border-bottom: solid transparent 1.5px;
   }
-  li h3:hover {
+  li h3:hover, p:hover {
     border-bottom: solid var(--body-contrast) 1.5px;
-    animation: border_anim 0.5s ease-in-out forwards;
+    animation: border_anim 0.3s ease-in-out forwards;
   }
-  .nav-link,h3{
+  .nav-link,h3, p{
     border-bottom: solid transparent 1.5px;
 
 }
@@ -86,11 +87,11 @@ transition: var(--unfocus);
     animation: border_anim 0.3s ease-in-out forwards;
   }
   */
-.nav-link:hover, .active{
-    border-bottom: solid var(--body-contrast) 1px;
-     transition: 0.5s;
+/* .nav-link:hover, .active{
+    border-bottom: solid var(--body-contrast) 1.5px;
+    animation: border_anim 0.2s ease-in-out forwards;
     
-}
+} */
 /*logo*/
 .nav-branding {
   width: 8ch;
