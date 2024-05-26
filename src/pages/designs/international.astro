@@ -29,13 +29,13 @@ console.log(data);
 
   <hr />
   <div class="flex">
-    <a class="selected" href="/designs/recent"><h3>recent</h3></a>
+    <a  href="/designs/recent"><h3>recent</h3></a>
     <span class="line">|</span>
-    <a href="/designs/older"><h3>older</h3></a>
+    <a  href="/designs/older"><h3>older</h3></a>
     <span class="line">|</span>
-    <a href="/designs/national"><h3>national</h3></a>
+    <a  href="/designs/national"><h3>national</h3></a>
     <span class="line">|</span>
-    <a href="/designs/international"><h3 class="">international</h3></a>
+    <a class="selected" href="/designs/international"><h3 class="">international</h3></a>
     <span class="line">|</span>
     <a href={`/designs`}><h3 class="">all</h3></a>
   </div>
@@ -50,9 +50,9 @@ console.log(data);
     } -->
     {
       data
-        .sort((a, b) => b.year - a.year) //sortering
+
         .map((data) => {
-        if (data.year == 2024 || data.year == 2022 || data.year == 2021 || data.year == 2020 || data.year == 2019  ) return <Card name="recent" data={data} />;
+        if (data.location == "International") return <Card name="recent" data={data} />;
 
       })
     }
@@ -95,8 +95,8 @@ console.log(data);
   console.log("filter by year");
   window.onload = function () {
 
-        document.querySelector("#header_arc").textContent = "Recent Projects";
-        document.querySelector(".breadcrumbtext").textContent = "Filter: Recent";
+        document.querySelector("#header_arc").textContent = "International Projects";
+        document.querySelector(".breadcrumbtext").textContent = "Filter: International";
         // header[i].style.display = "none";
         console.log("filter by recent");
  
