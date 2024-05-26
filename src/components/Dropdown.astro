@@ -6,15 +6,22 @@ const { header, underknap1, underknap2 } = Astro.props;
 
 <li class="nav-item dropdown">
   <div class="dropbtn">
-    <a href="/#type"> <div class="headtitle">{header}</div></a>
+    <a href="/#type"> 
+      <div class="headtitle">{header}</div>
+    </a>
     <div class="icon"></div>
+     </div>
     <div class="dropdown-content">
-      <a href="/designs?type=Stage"><div class="dropdownbtn">{underknap1}</div></a>
+      <a href="/designs?type=Stage">
+        <div class="dropdownbtn">{underknap1}</div>
+      </a>
       <div><hr /></div>
-      <a href="/designs?type=Architectural"><div class="dropdownbtn">{underknap2}</div></a>
+      <a href="/designs?type=Architectural">
+        <div class="dropdownbtn">{underknap2}</div>
+      </a>
       <div><hr /></div>
-    </div>
-  </div>
+    </li>
+ 
 
  
 
@@ -37,10 +44,16 @@ const { header, underknap1, underknap2 } = Astro.props;
       color: transparent;
       background-size: contain;
       background-repeat: no-repeat;
-      width: 1.5rem;
-      margin-top: 0.6rem;
+      width: 2rem;
+      margin-top: 0.5rem;
       margin-left: 1rem;
+      padding: 0.5rem;
     }
+    .icon:hover, li:hover .icon{
+      margin-top: 0.6rem;
+   transition: var(--focus);
+  }
+    
     /* Dropdown Button */
     .dropbtn {
       text-align: right;
@@ -66,6 +79,7 @@ const { header, underknap1, underknap2 } = Astro.props;
       display: flex;
       flex-direction: column;
       align-items: self-end;
+      text-align: right;
       margin: 1rem 1rem;
       margin-bottom: 1rem;
       padding-top: 0.5rem;
@@ -94,9 +108,21 @@ const { header, underknap1, underknap2 } = Astro.props;
     .show {
       display: block;
     }
-    @media (min-width: 900px) {
-      .headtitle{
-        
+    /* KUN PÅ MOBIL */
+    @media (max-width: 900px) {
+      .dropdown-content  {
+     display: block;
+    }
+    }
+    /* KUN PÅ DESK */
+        @media (min-width: 900px) {
+      .icon{
+        margin-top: 0.2rem;
+        transition: var(--unfocus);
+      }
+      .icon:hover, li:hover .icon{
+        margin-top: 0.4rem;
+        transition: var(--focus);
       }
       li .dropbtn .headtitle {
       border-bottom: solid transparent 2px;
@@ -127,6 +153,7 @@ const { header, underknap1, underknap2 } = Astro.props;
         background: var(--footer-gradient);
         min-width: 190px;
         height: 200px;
+       right: 0;
         z-index: 250;
         top: 1.25rem;
       }
