@@ -9,7 +9,8 @@ import CVcomponent from "../components/CVcomponent.astro";
 <MainLayout sitetitle="CV">
   <article id="grid_2-2">
     <div id="profile">
-      <img id="profilepic" src="/profilbillede.png" alt="" />
+      <img id="profilepic" src="/profilbillede.avif" alt="Jesper Kongshaug holding lights" width="2000" height="1333" />
+      <p id="courtesy">Courtesy of Ritzau</p>
     </div>
     <div id="profiletext">
       <div class="overhead">
@@ -150,6 +151,20 @@ import CVcomponent from "../components/CVcomponent.astro";
   button2.addEventListener("click", showArchi);
 </script>
 <style>
+  #profile {
+    display: grid;
+  }
+
+  #profilepic,
+  #courtesy {
+    grid-area: 1/1;
+  }
+  #courtesy {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
   .show {
     display: inherit;
   }
