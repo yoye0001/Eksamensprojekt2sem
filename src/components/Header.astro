@@ -15,9 +15,10 @@ import Dropdown from "../components/Dropdown.astro";
                 <Dropdown header="PORTFOLIO" underknap1="STAGE LIGHTING" underknap2="ARCHITECTURAL LIGHTING"></Dropdown> 
          
             <hr>
-            <li class="nav-item"><a href="/cv" class="nav-link"><h3>CV</a></h3></li>
+            <li class="nav-item"><p><a href="/cv" class="nav-link">CV 
+              </a></p></li>
             <hr>
-            <li class="nav-item"><a href="/contact" class="nav-link"><h3>CONTACT</a></h3></li>
+            <li class="nav-item"><p><a href="/contact" class="nav-link">CONTACT</a></p></li>
             <hr>
         </ul>
         <div class="hamburger">
@@ -35,14 +36,12 @@ import Dropdown from "../components/Dropdown.astro";
 
     /* kun på comp */
     @media (min-width: 900px) {
-    li a {
-    border-bottom: solid transparent 1.5px;
-  }
-  li h3:hover {
+ 
+  p:hover, .active {
     border-bottom: solid var(--body-contrast) 1.5px;
-    animation: border_anim 0.5s ease-in-out forwards;
+    animation: border_anim 0.3s ease-in-out forwards;
   }
-  .nav-link,h3{
+ p{
     border-bottom: solid transparent 1.5px;
 
 }
@@ -73,7 +72,7 @@ header{
 list-style: none;
 
 }
-.nav-link,h3{
+.nav-link,p{
     color: var(--body-contrast);
     text-decoration: none;
     font-family: montserrat, sans-serif;
@@ -81,7 +80,16 @@ transition: var(--unfocus);
     font-size: 1rem;
   
 }
-
+ /* .nav-link:hover{
+    border-bottom: solid var(--body-contrast) 1px;
+    animation: border_anim 0.3s ease-in-out forwards;
+  }
+  */
+/* .nav-link:hover, .active{
+    border-bottom: solid var(--body-contrast) 1.5px;
+    animation: border_anim 0.2s ease-in-out forwards;
+    
+} */
 /*logo*/
 .nav-branding {
   width: 8ch;
@@ -153,13 +161,13 @@ transition: var(--unfocus);
     left: 0;
   }
 
-  .nav-link,h3 {
+  .nav-link,p {
     font-size: 1.5rem;
     transition: 0.2s;
   }
 
  
-  .nav-link:hover, .active{
+  .nav-link:hover, .active, p:hover{
     border-bottom:none;
     transition: 0.2s;
     color: var(--secondary);
