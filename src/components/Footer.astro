@@ -9,25 +9,29 @@ import "../styles/generel.css";
       <p>+45 4050 8828</p>
       <div id="stregmobil">
         <hr id="vandretstreg" />
-      </div>
+      </div><p>
+        Scenograferne, Sankt Peders Straede 45, 1. sal
+        <br /> 1453 Copenhagen K
+      </p>
     </div>
-    <p>
-      Scenograferne, Sankt Peders Straede 45, 1. sal
-      <br /> 1453 Copenhagen K
-    </p>
-  </section>
-  <div>
-    <img id="logo" src="/faviconn.svg" alt="" />
-  </div>
-  <div id="links">
-    <a href="https://www.instagram.com/jespergardekongshaug/?hl=da"><img id="insta" src="/insta.png" alt="instagram icon" /></a>
 
-    <hr id="lodretstreg" />
-    <a href="https://www.linkedin.com/in/jesperkongshaug/?originalSubdomain=dk"><img id="linkedin" src="/linkedin.png" alt="linkedin icon" /></a>
-  </div>
+    <div class="logocontainer">
+      <img id="logo" src="/faviconn.svg" alt="" />
+    </div>
+    <div id="links">
+      <a href="https://www.instagram.com/jespergardekongshaug/?hl=da"><img id="insta" src="/insta.png" alt="instagram icon" /></a>
+
+      <hr id="lodretstreg" />
+      <a href="https://www.linkedin.com/in/jesperkongshaug/?originalSubdomain=dk"><img id="linkedin" src="/linkedin.png" alt="linkedin icon" /></a>
+    </div>
+  </section>
 </footer>
 
 <style>
+  .logocontainer {
+    max-width: 20%;
+  }
+
   footer {
     background: var(--footer-gradient);
     border-top: 1px solid var(--body-contrast);
@@ -40,9 +44,6 @@ import "../styles/generel.css";
       padding-top: 2rem;
       padding-bottom: 2rem;
       width: 10rem;
-    }
-
-    #logo {
     }
 
     #links {
@@ -73,7 +74,7 @@ import "../styles/generel.css";
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     #vandretstreg {
       color: var(--body-contrast);
       margin-bottom: 1rem;
@@ -108,7 +109,7 @@ import "../styles/generel.css";
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     #textbox {
       text-align: center;
       order: 2;
