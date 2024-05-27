@@ -63,6 +63,7 @@ console.log(myData);
     <a class="flexcontainer" href=""><img class="arrow" src="/public/arrowleft.svg" alt="arrow" /><h3>previous</h3></a>
     <a class="flexcontainer" href=""><h3>next</h3><img class="arrow" src="/public/arrowright.svg" alt="arrow" /></a>
   </div>
+<hr class="flexbottom">
 </MainLayout>
 
 <style>
@@ -80,9 +81,13 @@ console.log(myData);
     margin-bottom: 0.5rem;
     gap: 1rem;
   }
-  .flexcontainer h3 {
-    margin: auto;
+
+  .flexcontainer  {
+    text-decoration: none;
   }
+.flexbottom{
+  margin-bottom: 2rem;
+}
   .flexcontainer img {
     width: 1rem;
     height: auto;
