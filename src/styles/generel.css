@@ -27,8 +27,18 @@ html {
   --body-contrast: #ececec;
   --brandbackground: #0f1136;
 
-  --header-gradient: linear-gradient(30deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
-  --footer-gradient: linear-gradient(199deg, rgba(15, 17, 54, 1) 0%, rgba(15, 17, 54, 1) 35%, rgba(22, 33, 140, 1) 100%);
+  --header-gradient: linear-gradient(
+    30deg,
+    rgba(15, 17, 54, 1) 0%,
+    rgba(15, 17, 54, 1) 35%,
+    rgba(22, 33, 140, 1) 100%
+  );
+  --footer-gradient: linear-gradient(
+    199deg,
+    rgba(15, 17, 54, 1) 0%,
+    rgba(15, 17, 54, 1) 35%,
+    rgba(22, 33, 140, 1) 100%
+  );
   background-color: var(--brandbackground);
 
   --focus: all 0.3s ease;
@@ -38,6 +48,9 @@ html {
     background-color: var(--secondary);
     color: var(--accent1);
   }
+}
+hr {
+  color: var(--body-contrast);
 }
 
 /* MOBILE FONT SIZES */
