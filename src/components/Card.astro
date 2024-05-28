@@ -285,8 +285,10 @@ import "../styles/animations.css";
         entry.target.classList.toggle("focus", entry.isIntersecting);
       });
     },
+    //Hvor "vinduet" begynder i vinduet
     { rootMargin: "-450px" }
   );
+  //loop gennem alle kasser konstant
   kasserDesktop.forEach((kasse) => {
     observerDesktop.observe(kasse);
   });
