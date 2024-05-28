@@ -234,13 +234,6 @@ import "../styles/animations.css";
       border-radius: 2px;
     }
 
-    /* kan ikke få til at virke */
-    .focus .desktopline {
-      margin-top: 2rem;
-      transition: var(--focus);
-      width: 40vw;
-    }
-
     .focus h3 {
       font-size: 3rem;
       transition: var(--focus);
@@ -285,8 +278,10 @@ import "../styles/animations.css";
         entry.target.classList.toggle("focus", entry.isIntersecting);
       });
     },
+    //Hvor "vinduet" begynder i vinduet
     { rootMargin: "-450px" }
   );
+  //loop gennem alle kasser konstant
   kasserDesktop.forEach((kasse) => {
     observerDesktop.observe(kasse);
   });

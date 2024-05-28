@@ -19,11 +19,11 @@ const { data } = Astro.props;
       <br />
       <p>AgentManagement : HarrisonParrott Ltd., London, U.K.</p>
       <div class="iconwrapper">
-        <a target="_blank" href="https://www.instagram.com/jespergardekongshaug/?hl=en"> <img src="/public/ins.png" alt="instagram icon" /></a>
-        <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/public/1.png" alt="linkedin icon" /></a>
+        <a target="_blank" href="https://www.instagram.com/jespergardekongshaug/?hl=en"> <img src="/ins.png" alt="instagram icon" /></a>
+        <a target="_blank" href="https://www.linkedin.com/in/jesperkongshaug/"> <img src="/1.png" alt="linkedin icon" /></a>
       </div>
     </div>
-      <hr class="hr"/>
+    <hr class="hr" />
 
     <div class="contactform col">
       <form action="netflify">
@@ -33,20 +33,18 @@ const { data } = Astro.props;
           <label for="lname"><p>Last name</p></label>
         </div>
         <div class="grid1-1">
-          
-          <input type="text" id="fname" name="fname"placeholder="Enter your first name" class="placeholder"/>
-          <input type="text" id="lname" name="lname" placeholder="Enter your last name"class="placeholder" />
+          <input type="text" id="fname" name="fname" placeholder="Enter your first name" class="placeholder" />
+          <input type="text" id="lname" name="lname" placeholder="Enter your last name" class="placeholder" />
         </div>
         <label for="mail"><p>Email</p></label>
-        <input type="text" id="mail" name="mail"placeholder="Enter your Email" class="placeholder" />
+        <input type="text" id="mail" name="mail" placeholder="Enter your Email" class="placeholder" />
         <label for="message"><p>Message</p></label>
-        <input type="text" id="message" name="message" placeholder="Send a message"class="placeholder" />
-        
+        <input type="text" id="message" name="message" placeholder="Send a message" class="placeholder" />
+
         <ButtonSecondary class="small-button" ctaDestination="" buttonTitle="SEND" />
       </form>
     </div>
   </div>
-  
 </MainLayout>
 
 <style>
@@ -54,77 +52,77 @@ const { data } = Astro.props;
     text-align: center;
   } */
 
-  .contactform h3{
+  .contactform h3 {
     margin-bottom: 4px;
   }
-.placeholder::placeholder{
- color: var(--Background-contrast, #ECECEC);
+  .placeholder::placeholder {
+    color: var(--Background-contrast, #ececec);
 
-font-size: 16px;
-font-style: italic;
-font-weight: 400;
-line-height: normal;
-opacity: 40%;
-}
-#fname,#mail,#message, #lname{
-   background: var(--primary-50);
-   margin-bottom: 4%;
-}
-input{
-  border: 1px solid var(--body-contrast);
-}
-#fname{
-  width: 100%;
-  height: 35px;
-}
-#mail{
-   width: 100%;
-  height: 35px;
-
-}
-
-#message{
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 40%;
+  }
+  #fname,
+  #mail,
+  #message,
+  #lname {
+    background: var(--primary-50);
+    margin-bottom: 4%;
+  }
+  input {
+    border: 1px solid var(--body-contrast);
+  }
+  #fname {
     width: 100%;
-  height: 157px;
-}
+    height: 35px;
+  }
+  #mail {
+    width: 100%;
+    height: 35px;
+  }
+
+  #message {
+    width: 100%;
+    height: 157px;
+  }
 
   .iconwrapper {
     display: flex;
-   gap: 50px;
+    gap: 50px;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
   .iconwrapper a {
-width: 75px;
-height: 75px;
-flex-shrink: 0;
+    width: 75px;
+    height: 75px;
+    flex-shrink: 0;
   }
 
-  form{
+  form {
     max-width: 100%;
   }
   hr {
+    height: var(--Number, 0px);
+    /* transform: rotate(90deg); */
+    /* flex-shrink: 0; */
 
-height: var(--Number, 0px);
-/* transform: rotate(90deg); */
-/* flex-shrink: 0; */
-
-stroke: var(--Background-contrast, #ECECEC);
-  
+    stroke: var(--Background-contrast, #ececec);
   }
   .grid1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
- 
- 
   }
 
-   .grid2-1-2 {  align-items: center;
+  .grid2-1-2 {
+    align-items: center;
   }
- h1,h3{
-margin-top: 40px;
- }
+  h1,
+  h3 {
+    margin-top: 40px;
+  }
 
   @media (min-width: 900px) {
     .grid2-1-2 {
@@ -133,40 +131,35 @@ margin-top: 40px;
       grid-template-columns: 2fr 1fr 2fr;
       margin: auto;
       /* flex-direction: row; */
-   
     }
     hr {
-width: 1px;
-height: 476px;
-margin: auto;
-  }
+      width: 1px;
+      height: 476px;
+      margin: auto;
+    }
   }
   @media (max-width: 900px) {
+    .contactform {
+      margin: 0 auto;
+    }
+    .hr {
+      width: 246px;
+      transform: none;
+      height: var(--Number, 0px);
 
- .contactform{
-   margin: 0 auto;
-  }
- .hr {
-    width: 246px;
-    transform: none;
-height: var(--Number, 0px);
-
-margin: 0 auto;
-  }
+      margin: 0 auto;
+    }
     .iconwrapper a {
       width: 54px;
-height: 54px;
-flex-shrink: 0;
-
+      height: 54px;
+      flex-shrink: 0;
     }
-      .iconwrapper{
-        gap: 41px;
-        justify-content: center;
-      }
-      .contactinformation{
-text-align: center;
-      }
+    .iconwrapper {
+      gap: 41px;
+      justify-content: center;
+    }
+    .contactinformation {
+      text-align: center;
+    }
   }
-     
-  
 </style>
