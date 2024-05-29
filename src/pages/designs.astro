@@ -126,11 +126,24 @@ console.log(data);
     margin-left: 3rem;
     margin-right: 3rem;
   }
-  .flex {
+
+  @media (max-width: 900px) {
+    .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content:center;
+  }
+  }
+  @media (min-width: 900px) {
+    .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  }
+
   .line {
     color: var(--body-contrast);
     font-size: 32px;
