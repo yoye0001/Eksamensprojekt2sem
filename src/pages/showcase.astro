@@ -1,0 +1,71 @@
+---
+import "../styles/generel.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Highlight from "../components/Highlight.astro";
+import Grid from "../components/Grid.astro";
+
+
+const data = await fetch(`https://plcpwtguguiponmaikkt.supabase.co/rest/v1/kongshaugTable1`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3B3dGd1Z3VpcG9ubWFpa2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3ODMzNDMsImV4cCI6MjAzMTM1OTM0M30.F0THFO_2BDe8j-ZXrXcyfbczErZtlQ4nCo_MDcCMEVM",
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<MainLayout sitetitle="Showcase">
+
+      <h1>showcase</h1>
+
+      <p>SHowcase & Inspiration on Lighting, Design, and Space</p>
+<Highlight/>
+
+       <div class="line"></div>
+
+       <div class="h32"><h3>Photos & videos</h3></div>
+<Grid/>
+
+</MainLayout>
+
+<style>
+      .line {
+            width: 1124.004px;
+            height: 1px;
+            margin: auto;
+            background-color: #ECECEC
+        
+            
+        }
+.h32 h3{
+    padding-top: 106px;
+}
+
+h1{
+    padding-top: 101px;
+    text-align: center;
+}
+p{
+margin-top: 50px;
+margin-bottom: 82px;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+text-align: center;
+color: #ECECEC
+    
+}
+
+ @media (max-width: 768px){
+    .line{
+ width: 341px;
+height: 1px;
+          
+            margin: auto;
+    }
+}
+
+
+</style>

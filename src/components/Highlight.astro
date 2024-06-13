@@ -1,0 +1,102 @@
+---
+const { data } = Astro.props;
+
+import "../styles/generel.css";
+import "../styles/animations.css";
+---
+<article>
+    <h3>Instagram Highlights</h3>
+<div class="grid">
+<article>
+  <a href="https://www.instagram.com/p/C7JgpCFLQSX/?img_index=1"><img id="1" src="/1.webp" alt="webp"> <p>@cphlightfest</p></a>
+  
+</article>
+<article>
+  <a href="https://www.instagram.com/p/C7JgpCFLQSX/?img_index=1"> <img id="2" src="/2.webp" alt="webp"> <p>@malene_hessel</p></a>
+</article>
+<article>
+
+  <img id="3" src="/3.webp" alt="webp"> <p>@2700kelvin</p>
+</article>
+<article>
+
+  <img id="4" src="/4.webp" alt="webp"> <p>@Jespekongshaug</p>
+</article>
+<article>
+  <img id="5" src="/5.webp" alt="webp"> <p>@MARIADAHLCPH</p>
+</article>
+</div>
+
+</article>
+<style>
+     .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        place-items: center;
+    
+    }
+p{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+width: 99px;
+padding-bottom: 36px;
+}
+ article p{
+     
+      text-decoration: none;
+ width: 194px;
+ text-align: end;
+ margin-top: 8px;
+
+    }
+
+    a{
+          text-decoration: none;
+         
+    }
+     article p:hover{
+ 
+      text-decoration: underline
+    }
+    img{width: 194px;
+height: 188px;
+}
+
+ h3{
+        margin-bottom: 37px;
+    }
+
+    
+     @media (max-width: 768px){
+           .grid{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        place-items: center;
+        
+           }
+             img{width: 94.852px;
+height: 94.609px;
+flex-shrink: 0;
+    }
+     
+
+   article p{
+     
+      text-decoration: none;
+ text-align: end;
+ margin-top: 8px;
+ font-size: 8px;
+width: 94px;
+   }
+
+    }
+
+
+
+
+</style>

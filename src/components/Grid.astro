@@ -1,0 +1,169 @@
+---
+const { data } = Astro.props;
+
+import "../styles/generel.css";
+import "../styles/animations.css";
+---
+
+<div class="grid">
+    <div class="wrapper">
+        <img id="grid1" src="/grid1.webp" alt="webp">
+        <div class="content">
+            <h3>Planetarium</h3>
+            <p>CREDIT: YOUHAN YE 2024</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid2" src="/grid2.webp" alt="webp">
+        <div class="content">
+            <h3>Tivoli Corner</h3>
+            <p>CREDIT: YOUHAN YE 2024</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid3" src="/grid3.png" alt="webp">
+        <div class="content">
+            <h3>Refer & Staer</h3>
+            <p>CREDIT: REFER STAER LIGHTING</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid4" src="/grid4.png" alt="webp">
+        <div class="content">
+            <h3>interactive </h3>
+            <p>CREDIT: MASU PLANNING</p>
+            
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid5" src="/grid5.png" alt="webp">
+        <div class="content">
+            <h3>TOSCA</h3>
+            <p>CREDIT: ROYAL DANISH OPERA</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid6" src="/grid6.png" alt="webp">
+        <div class="content">
+            <h3>Wonderworld</h3>
+            <p>CREDIT: MARIANNE GRØNNOW</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid7" src="/grid7.png" alt="webp">
+        <div class="content">
+            <h3>the blue planet</h3>
+            <p>CREDIT: YOUHAN YE 2024</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid8" src="/grid8.png" alt="webp">
+        <div class="content">
+            <h3>Langebro</h3>
+            <p>CREDIT: DEN DANSKE LY</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img id="grid9" src="/grid9.png" alt="webp">
+        <div class="content">
+            <h3>CELESTE</h3>
+            <p>CREDIT: CPH CONTEMPORARY</p>
+        </div>
+    </div>
+</div>
+
+<style>
+   .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1105px;
+    max-height: 1065px;
+    gap: 3%;
+    margin: auto;
+    padding-top: 37px;
+    margin-bottom: 138px;
+    position: relative;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.wrapper img {
+    max-width: 341px;
+    max-height: 321px;
+    flex-shrink: 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.wrapper:hover img {
+    transform: scale(1.1);
+}
+
+.content {
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border-radius: px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: azure;
+  white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Ensure the hover effect remains on the image */
+}
+.content p, h3 {
+    font-weight: 100;
+    text-align: end;
+   
+}
+
+.wrapper:hover .content {
+    opacity: 1;
+}
+
+ @media (max-width: 768px){
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+max-width: 398px;
+max-height: 748px;
+    gap: 3%;
+    margin: auto;
+    padding-top: 37px;
+    margin-bottom: 138px;
+    
+}
+
+.wrapper {
+display: flex;
+ justify-content: center;
+   width: 100%;
+    height: 100%;
+}
+
+
+.wrapper img {
+   
+flex-shrink: 0;
+    flex-shrink: 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+img{
+      max-width: 165px;
+max-height: 164px;
+}
+
+#grid9{
+    display: none;
+}
+
+ }
+</style>
