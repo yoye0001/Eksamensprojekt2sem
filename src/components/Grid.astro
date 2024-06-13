@@ -7,7 +7,7 @@ import "../styles/animations.css";
 
 <div class="grid">
     <div class="wrapper">
-        <img id="grid1" src="/grid1.webp" alt="webp">
+        <img id="grid1" src="/grid2.png" alt="webp">
         <div class="content">
             <h3>Planetarium</h3>
             <p>CREDIT: YOUHAN YE 2024</p>
@@ -107,15 +107,16 @@ import "../styles/animations.css";
 .content {
     position: absolute;
     top: 90%;
-    left: 70%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    border-radius: px;
+  
     background-color: rgba(0, 0, 0, 0.5);
     color: azure;
   white-space: nowrap;
     opacity: 0;
+     overflow: hidden;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Ensure the hover effect remains on the image */
+    pointer-events: none; /* hover effect forblver på billedet*/
 }
 .content p, h3 {
     font-weight: 100;
